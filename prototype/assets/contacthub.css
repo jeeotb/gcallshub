@@ -1218,3 +1218,5 @@
 .app.lt .tile::before{right:-14px;top:-10px;width:108px;height:108px;transform:rotate(-4deg)}
 .app.lt .tile:hover::before{transform:rotate(-8deg) scale(1.05)}
 .app.lt .tile::before{right:-2px;top:-2px;width:100px;height:100px}
+/* bỏ icon nhỏ trong 4 thẻ chỉ số (đã có icon kính 3D) — áp cho cả bản sáng và tối */
+.app.lt .tile .ti,.app.dk .tile .ti{display:none!important}
