@@ -1540,3 +1540,35 @@
 .dk-d{font-size:29px}
 .dcall{width:64px;height:64px}
 .dact{width:46px;height:46px}
+
+/* =====================================================================
+   v35 — thanh tab trong suốt hơn, icon nét (không 3D)
+   ===================================================================== */
+.app.lt .nav{background:rgba(255,255,255,.08)!important;backdrop-filter:blur(14px) saturate(170%);-webkit-backdrop-filter:blur(14px) saturate(170%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.6),0 12px 30px -16px rgba(40,30,90,.35)!important}
+.app.lt .nav .pill{background:rgba(255,255,255,.16)!important;backdrop-filter:blur(10px) saturate(160%);-webkit-backdrop-filter:blur(10px) saturate(160%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 1.5px 0 rgba(255,255,255,.7)!important}
+.app.lt .nav .pill::after{background:radial-gradient(120% 80% at 30% 8%,rgba(255,255,255,.45),rgba(255,255,255,0) 55%)}
+.app.lt .nav a.on .pill{background:rgba(255,255,255,.9)!important;box-shadow:inset 0 0 0 1px #fff,0 8px 20px -10px rgba(30,20,70,.4)!important}
+.nav-ico{position:relative;z-index:1;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.app.lt .nav a{color:rgba(42,40,56,.55)}
+.app.lt .nav a.on{color:#2A2838}
+.app.lt.night .nav{background:rgba(255,255,255,.05)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 12px 30px -16px rgba(0,0,0,.8)!important}
+.app.lt.night .nav .pill{background:rgba(255,255,255,.07)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)!important}
+.app.lt.night .nav a{color:rgba(255,255,255,.62)}
+.app.lt.night .nav a.on{color:#2A2838}
+.app.lt.night .nav a.on .pill{background:rgba(255,255,255,.92)!important}
+/* lớp mờ đáy màn mỏng hơn để thanh tab trong suốt thấy được nội dung phía sau */
+.app.lt .layer::after{height:70px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 100%)}
+.app.lt.night .layer::after{background:linear-gradient(180deg,rgba(14,13,22,0) 0%,rgba(14,13,22,.6) 100%)}
+/* v35b — đúng ảnh mẫu: viên xám trong suốt phẳng, không viền / vệt sáng gradient */
+.app.lt .nav{background:rgba(255,255,255,.14)!important;box-shadow:0 10px 28px -16px rgba(40,30,90,.3)!important}
+.app.lt .nav::before{opacity:0}
+.app.lt .nav .pill{background:rgba(130,128,140,.2)!important;box-shadow:none!important}
+.app.lt .nav .pill::after,.app.lt .nav .pill::before{display:none}
+.app.lt .nav a.on .pill{background:#fff!important;box-shadow:0 6px 16px -8px rgba(30,20,70,.3)!important}
+.app.lt .nav a{color:rgba(42,40,56,.6)}
+.nav-ico{stroke-width:1.6}
+.app.lt.night .nav{background:rgba(255,255,255,.06)!important;box-shadow:0 10px 28px -16px rgba(0,0,0,.8)!important}
+.app.lt.night .nav .pill{background:rgba(255,255,255,.12)!important;box-shadow:none!important}
+.app.lt.night .nav a.on .pill{background:#fff!important}
