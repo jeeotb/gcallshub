@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<title>Tài khoản · Dark</title>
+<title>Tài khoản · Tối</title>
 <script src="./support.js"></script>
 <link rel="stylesheet" href="assets/contacthub.css">
 </head>
@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>body{margin:0}</style>
 </helmet>
-<div class="app dk" style="height: 1160px">
+<div class="app lt night" style="height: 1160px">
   <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
   <div class="layer">
     <header class="top">
@@ -36,7 +36,7 @@
       <a class="card row" href="StatusSheet.dc.html" style="border-radius: 28px">
         <span class="ev in" style="background: #ECF8F1; color: #1F9D5B"><span class="dot"></span></span>
         <div class="main"><div class="name">Sẵn sàng</div><div class="sub">Trạng thái trực</div></div>
-        <svg class="ico" style="color: #9A95AA" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg>
+        <svg class="ico" style="color: #757090" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg>
       </a>
 
       <div class="card">
@@ -46,7 +46,7 @@
       </div>
 
       <div class="card">
-        <a class="info" href="#"><span class="ic"><img class="i3d" src="assets/icons/language.svg" alt=""></span><div class="main"><div class="v">Tiếng Việt</div></div><svg class="ico" style="color: #9A95AA" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></a>
+        <a class="info" href="#"><span class="ic"><img class="i3d" src="assets/icons/language.svg" alt=""></span><div class="main"><div class="v">Tiếng Việt</div></div><svg class="ico" style="color: #757090" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></a>
         <label class="info"><span class="ic"><img class="i3d" src="assets/icons/vibrate.svg" alt=""></span><div class="main"><div class="v">Chỉ rung</div></div><span class="toggle" role="switch" aria-checked="false" aria-label="Chỉ rung"></span></label>
       </div>
 
@@ -58,18 +58,36 @@
       </div>
     </div>
 
+    <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ true }}">
     <nav class="nav" aria-label="Điều hướng chính">
       <a href="MainD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
       <a href="ContactsD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
       <a href="HistoryD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
       <a href="TasksD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
+      <button type="button" class="nav-fold" onClick="{{ foldNav }}" aria-label="Thu gọn thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span></button>
     </nav>
+    </sc-if>
+    <sc-if value="{{ navClosed }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="nav-dock" onClick="{{ openNav }}" aria-label="Mở thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span><span class="dock-dot"></span></button>
+    </sc-if>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1160}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    let nav = true;
+    try { nav = window.localStorage.getItem('gch-nav') !== 'closed'; } catch (e) { /* storage blocked */ }
+    this.state = { nav: nav };
+  }
+  renderVals() {
+    return {
+      navOpen: this.state.nav, navClosed: !this.state.nav,
+      foldNav: () => { this.setState({ nav: false }); try { window.localStorage.setItem('gch-nav', 'closed'); } catch (e) {} },
+      openNav: () => { this.setState({ nav: true }); try { window.localStorage.setItem('gch-nav', 'open'); } catch (e) {} },
+    };
+  }
 }
 </script>
 </body>

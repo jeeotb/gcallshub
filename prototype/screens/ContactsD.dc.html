@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<title>Danh bạ · Dark</title>
+<title>Danh bạ · Tối</title>
 <script src="./support.js"></script>
 <link rel="stylesheet" href="assets/contacthub.css">
 </head>
@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>body{margin:0}</style>
 </helmet>
-<div class="app dk">
+<div class="app lt night">
   <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
   <div class="layer">
     <header class="top">
@@ -35,7 +35,7 @@
         <label class="card" style="flex: 1; height: 50px; border-radius: 25px; display: flex; align-items: center; gap: 10px; padding: 0 18px; overflow: visible">
           <img class="i3d" src="assets/icons/search.svg" alt="">
           <span style="position: absolute; left: -9999px">Tìm khách hàng</span>
-          <input placeholder="Tìm tên, số điện thoại" style="flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: #F4F2F8; font: inherit; font-size: 15px">
+          <input placeholder="Tìm tên, số điện thoại" style="flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: #1F1A33; font: inherit; font-size: 15px">
         </label>
         <button class="gbtn" type="button" style="width: 50px; height: 50px" aria-label="Lọc theo nguồn dữ liệu"><img class="i3d" src="assets/icons/filter.svg" alt=""></button>
       </div>
@@ -53,14 +53,14 @@
           <button class="call-btn" type="button" aria-label="Gọi Anh Hoàng"><img class="i3d" src="assets/icons/phone.svg" alt=""></button>
           <a class="more-btn" href="ContactQuick.dc.html" aria-label="Thêm thao tác"><svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></a>
         </div>
-        <div class="letter" style="border-top: 1px solid rgba(255,255,255,.08)"><span>B</span></div>
+        <div class="letter" style="border-top: 1px solid rgba(124,92,224,.1)"><span>B</span></div>
         <div class="row" style="border-top: 0">
           <span class="av">BN</span>
           <div class="main"><div class="name">Bảo Ngọc</div><div class="sub num">0912 345 678</div></div>
           <button class="call-btn" type="button" aria-label="Gọi Bảo Ngọc"><img class="i3d" src="assets/icons/phone.svg" alt=""></button>
           <a class="more-btn" href="ContactQuick.dc.html" aria-label="Thêm thao tác"><svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></a>
         </div>
-        <div class="letter" style="border-top: 1px solid rgba(255,255,255,.08)"><span>D</span></div>
+        <div class="letter" style="border-top: 1px solid rgba(124,92,224,.1)"><span>D</span></div>
         <div class="row" style="border-top: 0">
           <span class="av">DT</span>
           <div class="main"><div class="name">Dũng Trần</div><div class="sub num">0983 111 222</div></div>
@@ -73,7 +73,7 @@
           <button class="call-btn" type="button" aria-label="Gọi Dương Lan"><img class="i3d" src="assets/icons/phone.svg" alt=""></button>
           <a class="more-btn" href="ContactQuick.dc.html" aria-label="Thêm thao tác"><svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></a>
         </div>
-        <div class="letter" style="border-top: 1px solid rgba(255,255,255,.08)"><span>H</span></div>
+        <div class="letter" style="border-top: 1px solid rgba(124,92,224,.1)"><span>H</span></div>
         <div class="row" style="border-top: 0">
           <span class="av">HN</span>
           <div class="main"><div class="name">Hoàng Nam</div><div class="sub num">0888 743 000</div></div>
@@ -83,18 +83,36 @@
       </div>
     </div>
 
+    <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ true }}">
     <nav class="nav" aria-label="Điều hướng chính">
       <a href="MainD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
       <a href="ContactsD.dc.html" class="on"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
       <a href="HistoryD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
       <a href="TasksD.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
+      <button type="button" class="nav-fold" onClick="{{ foldNav }}" aria-label="Thu gọn thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span></button>
     </nav>
+    </sc-if>
+    <sc-if value="{{ navClosed }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="nav-dock" onClick="{{ openNav }}" aria-label="Mở thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span><span class="dock-dot"></span></button>
+    </sc-if>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    let nav = true;
+    try { nav = window.localStorage.getItem('gch-nav') !== 'closed'; } catch (e) { /* storage blocked */ }
+    this.state = { nav: nav };
+  }
+  renderVals() {
+    return {
+      navOpen: this.state.nav, navClosed: !this.state.nav,
+      foldNav: () => { this.setState({ nav: false }); try { window.localStorage.setItem('gch-nav', 'closed'); } catch (e) {} },
+      openNav: () => { this.setState({ nav: true }); try { window.localStorage.setItem('gch-nav', 'open'); } catch (e) {} },
+    };
+  }
 }
 </script>
 </body>

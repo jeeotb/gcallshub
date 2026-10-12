@@ -1180,3 +1180,36 @@
 .av.lg:has(.me-photo){padding:0;overflow:visible}
 .av.lg .me-photo{position:absolute;inset:0}
 .mascot-av .clip:has(.greet-photo){align-items:stretch;background:#fff}
+
+/* =====================================================================
+   v27 — BẢN TỐI = BẢN SÁNG + lớp .night: chỉ đổi nền, card và màu chữ.
+   Tab, nút, thanh tab, 4 thẻ chỉ số, icon giữ nguyên như bản sáng.
+   ===================================================================== */
+.app.lt.night{--ink:#F2F0FA;--ink-2:#C9C6DA;--ink-3:#9A96B2;--line:rgba(255,255,255,.08);
+  --card-edge:0 0 0 1px rgba(255,255,255,.08);--card-shadow:0 14px 30px -20px rgba(0,0,0,.8);
+  background:radial-gradient(70% 22% at 8% 0%,rgba(80,150,130,.18),transparent 70%),radial-gradient(90% 26% at 92% 0%,rgba(110,90,220,.28),transparent 72%),linear-gradient(180deg,#14121F 0%,#0E0D16 420px);color:var(--ink)}
+.app.lt.night .wall{opacity:.45!important}
+.app.lt.night .wall .b1,.app.lt.night .wall .b2,.app.lt.night .wall .b3,.app.lt.night .wall .b4{filter:brightness(.42) saturate(1.2)!important}
+/* nền card */
+.app.lt.night .card,.app.lt.night .glass,.app.lt.night .pop,.app.lt.night .rate{background:#1A1826!important}
+.app.lt.night .card:active{background:#201E2E}
+.app.lt.night .body>.card:first-child{background:transparent!important}
+.app.lt.night .layer::after{background:linear-gradient(180deg,rgba(14,13,22,0) 0%,rgba(14,13,22,.92) 45%,#0E0D16 100%)}
+/* chữ */
+.app.lt.night .h1,.app.lt.night .h2,.app.lt.night .big,.app.lt.night .row .name,.app.lt.night .info .v,.app.lt.night .num{color:var(--ink)}
+.app.lt.night .meta,.app.lt.night .row .sub,.app.lt.night .row .time,.app.lt.night .info .k,.app.lt.night .day,.app.lt.night .letter,.app.lt.night .eyebrow{color:var(--ink-3)}
+.app.lt.night [style*="color: #1F1A33"]{color:var(--ink)!important}
+.app.lt.night [style*="color: #4A4463"]{color:var(--ink-2)!important}
+.app.lt.night [style*="color: #757090"]{color:var(--ink-3)!important}
+.app.lt.night .bchart .grid{background:rgba(255,255,255,.08)}
+.app.lt.night .bchart .grid span,.app.lt.night .xl span{color:var(--ink-3)}
+.app.lt.night .rbar{background:rgba(255,255,255,.08)}
+.app.lt.night .ring circle:first-child{stroke:rgba(255,255,255,.1)}
+.app.lt.night .row{border-top-color:var(--line)}
+.app.lt.night .info{border-top-color:var(--line)}
+.app.lt.night .mascot-av .online,.app.lt.night .av .live{box-shadow:0 0 0 3px #14121F!important}
+/* phần giữ nền sáng (nút, chip, phân đoạn, thanh tab, 4 thẻ chỉ số) giữ nguyên chữ tối của bản sáng */
+.app.lt.night :is(.status-pill,.chip,.seg,.btn.ghost,.nav,.tile,.gbtn,.cal-btn,.tag,.logo-badge){--ink:#14121F;--ink-2:#4A475C;--ink-3:#7B7891}
+.app.lt.night .status-pill{color:#14121F}
+.app.lt.night .tile .num{color:#14121F}
+.app.lt.night .tile .v-rose{color:#C81E4A}
