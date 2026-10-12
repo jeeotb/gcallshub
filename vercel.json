@@ -1,0 +1,1 @@
+{ "cleanUrls": true, "rewrites": [{ "source": "/brand", "destination": "/design/brand-guidelines.html" }] }

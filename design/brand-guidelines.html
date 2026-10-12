@@ -188,6 +188,7 @@ a{color:var(--accent)}
   <a href="#toi">Giao diện tối</a>
   <a href="#hinh-anh">Hình ảnh & nội dung</a>
   <a href="#figma">Bàn giao Figma & dev</a>
+  <a href="../index.html" style="margin-top:14px;color:var(--accent);font-weight:500">← Mở prototype app</a>
 </nav>
 
 <main>
@@ -413,6 +414,7 @@ a{color:var(--accent)}
   <div class="tbl" style="margin-top:12px"><table>
     <thead><tr><th>Thành phần</th><th>Quy cách</th><th>Dùng khi</th></tr></thead>
     <tbody>
+      <tr><td>Quy tắc chung</td><td class="code">mọi nút bo 999 (hai đầu tròn)</td><td>Không dùng nút góc vuông hay bo nhỏ, kể cả nút xanh Gọi lại</td></tr>
       <tr><td>Nút chính</td><td class="code">h48 · bo 999 · gradient #8D78FF→#6F55F5 · chữ 14/500 trắng</td><td>Một hành động chính mỗi màn</td></tr>
       <tr><td>Nút phụ</td><td class="code">h48 · nền trắng · viền 1px #ECEAF4</td><td>Huỷ, Bỏ qua, hành động thứ hai</td></tr>
       <tr><td>Nút gọi</td><td class="code">64–76 tròn · xanh #22A65E · icon trắng</td><td>Gọi, nghe máy. Không đổi màu</td></tr>
@@ -453,7 +455,7 @@ a{color:var(--accent)}
       <span>1<small>&nbsp;</small></span><span>2<small>ABC</small></span><span>3<small>DEF</small></span>
       <span>4<small>GHI</small></span><span>5<small>JKL</small></span><span>6<small>MNO</small></span>
     </div>
-    <p class="note">Phím tròn 76, cách nhau 14 × 26, kính lỏng: trắng 42%, blur 18, viền trắng trong, bóng trong ở đáy. Số 32/300, chữ cái 9.5/600 giãn 0.2em. Gợi ý người gọi là một dòng chữ xám dưới dãy số, không dùng thẻ.</p>
+    <p class="note">Phím tròn 76 (trong lúc gọi: 68, cùng kiểu), cách nhau 14 × 26, kính lỏng + grain: trắng 42%, blur 18, viền trắng trong, bóng trong ở đáy. Số 32/300, chữ cái 9.5/600 giãn 0.2em. Gợi ý người gọi là một dòng chữ xám dưới dãy số, không dùng thẻ.</p>
   </div>
 </section>
 
@@ -463,7 +465,7 @@ a{color:var(--accent)}
   <div class="tbl"><table>
     <thead><tr><th>Hiệu ứng</th><th>Thông số</th><th>Ghi chú</th></tr></thead>
     <tbody>
-      <tr><td>Kính mờ (card, sheet, thanh tab)</td><td class="code">fill trắng 14–66% · background blur 14–26 · saturate 160%</td><td>Trên Figma: Background blur + fill có độ trong</td></tr>
+      <tr><td>Kính mờ (áp dụng đồng bộ)</td><td class="code">fill trắng 14–66% · background blur 14–30 · saturate 160–190% · viền trong trắng 1px</td><td>Card, thanh tab, sheet, popover, header màn phụ, ô nhập, ô lựa chọn, chip, phân đoạn, nút tròn, phím quay số, phím khi đang gọi. Figma: Background blur + fill có độ trong</td></tr>
       <tr><td>Grain</td><td class="code">noise fractal 0.85 · độ đậm 7–14% · multiply</td><td>Figma: lớp noise PNG, blend Multiply</td></tr>
       <tr><td>Nền lỏng (liquid)</td><td class="code">4 khối tím nhạt 240–400 · blur 28 · saturate 60% · trôi 19–29s</td><td>Native: shader / Lottie / video pre-render</td></tr>
       <tr><td>Bóng card</td><td class="code">0 16 34 −24 · #3C288C 35%</td><td>Rất nhẹ, chỉ để tách card khỏi nền</td></tr>
