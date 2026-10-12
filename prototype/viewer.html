@@ -6,6 +6,8 @@
 <title>Gcalls ContactHub · Prototype</title>
 <style>
   :root { --bg: #E9E6F2; --ink: #1F1A33; --muted: #5E5878; --line: #D9D4E8; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; } .bar { background: #1C1824 !important; } .bar a { color: #CFC8FF !important; } }
+  :root[data-theme="dark"] { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; }
   html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Be Vietnam Pro", system-ui, sans-serif; }
   .bar { position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--line); }
   .bar a { color: #5B3FC4; font-weight: 600; text-decoration: none; }

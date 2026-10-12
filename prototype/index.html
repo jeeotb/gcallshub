@@ -7,6 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   :root { --bg: #F4F2FA; --ink: #1F1A33; --muted: #5E5878; --line: #DDD8EC; --brand: #5B3FC4; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; --brand: #CFC8FF; } .note, .thumb { background: #1C1824 !important; } }
+  :root[data-theme="dark"] { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; --brand: #CFC8FF; }
   html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Be Vietnam Pro", system-ui, sans-serif; }
   header { padding: 32px 16px 8px; max-width: 1240px; margin: 0 auto; }
   h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -.02em; }
