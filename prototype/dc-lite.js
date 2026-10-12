@@ -7,7 +7,15 @@
 
   var cache = {};       // name -> Promise<def>
   var helmetDone = {};  // name -> true
-  var defs = {};        // name -> def, filled once a file and its imports are loaded
+  var defs = {};
+  var night = false;     // giao diện tối: thêm class night cho mọi .app
+
+  function applyTheme(root) {
+    root.querySelectorAll('.app').forEach(function (a) {
+      a.classList.add('lt');
+      a.classList.toggle('night', night);
+    });
+  }        // name -> def, filled once a file and its imports are loaded
 
   function DCLogic(props) {
     this.props = props || {};
@@ -22,12 +30,13 @@
 
   function load(name) {
     if (!cache[name]) {
-      cache[name] = fetch('screens/' + name + '.dc.html')
-        .then(function (r) {
-          if (!r.ok) throw new Error('Không tải được ' + name);
-          return r.text();
-        })
-        .then(function (txt) { return parse(name, txt); });
+      var src = window.DC_SCREENS
+        ? (window.DC_SCREENS[name] != null ? Promise.resolve(window.DC_SCREENS[name]) : Promise.reject(new Error('Không có màn ' + name)))
+        : fetch('screens/' + name + '.dc.html').then(function (r) {
+            if (!r.ok) throw new Error('Không tải được ' + name);
+            return r.text();
+          });
+      cache[name] = src.then(function (txt) { return parse(name, txt); });
     }
     return cache[name];
   }
@@ -52,7 +61,7 @@
   function installHead(def) {
     if (helmetDone[def.name]) return;
     helmetDone[def.name] = true;
-    def.headLinks.forEach(function (l) {
+    if (!window.DC_SCREENS) def.headLinks.forEach(function (l) {
       var href = l.getAttribute('href');
       if (!document.querySelector('link[href="' + href + '"]')) {
         var n = document.createElement('link'); n.rel = 'stylesheet'; n.href = href; document.head.appendChild(n);
@@ -117,6 +126,7 @@
       self.walk(n, vals, frag, counter);
     });
     this.root.replaceChildren(frag);
+    applyTheme(this.root);
     restoreFocus(this.root, focus);
     if (this.logic.componentDidMount && !this.mounted) { this.mounted = true; this.logic.componentDidMount(); }
     return this.root;
@@ -209,10 +219,25 @@
   }
 
   window.DcLite = {
-    mount: function (host, name, onNavigate) {
-      return load(name).then(function (def) {
+    setNight: function (on) { night = !!on; applyTheme(document); },
+    isNight: function () { return night; },
+    mount: function (host, name, onNavigate, opts) {
+      opts = opts || {};
+      var anchor = opts.anchor || host;
+      var leaving = opts.animate && host.firstChild
+        ? new Promise(function (r) { anchor.classList.remove('dc-enter'); anchor.classList.add('dc-leave'); setTimeout(r, 230); })
+        : Promise.resolve();
+      return Promise.all([load(name), leaving]).then(function (res) {
+        var def = res[0];
         var inst = new Instance(def, {}, onNavigate);
-        host.replaceChildren(inst.render());
+        var top = inst.render(); top.classList.add('dc-top');
+        host.replaceChildren(top);
+        if (opts.onRendered) opts.onRendered();
+        anchor.classList.remove('dc-leave');
+        void anchor.offsetWidth;
+        anchor.classList.add('dc-enter');
+        clearTimeout(anchor.__dcT);
+        anchor.__dcT = setTimeout(function () { anchor.classList.remove('dc-enter'); }, 1100);
         document.title = def.title + ' · Gcalls ContactHub';
         return def;
       });

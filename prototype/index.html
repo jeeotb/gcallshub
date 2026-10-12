@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Gcalls ContactHub</title>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -27,6 +28,7 @@
     background: rgba(255,255,255,.18); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
   }
   .controls button[aria-pressed="true"] { background: #fff; color: #5B43E0; }
+  .controls select { font: inherit; font-size: 13px; font-weight: 600; height: 34px; padding: 0 10px; border-radius: 999px; border: 0; color: #2E1D86; background: #fff; max-width: 100%; }
   .stage { width: 100%; display: flex; justify-content: center; }
   .scaler { transform-origin: top center; }
 
@@ -67,6 +69,7 @@
   <div class="controls">
     <button type="button" id="t-light" aria-pressed="true">Giao diện sáng</button>
     <button type="button" id="t-dark" aria-pressed="false">Giao diện tối</button>
+    <select id="pick" aria-label="Chọn màn hình"></select>
     <a href="gallery.html">Xem tất cả màn hình</a>
   </div>
 </header>
@@ -95,24 +98,25 @@
   var host = document.getElementById('host');
   var scroll = document.getElementById('scroll');
   var screen = document.getElementById('screen');
+  var pick = document.getElementById('pick');
   var known = {};
-  var theme = 'L';
-  var current = 'MainL';
+  var current = 'Main';
 
-  function base(name) { return name.replace(/[LD]$/, ''); }
-  function show(name) {
+  function setTheme(nightOn) {
+    DcLite.setNight(nightOn);
+    screen.classList.toggle('dark', nightOn);
+    document.getElementById('t-light').setAttribute('aria-pressed', !nightOn);
+    document.getElementById('t-dark').setAttribute('aria-pressed', nightOn);
+  }
+  function show(name, animate) {
     if (!known[name]) return;
-    current = name;
-    theme = /D$/.test(name) ? 'D' : 'L';
-    screen.classList.toggle('dark', theme === 'D');
-    document.getElementById('t-light').setAttribute('aria-pressed', theme === 'L');
-    document.getElementById('t-dark').setAttribute('aria-pressed', theme === 'D');
-    DcLite.mount(host, name, function (next) { show(next); })
-      .then(function () { scroll.scrollTop = 0; })
+    current = name; pick.value = name;
+    DcLite.mount(host, name, function (next) { show(next, true); }, { animate: animate, anchor: screen, onRendered: function () { scroll.scrollTop = 0; } })
       .catch(function (e) { host.innerHTML = '<div class="err">' + e.message + '</div>'; });
   }
-  document.getElementById('t-light').addEventListener('click', function () { show(base(current) + 'L'); });
-  document.getElementById('t-dark').addEventListener('click', function () { show(base(current) + 'D'); });
+  document.getElementById('t-light').addEventListener('click', function () { setTheme(false); });
+  document.getElementById('t-dark').addEventListener('click', function () { setTheme(true); });
+  pick.addEventListener('change', function () { show(pick.value, true); });
 
   function fit() {
     var avail = window.innerHeight - document.querySelector('header').offsetHeight - 70;
@@ -125,11 +129,30 @@
   }
   window.addEventListener('resize', fit);
 
-  fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
-    c.order.forEach(function (f) { known[f.replace('.dc.html', '')] = true; });
-    fit();
-    show('MainL');
-  });
+  // cuộn xuống: thanh tab thu gọn thành nút logo; bấm logo để mở lại
+  var lastY = 0;
+  scroll.addEventListener('scroll', function () {
+    var y = scroll.scrollTop;
+    if (y > lastY + 12 && y > 60) {
+      var fold = host.querySelector('.nav-fold');
+      if (fold) fold.click();
+    }
+    lastY = y;
+  }, { passive: true });
+
+  function start(c) {
+    c.groups.forEach(function (g) {
+      var og = document.createElement('optgroup'); og.label = g.title;
+      g.screens.forEach(function (f) {
+        var n = f.replace('.dc.html', ''); known[n] = true;
+        var o = document.createElement('option'); o.value = n; o.textContent = c.boards[f].title; og.appendChild(o);
+      });
+      pick.appendChild(og);
+    });
+    fit(); setTheme(false); show('Main');
+  }
+  if (window.DC_CANVAS) start(window.DC_CANVAS);
+  else fetch('canvas.json').then(function (r) { return r.json(); }).then(start);
 })();
 </script>
 </body>

@@ -6,7 +6,7 @@ Tài liệu bàn giao cho dev. Mỗi màn có 3 thứ đi kèm nhau:
 - **Mã nguồn mockup**: `prototype/screens/<Tên>.dc.html`. Đây là HTML/CSS chuẩn. Phần logic hiển thị nằm trong khối `<script data-dc-script>` cuối file.
 - **Prototype bấm được**: `prototype/viewer.html?s=<Tên>`. Cách chạy xem ở `README.md`.
 
-> **Phạm vi hiện tại:** bộ mockup gồm **5 màn chính ở giao diện sáng tím – trắng** (`*L`, bản chính), kèm bản tối (`*D`). Các màn khác nhắc tới trong tài liệu này (luồng gọi, sheet, đăng nhập, trạng thái hệ thống) đã được bỏ khỏi repo. Bản thiết kế sáng của chúng vẫn còn trên canvas và chưa có bản tối; phần mô tả được giữ lại để làm định hướng.
+> **Phạm vi hiện tại:** bộ mockup gồm **25 màn** (bảng ở mục 3 và README). Mỗi màn chỉ có một file; giao diện sáng / tối do lớp `.lt` / `.lt.night` mà khung xem gắn vào `.app` (xem `applyTheme` trong `dc-lite.js`). Các màn khác nhắc tới trong tài liệu này (luồng gọi, sheet, đăng nhập, trạng thái hệ thống) đã được bỏ khỏi repo. Bản thiết kế sáng của chúng vẫn còn trên canvas và chưa có bản tối; phần mô tả được giữ lại để làm định hướng.
 
 Mockup chỉ dùng **dữ liệu giả**. Ô ghi trong `[NGOẶC VUÔNG]` là thông tin bên Gcalls cần xác nhận (xem mục 9).
 
@@ -53,17 +53,45 @@ Luồng gọi:
 
 ## 3. Danh sách màn hình
 
-| File (tối / sáng) | Màn | Mở từ | Ghi chú dev |
-|---|---|---|---|
-| `MainD` / `MainL` | Tổng quan | Tab 1 | Thứ tự (bản tối): lời chào → 4 thẻ Việc cần làm → Hiệu suất cuộc gọi → Cần chú ý → Gần đây. Biểu đồ cột chồng gọi đi/đến. Chọn khoảng thời gian (Hôm nay/7/30/90 ngày, tuỳ chỉnh có lịch, nhóm theo giờ/ngày/tuần/tháng). 4 ô chỉ số bấm được. Danh sách "Cần chú ý". Khách gần đây. |
-| `ContactsD` / `ContactsL` | Danh bạ | Tab 2 | Tìm ngay trong danh sách. Lọc theo nguồn dữ liệu. Tab Khách hàng / Nhóm. Nhóm theo chữ cái A–Z. Nút Gọi luôn hiện sẵn. |
-| `HistoryD` / `HistoryL` | Lịch sử | Tab 3 | Chip lọc Tất cả / Cuộc gọi / Gọi nhỡ / Tin nhắn. Nhóm theo ngày. Icon thể hiện đi / đến / nhỡ / SMS, có icon ghi âm. |
-| `TasksD` / `TasksL` | Công việc | Tab 4 | Vòng tiến độ + Quá hạn / Hôm nay / Chưa nhận. Phân đoạn Đang mở / Hôm nay / Đã xong. Thẻ việc có nút Nhận việc. FAB Nhắc hẹn. |
-| `AccountD` / `AccountL` | Tài khoản | Avatar | Trạng thái trực, máy nhánh, tổng đài, SSO, ngôn ngữ, chỉ rung, đăng xuất. |
+Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng và tối.
 
-Trong prototype, các nút dẫn tới màn đã bỏ (tìm kiếm, thông báo, sheet, chi tiết…) không chuyển màn.
+| # | File | Màn | Ghi chú dev |
+|---|------|-----|-------------|
+| 1 | `Main` | Tổng quan | Thứ tự: lời chào (ảnh tổng đài viên) → 4 thẻ Việc cần làm → Hiệu suất cuộc gọi (biểu đồ, chọn khoảng ngày) → Cần chú ý → Gần đây |
+| 2 | `Contacts` | Danh bạ | Tìm, lọc nguồn, Khách hàng / Nhóm, nhóm A–Z, nút Gọi (icon đen nền xám) → Đang gọi; nút tròn bàn phím |
+| 3 | `History` | Lịch sử | Chip lọc, nhóm theo ngày, icon gọi đi / đến / nhỡ / SMS; nút tròn bàn phím |
+| 4 | `Tasks` | Công việc | Vòng tiến độ, phân đoạn, thẻ việc, Nhận việc, FAB Nhắc hẹn |
+| 5 | `Account` | Tài khoản | Trạng thái trực, máy nhánh, tổng đài, SSO, ngôn ngữ, chỉ rung, đăng xuất |
+| 6 | `StatusSheet` | Trạng thái trực | Sheet: 4 mức + công tắc Chỉ rung |
+| 7 | `Search` | Tìm kiếm | Khách gần đây + gọi nhanh, tìm từ 2 ký tự |
+| 8 | `Notifications` | Thông báo | Tất cả / Chưa đọc, chấm tím = chưa đọc |
+| 9 | `ContactQuick` | Xem nhanh khách hàng | Sheet: Gọi / Nhắn / Nhắc hẹn / Ghim, thông tin, hoạt động gần nhất |
+| 10 | `Customer` | Hồ sơ khách hàng | Tab Thông tin / Tương tác / Nhắc nhở, cùng thanh 4 hành động |
+| 11 | `HistoryFilter` | Bộ lọc lịch sử | Sheet: nút Áp dụng ghi số kết quả |
+| 12 | `CallDetail` | Chi tiết cuộc gọi | Sheet: trình phát ghi âm, Hồ sơ / Gọi lại |
+| 13 | `TaskFilter` | Bộ lọc công việc | Sheet |
+| 14 | `TaskTimeline` | Diễn biến công việc | Sheet: ghi chú nội bộ, dòng thời gian, Nhận việc |
+| 15 | `CreateReminder` | Tạo nhắc hẹn | Sheet: khách, nội dung, ghi chú, ngày giờ, ưu tiên, lặp lại |
+| 16 | `Dialer` | Bàn phím quay số | Gõ từ 2 số gợi ý khách trùng số; chọn đầu số gọi ra |
+| 17 | `InCall` | Đang gọi | Tắt mic, loa, giữ máy, chuyển tiếp, thêm người, ghi chú, DTMF |
+| 18 | `Incoming` | Cuộc gọi đến | Thông tin khách khi đổ chuông, Từ chối / Nghe, Nhắn bận / Nhắc gọi lại |
+| 19 | `AfterCall` | Kết thúc cuộc gọi | Kết quả, ghi chú, hoàn thành việc, hẹn gọi lại nhanh |
+| 20 | `SendSms` | Nhắn tin SMS | Sheet: mẫu tin, đếm ký tự / số tin |
+| 21 | `Login` | Đăng nhập | Mã tổng đài → Keycloak SSO |
+| 22 | `Permissions` | Cấp quyền | Micro + Thông báo bắt buộc |
+| 23 | `HistoryLoading` | Đang tải | Skeleton giữ bố cục |
+| 24 | `SearchEmpty` | Không có kết quả | Là số điện thoại thì cho Gọi / Nhắn ngay |
+| 25 | `Offline` | Mất kết nối | Ngoại tuyến, đếm ngược thử lại, khoá nút Gọi |
 
 ## 4. Design tokens
+
+**Font:** Inter (đủ dấu tiếng Việt), 400 / 500 / 600. Cỡ chữ: tiêu đề trang 26/500, tiêu đề mục 16/600, chữ thân 14, tên dòng 14.5/600, chữ phụ 12.5, chip 13/500, nhãn thanh tab 11.
+
+**Phân bổ màu tím:** chỉ dùng cho nút chính, mục / chip / tab đang chọn, công tắc bật, thẻ lựa chọn đang chọn và link nhỏ. Icon trong ô, nút gọi trong danh sách (icon điện thoại đen trên nền xám trắng `#F3F3F6`), nút đầu trang, avatar chữ và tag dùng màu trung tính.
+
+**Bề mặt kính:** card, thanh tab, sheet và 4 thẻ chỉ số dùng kính mờ (`backdrop-filter: blur(22–26px) saturate(160%)`), viền trắng trong 1px, kèm lớp grain (SVG noise, độ đậm 7–14%).
+
+**Chuyển cảnh:** đổi module thì nội dung cũ trượt sang trái và mờ dần (230ms), màn mới vào từ phải và hiện dần (420ms), các khối hiện lần lượt cách nhau 60ms, 4 thẻ chỉ số bật ra lần lượt. Sheet trượt lên, nền mờ hiện dần. Nút và icon khi bấm co lại 0.88 và mờ nhẹ rồi trở lại. Thanh tab: cuộn xuống thì thu thành nút logo tròn, bấm logo để mở lại (chỉ hiện 4 nút module). Tắt chuyển động khi máy bật "Giảm chuyển động".
 
 **Giao diện sáng (bản chính)** — class `.app.lt`, tham khảo phong cách "Elle":
 
@@ -76,7 +104,7 @@ Trong prototype, các nút dẫn tới màn đã bỏ (tìm kiếm, thông báo,
 | Card | trắng, viền 1px `#ECEAF4`, bo 20, bóng rất nhẹ | |
 | Ô icon pastel | tím `#F3F0FF` · hồng `#FFE9EE` (gọi nhỡ) · bạc hà `#E5F7EF` (gọi đến, hôm nay, sẵn sàng) · cam nhạt `#FFF0E3` (SMS, quá hạn) · xanh nhạt `#E8F1FF` | Icon bên trong màu tím |
 | Chữ | `#14121F` / `#4A475C` / `#7B7891` | |
-| Thanh tab | nền trắng chuyển tím nhạt `#FFFFFF → #F4F0FF → #E7DFFF`, ô tròn trắng + nhãn; tab đang chọn icon và nhãn tím. Cùng lề 20px và bo 20px với card; đáy màn có lớp mờ trắng để nội dung trôi dưới thanh tab không lộ mép | Nút logo Gcalls tròn ở cuối thanh: bấm để thu gọn thành nút tròn góc phải dưới (chấm đỏ khi có việc mới), bấm lại để mở. Trạng thái thu gọn được nhớ giữa các tab |
+| Thanh tab | kính mờ trắng có grain, 4 ô tròn trắng + nhãn; tab đang chọn icon và nhãn tím. Cùng lề 20px và bo 20px với card; đáy màn có lớp mờ để nội dung trôi dưới thanh tab không lộ mép | Khi mở chỉ có 4 nút module. Cuộn xuống thì thu thành nút logo Gcalls tròn góc phải dưới (chấm đỏ khi có việc mới), bấm logo để mở lại. Trạng thái được nhớ giữa các màn |
 | 4 thẻ chỉ số (Việc cần làm) | Nền pastel: hồng `#FAD3EE` (gọi nhỡ), tím `#D9D3FF` (chưa nhận), vàng `#FFE8A3` (quá hạn), bạc hà `#C8F2EA` (hôm nay). Không có icon nhỏ (chỉ dùng icon kính 3D); số 32px/700 và nhãn 13px/600 ở dưới, cùng lề trái 18px. Trang trí: 4 icon kính 3D riêng, tô theo màu thẻ (`assets/deco/`: `missed-pink` ống nghe + X, `unassigned-violet` người + dấu cộng, `overdue-yellow` đồng hồ báo thức + !, `today-mint` lịch + ✓; PNG nền trong suốt 420px), cùng tông màu với thẻ, đặt ở góc trên phải, xoay -6° | Dùng chung cho bản sáng và tối |
 | Nền động (liquid) | 4 khối tím nhạt (bản tối: tím trầm, mờ 55%), đường kính 240–400px, trôi và co giãn chậm (chu kỳ 19 / 23 / 25 / 29s, so le). Bộ lọc gooey (Gaussian blur 22 + ngưỡng alpha) để các khối chạm nhau thì dính lại như giọt nước, sau đó blur thêm 28px (tối: 36px), giảm độ bão hòa còn 60%, độ đậm 75% (tối: 40%) cho dịu mắt | Tắt chuyển động khi máy bật "Giảm chuyển động". Trên native: dùng shader / Lottie hoặc ảnh động pre-render để nhẹ máy |
 | Chip, phân đoạn | chip trắng viền mảnh, chip chọn tím đặc; phân đoạn nền `#F4F3F8`, mục chọn trắng chữ tím | |

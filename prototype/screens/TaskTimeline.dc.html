@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Diễn biến công việc</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div style="position: absolute; inset: 0">
+    <dc-import name="Tasks" hint-size="390px,844px"></dc-import>
+  </div>
+  <a class="scrim" href="Tasks.dc.html" aria-label="Đóng"></a>
+  <div class="sheet" role="dialog" aria-label="Diễn biến công việc">
+    <div class="grab"></div>
+    <div class="sheet-head">
+      <div class="tt"><h2>Diễn biến công việc</h2><div class="meta">Lịch sử chung để cả đội xử lý đúng ngữ cảnh</div></div>
+      <a class="icon-btn" href="Tasks.dc.html" aria-label="Đóng"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></a>
+    </div>
+
+    <div style="background: rgba(255,255,255,.55); border-radius: 14px; padding: 12px; display: flex; align-items: center; gap: 12px">
+      <span class="av"><img class="av-photo" src="assets/people/p4.jpg" alt=""></span>
+      <div style="flex: 1; min-width: 0"><div style="font-weight: 700">Ms. Emily Smith</div><div class="meta">Gọi lại · Khách hàng đang chờ bạn gọi lại</div></div>
+      <span class="tag warn">Chưa nhận</span>
+    </div>
+
+    <div>
+      <label class="field-label" for="note">Ghi chú bàn giao nội bộ</label>
+      <div style="position: relative">
+        <textarea id="note" class="input area" style="height: 84px; resize: none; padding-right: 76px" placeholder="Ví dụ: Khách hẹn gọi lại sau 16h, đã gửi báo giá qua email"></textarea>
+        <button class="btn sm secondary" type="button" style="position: absolute; right: 8px; bottom: 8px">Lưu</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="field-label">Dòng thời gian</div>
+      <div style="display: flex; gap: 12px">
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <span style="width: 32px; height: 32px; border-radius: 50%; background: rgba(117,112,144,.1); color: #4A4463; display: flex; align-items: center; justify-content: center"><svg class="ico sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg></span>
+          <span style="flex: 1; width: 2px; background: rgba(124,92,224,.12); margin-top: 4px; min-height: 24px"></span>
+        </div>
+        <div style="flex: 1; padding-bottom: 12px">
+          <div style="font-weight: 700">Đã nhận từ hệ thống nguồn</div>
+          <div style="font-size: 14px; color: #4A4463">Trạng thái nguồn: <span class="tag bad">rejected</span></div>
+          <div class="meta" style="margin-top: 2px">Hệ thống · 09:30, 06/09/2018</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="btn primary block" type="button"><svg class="ico sm" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="m16 11 2 2 4-4"></path></svg>Nhận việc</button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

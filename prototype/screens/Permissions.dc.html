@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Cấp quyền</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}
+.btn.dis{opacity:.4;pointer-events:none}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <header class="sub-top">
+    <a class="icon-btn" href="Login.dc.html" aria-label="Quay lại"><svg class="ico" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"></path></svg></a>
+    <div class="t">Bước 2/2</div>
+    <span style="width: 44px"></span>
+  </header>
+
+  <div style="padding: 16px 20px 0; display: flex; flex-direction: column; gap: 20px">
+    <div style="padding: 0 4px">
+      <h1 class="h1" style="font-size: 26px">Cho phép ứng dụng</h1>
+      <div style="font-size: 14.5px; color: #4A4463">Để nhận cuộc gọi khi màn hình tắt và không bỏ lỡ khách nào.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <sc-for list="{{ perms }}" as="p" hint-placeholder-count="4">
+        <button type="button" class="{{ p.cls }}" onClick="{{ p.pick }}" role="switch" aria-checked="{{ p.aria }}" style="text-align: left; width: 100%">
+          <span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(124,92,224,.1); color: #5B3FC4; display: flex; align-items: center; justify-content: center; flex: none"><svg class="ico" viewBox="0 0 24 24"><path d="{{ p.d }}"></path></svg></span>
+          <span style="flex: 1; display: flex; flex-direction: column"><span class="ot">{{ p.t }} <span class="{{ p.reqCls }}" style="margin-left: 4px">{{ p.req }}</span></span><span class="od">{{ p.desc }}</span></span>
+          <span class="{{ p.tog }}"></span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; bottom: 28px; display: flex; flex-direction: column; gap: 10px">
+    <a class="{{ goCls }}" href="Main.dc.html">Bắt đầu sử dụng</a>
+    <div class="meta" style="text-align: center">{{ goNote }}</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { on: [true, false, false, false] };
+  }
+  renderVals() {
+    const P = [
+      { t: 'Micro', req: 'Bắt buộc', desc: 'Nói chuyện trong cuộc gọi', d: 'M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v3' },
+      { t: 'Thông báo', req: 'Bắt buộc', desc: 'Báo cuộc gọi đến, gọi nhỡ, nhắc hẹn', d: 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0' },
+      { t: 'Chạy nền', req: 'Khuyến nghị', desc: 'Bỏ tối ưu pin để vẫn đổ chuông khi khoá máy', d: 'M7 7h10v10H7zM22 11v2M2 11v2M11 2h2M11 22h2' },
+      { t: 'Danh bạ máy', req: 'Không bắt buộc', desc: 'Hiện tên người gọi chưa có trong ContactHub', d: 'M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' }
+    ];
+    const on = this.state.on;
+    const ready = on[0] && on[1];
+    return {
+      perms: P.map((p, k) => ({
+        t: p.t, desc: p.desc, d: p.d, req: p.req,
+        reqCls: k < 2 ? 'tag warn' : 'tag',
+        cls: 'opt' + (on[k] ? ' on' : ''),
+        tog: 'toggle' + (on[k] ? ' on' : ''),
+        aria: on[k] ? 'true' : 'false',
+        pick: () => { const n = this.state.on.slice(); n[k] = !n[k]; this.setState({ on: n }); }
+      })),
+      goCls: 'btn primary block' + (ready ? '' : ' dis'),
+      goNote: ready ? 'Có thể đổi lại trong Cài đặt của điện thoại.' : 'Cần bật Micro và Thông báo để tiếp tục.'
+    };
+  }
+}
+</script>
+</body>
+</html>

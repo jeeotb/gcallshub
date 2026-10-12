@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Hồ sơ khách hàng</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <header class="sub-top">
+    <a class="icon-btn" href="Contacts.dc.html" aria-label="Quay lại"><svg class="ico" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"></path></svg></a>
+    <div class="t">Hồ sơ khách hàng</div>
+    <button class="icon-btn" type="button" aria-label="Thêm thao tác"><svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></button>
+  </header>
+
+  <div style="background: transparent; padding: 16px 20px; display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid rgba(124,92,224,.1)">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span class="av lg"><img class="av-photo" src="assets/people/p2.jpg" alt=""></span>
+      <div style="flex: 1; min-width: 0">
+        <div style="font-size: 20px; font-weight: 700">Anh Hoàng</div>
+        <div class="meta" style="font-size: 14px">0901 234 567</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px"><span class="tag brand">Gcalls</span><span class="tag">Gcalls Cloud</span></div>
+      </div>
+    </div>
+    <div class="actions4">
+      <button class="act" type="button"><span class="c call"><svg class="ico" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span>Gọi điện</button>
+      <button class="act" type="button"><span class="c"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg></span>Nhắn tin</button>
+      <a class="act" href="CreateReminder.dc.html"><span class="c"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3"></path></svg></span>Nhắc hẹn</a>
+      <button class="act" type="button"><span class="c"><svg class="ico" viewBox="0 0 24 24"><path d="M12 17v5M9 3h6l-1 7 4 4H6l4-4z"></path></svg></span>Ghim</button>
+    </div>
+  </div>
+
+  <div class="body" style="gap: 14px; padding-bottom: 24px">
+    <div class="seg" role="tablist">
+      <button type="button" class="{{ t1 }}" onClick="{{ goInfo }}">Thông tin</button>
+      <button type="button" class="{{ t2 }}" onClick="{{ goAct }}">Tương tác <span class="n">4</span></button>
+      <button type="button" class="{{ t3 }}" onClick="{{ goRem }}">Nhắc nhở <span class="n">0</span></button>
+    </div>
+
+    <sc-if value="{{ isInfo }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div class="card">
+          <div class="info"><span class="ic"><svg class="ico sm" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span><div class="main"><div class="k">Điện thoại</div><div class="v">0901 234 567</div></div></div>
+          <div class="info"><span class="ic"><svg class="ico sm" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg></span><div class="main"><div class="k">Email</div><div class="v muted">Chưa bổ sung</div></div></div>
+          <div class="info"><span class="ic"><svg class="ico sm" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span><div class="main"><div class="k">Địa chỉ</div><div class="v muted">Chưa bổ sung</div></div></div>
+          <div class="info"><span class="ic"><svg class="ico sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg></span><div class="main"><div class="k">Ngày sinh</div><div class="v muted">Chưa bổ sung</div></div></div>
+          <div class="info"><span class="ic"><svg class="ico sm" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span><div class="main"><div class="k">Giới tính</div><div class="v">Nam</div></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <h2 class="h2" style="font-size: 15px">Ghi chú chăm sóc</h2>
+          <div class="card" style="padding: 14px; color: #757090; font-size: 14px">Chưa có ghi chú cho khách hàng này.</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isAct }}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; gap: 6px; align-items: center">
+          <button class="chip on" type="button">Tất cả</button>
+          <button class="chip" type="button">Cuộc gọi</button>
+          <button class="chip" type="button">SMS</button>
+          <button class="chip" type="button">Ghi chú</button>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <span class="meta">4 tương tác</span>
+          <button class="btn sm ghost" type="button"><svg class="ico sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Toàn thời gian<svg class="ico sm" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+        </div>
+        <div class="card">
+          <a class="row" href="CallDetail.dc.html"><span class="ev out"><svg class="ico sm" viewBox="0 0 24 24"><path d="M16 2h6v6M22 2l-7 7"></path><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"></path></svg></span><div class="main"><div class="name">Gọi đi · 0:05</div><div class="sub">05/10 · 17:55 · ly.hoang</div></div></a>
+          <a class="row" href="CallDetail.dc.html"><span class="ev in"><svg class="ico sm" viewBox="0 0 24 24"><path d="M16 2v6h6M22 2l-6 6"></path><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"></path></svg></span><div class="main"><div class="name">Gọi đến · 0:01</div><div class="sub">05/10 · 11:45</div></div></a>
+          <div class="row"><span class="ev sms"><svg class="ico sm" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg></span><div class="main"><div class="name">SMS đã gửi</div><div class="sub">05/10 · 11:13</div></div></div>
+          <a class="row" href="CallDetail.dc.html"><span class="ev out"><svg class="ico sm" viewBox="0 0 24 24"><path d="M16 2h6v6M22 2l-7 7"></path><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"></path></svg></span><div class="main"><div class="name">Gọi đi · 0:14</div><div class="sub">05/10 · 11:12</div></div></a>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isRem }}" hint-placeholder-val="{{ false }}">
+      <div class="card">
+        <div class="empty">
+          <span class="ei"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3"></path></svg></span>
+          <span class="et">Chưa có nhắc nhở</span>
+          <span class="ed">Nhắc nhở gắn với khách hàng sẽ hiện tại đây sau khi được tạo hoặc đồng bộ từ nguồn.</span>
+          <a class="btn sm secondary" href="CreateReminder.dc.html" style="margin-top: 8px"><svg class="ico sm" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>Tạo nhắc hẹn</a>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 'info' }; }
+  renderVals() {
+    const t = this.state.tab;
+    return {
+      t1: t === 'info' ? 'on' : '', t2: t === 'act' ? 'on' : '', t3: t === 'rem' ? 'on' : '',
+      isInfo: t === 'info', isAct: t === 'act', isRem: t === 'rem',
+      goInfo: () => this.setState({ tab: 'info' }),
+      goAct: () => this.setState({ tab: 'act' }),
+      goRem: () => this.setState({ tab: 'rem' })
+    };
+  }
+}
+</script>
+</body>
+</html>

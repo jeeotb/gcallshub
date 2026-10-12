@@ -1,136 +1,260 @@
 {
   "v": 3,
-  "attachments": {},
+  "title": "Gcalls ContactHub",
   "boards": {
-    "MainD.dc.html": {
+    "Main.dc.html": {
+      "title": "Tổng quan",
+      "w": 390,
       "h": 1980,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "D1 · Tổng quan (tối)",
-      "w": 390,
-      "x": 2560,
+      "x": 0,
       "y": 0
     },
-    "ContactsD.dc.html": {
+    "Contacts.dc.html": {
+      "title": "Danh bạ",
+      "w": 390,
       "h": 844,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "D2 · Danh bạ (tối)",
-      "w": 390,
-      "x": 3030,
+      "x": 470,
       "y": 0
     },
-    "HistoryD.dc.html": {
+    "History.dc.html": {
+      "title": "Lịch sử",
+      "w": 390,
       "h": 844,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "D3 · Lịch sử (tối)",
-      "w": 390,
-      "x": 3500,
+      "x": 940,
       "y": 0
     },
-    "TasksD.dc.html": {
+    "Tasks.dc.html": {
+      "title": "Công việc",
+      "w": 390,
       "h": 844,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "D4 · Công việc (tối)",
-      "w": 390,
-      "x": 3970,
+      "x": 1410,
       "y": 0
     },
-    "AccountD.dc.html": {
+    "Account.dc.html": {
+      "title": "Tài khoản",
+      "w": 390,
       "h": 1160,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "D5 · Tài khoản (tối)",
-      "w": 390,
-      "x": 4440,
+      "x": 1880,
       "y": 0
     },
-    "MainL.dc.html": {
-      "h": 1980,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "1 · Tổng quan",
+    "StatusSheet.dc.html": {
+      "title": "Trạng thái trực (dùng chung)",
       "w": 390,
-      "x": 2560,
-      "y": 2380
-    },
-    "ContactsL.dc.html": {
       "h": 844,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "2 · Danh bạ",
-      "w": 390,
-      "x": 3030,
-      "y": 2380
+      "x": 0,
+      "y": 2400
     },
-    "HistoryL.dc.html": {
+    "Search.dc.html": {
+      "title": "Tìm kiếm",
+      "w": 390,
       "h": 844,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "3 · Lịch sử",
-      "w": 390,
-      "x": 3500,
-      "y": 2380
+      "x": 470,
+      "y": 2400
     },
-    "TasksL.dc.html": {
+    "Notifications.dc.html": {
+      "title": "Thông báo",
+      "w": 390,
       "h": 844,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "4 · Công việc",
-      "w": 390,
-      "x": 3970,
-      "y": 2380
+      "x": 940,
+      "y": 2400
     },
-    "AccountL.dc.html": {
-      "h": 1160,
-      "is_interactive": true,
-      "radius": 28,
-      "title": "5 · Tài khoản",
+    "ContactQuick.dc.html": {
+      "title": "Xem nhanh khách hàng",
       "w": 390,
-      "x": 4440,
-      "y": 2380
-    }
-  },
-  "createdOnFiles": {
-    "at": "2026-10-08T08:30:00Z",
-    "v": 1
-  },
-  "designSystems": [],
-  "launch": {
-    "view": "canvas"
-  },
-  "notes": {
-    "t4": {
-      "kind": "title1",
-      "maxW": 2270,
-      "text": "Thử nghiệm: giao diện tối theo ảnh tham khảo",
-      "w": 240,
-      "x": 2560,
-      "y": -300
+      "h": 844,
+      "x": 1410,
+      "y": 2400
     },
-    "t5": {
-      "kind": "title1",
-      "maxW": 2270,
-      "text": "Thử nghiệm: bản sáng theo ảnh tham khảo",
-      "w": 240,
-      "x": 2560,
-      "y": 2160
+    "Customer.dc.html": {
+      "title": "Hồ sơ khách hàng",
+      "w": 390,
+      "h": 844,
+      "x": 1880,
+      "y": 2400
+    },
+    "HistoryFilter.dc.html": {
+      "title": "Bộ lọc lịch sử",
+      "w": 390,
+      "h": 844,
+      "x": 0,
+      "y": 4800
+    },
+    "CallDetail.dc.html": {
+      "title": "Chi tiết cuộc gọi",
+      "w": 390,
+      "h": 844,
+      "x": 470,
+      "y": 4800
+    },
+    "TaskFilter.dc.html": {
+      "title": "Bộ lọc công việc",
+      "w": 390,
+      "h": 844,
+      "x": 940,
+      "y": 4800
+    },
+    "TaskTimeline.dc.html": {
+      "title": "Diễn biến công việc",
+      "w": 390,
+      "h": 844,
+      "x": 1410,
+      "y": 4800
+    },
+    "CreateReminder.dc.html": {
+      "title": "Tạo nhắc hẹn",
+      "w": 390,
+      "h": 844,
+      "x": 1880,
+      "y": 4800
+    },
+    "Dialer.dc.html": {
+      "title": "Bàn phím quay số",
+      "w": 390,
+      "h": 844,
+      "x": 0,
+      "y": 7200
+    },
+    "InCall.dc.html": {
+      "title": "Đang gọi",
+      "w": 390,
+      "h": 844,
+      "x": 470,
+      "y": 7200
+    },
+    "Incoming.dc.html": {
+      "title": "Cuộc gọi đến",
+      "w": 390,
+      "h": 844,
+      "x": 940,
+      "y": 7200
+    },
+    "AfterCall.dc.html": {
+      "title": "Kết thúc cuộc gọi (ghi kết quả)",
+      "w": 390,
+      "h": 844,
+      "x": 1410,
+      "y": 7200
+    },
+    "SendSms.dc.html": {
+      "title": "Nhắn tin SMS",
+      "w": 390,
+      "h": 844,
+      "x": 1880,
+      "y": 7200
+    },
+    "Login.dc.html": {
+      "title": "Đăng nhập (Keycloak SSO)",
+      "w": 390,
+      "h": 844,
+      "x": 0,
+      "y": 9600
+    },
+    "Permissions.dc.html": {
+      "title": "Cấp quyền lần đầu",
+      "w": 390,
+      "h": 844,
+      "x": 470,
+      "y": 9600
+    },
+    "HistoryLoading.dc.html": {
+      "title": "Lịch sử · đang tải",
+      "w": 390,
+      "h": 844,
+      "x": 940,
+      "y": 9600
+    },
+    "SearchEmpty.dc.html": {
+      "title": "Tìm kiếm · không có kết quả",
+      "w": 390,
+      "h": 844,
+      "x": 1410,
+      "y": 9600
+    },
+    "Offline.dc.html": {
+      "title": "Mất kết nối tổng đài",
+      "w": 390,
+      "h": 844,
+      "x": 1880,
+      "y": 9600
     }
   },
   "order": [
-    "MainL.dc.html",
-    "ContactsL.dc.html",
-    "HistoryL.dc.html",
-    "TasksL.dc.html",
-    "AccountL.dc.html",
-    "MainD.dc.html",
-    "ContactsD.dc.html",
-    "HistoryD.dc.html",
-    "TasksD.dc.html",
-    "AccountD.dc.html"
+    "Main.dc.html",
+    "Contacts.dc.html",
+    "History.dc.html",
+    "Tasks.dc.html",
+    "Account.dc.html",
+    "StatusSheet.dc.html",
+    "Search.dc.html",
+    "Notifications.dc.html",
+    "ContactQuick.dc.html",
+    "Customer.dc.html",
+    "HistoryFilter.dc.html",
+    "CallDetail.dc.html",
+    "TaskFilter.dc.html",
+    "TaskTimeline.dc.html",
+    "CreateReminder.dc.html",
+    "Dialer.dc.html",
+    "InCall.dc.html",
+    "Incoming.dc.html",
+    "AfterCall.dc.html",
+    "SendSms.dc.html",
+    "Login.dc.html",
+    "Permissions.dc.html",
+    "HistoryLoading.dc.html",
+    "SearchEmpty.dc.html",
+    "Offline.dc.html"
   ],
-  "pages": [],
-  "title": "ContactHub Redesign"
+  "groups": [
+    {
+      "title": "4 tab chính + Tài khoản",
+      "screens": [
+        "Main.dc.html",
+        "Contacts.dc.html",
+        "History.dc.html",
+        "Tasks.dc.html",
+        "Account.dc.html"
+      ]
+    },
+    {
+      "title": "Trạng thái, tìm kiếm, thông báo, khách hàng",
+      "screens": [
+        "StatusSheet.dc.html",
+        "Search.dc.html",
+        "Notifications.dc.html",
+        "ContactQuick.dc.html",
+        "Customer.dc.html"
+      ]
+    },
+    {
+      "title": "Bộ lọc, chi tiết cuộc gọi, công việc",
+      "screens": [
+        "HistoryFilter.dc.html",
+        "CallDetail.dc.html",
+        "TaskFilter.dc.html",
+        "TaskTimeline.dc.html",
+        "CreateReminder.dc.html"
+      ]
+    },
+    {
+      "title": "Luồng gọi điện",
+      "screens": [
+        "Dialer.dc.html",
+        "InCall.dc.html",
+        "Incoming.dc.html",
+        "AfterCall.dc.html",
+        "SendSms.dc.html"
+      ]
+    },
+    {
+      "title": "Đăng nhập & trạng thái hệ thống",
+      "screens": [
+        "Login.dc.html",
+        "Permissions.dc.html",
+        "HistoryLoading.dc.html",
+        "SearchEmpty.dc.html",
+        "Offline.dc.html"
+      ]
+    }
+  ]
 }

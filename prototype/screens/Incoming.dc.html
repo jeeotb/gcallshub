@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Cuộc gọi đến</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app" style="background: linear-gradient(180deg, #8B74FF 0%, #6247EA 45%, #2E1D86 100%); color: #fff">
+  <div style="padding: 64px 24px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+    <span style="display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 15px; background: rgba(255,255,255,.12); font-size: 13px; font-weight: 600; margin-bottom: 26px"><svg class="ico sm" viewBox="0 0 24 24"><path d="M16 2v6h6M22 2l-6 6"></path><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"></path></svg>Cuộc gọi đến · Máy nhánh 102</span>
+    <span style="width: 104px; height: 104px; border-radius: 50%; background: rgba(255,255,255,.14); box-shadow: 0 0 0 10px rgba(255,255,255,.07), 0 0 0 24px rgba(255,255,255,.035); overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 600; margin-bottom: 18px"><img src="assets/people/p1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%"></span>
+    <div style="font-size: 26px; font-weight: 700; letter-spacing: -.02em">Trần Thu Hà</div>
+    <div class="num" style="font-size: 15px; color: rgba(255,255,255,.75)">0845 676 622</div>
+  </div>
+
+  <div style="margin: 28px 20px 0; border-radius: 20px; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); padding: 6px 16px">
+    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; font-size: 14px"><span style="color: rgba(255,255,255,.7)">Lần trước</span><span style="font-weight: 600; color: #FFB3C3">Gọi nhỡ · 05/10, 21:20</span></div>
+    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; font-size: 14px; border-top: 1px solid rgba(255,255,255,.1)"><span style="color: rgba(255,255,255,.7)">Việc đang mở</span><span style="font-weight: 600">Không có</span></div>
+    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; font-size: 14px; border-top: 1px solid rgba(255,255,255,.1)"><span style="color: rgba(255,255,255,.7)">Nguồn dữ liệu</span><span style="font-weight: 600">Gcalls Cloud</span></div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 44px; padding: 0 36px; display: flex; flex-direction: column; gap: 34px">
+    <div style="display: flex; justify-content: center; gap: 12px">
+      <a href="SendSms.dc.html" style="height: 40px; padding: 0 14px; border-radius: 20px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 13.5px; font-weight: 600"><svg class="ico sm" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Nhắn đang bận</a>
+      <a href="CreateReminder.dc.html" style="height: 40px; padding: 0 14px; border-radius: 20px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 13.5px; font-weight: 600"><svg class="ico sm" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path></svg>Nhắc gọi lại</a>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start">
+      <a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 10px; color: #fff; font-size: 13.5px; font-weight: 600"><span style="width: 74px; height: 74px; border-radius: 50%; background: #E5486B; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 28px -12px rgba(229,72,107,.9)"><svg class="ico lg" style="transform: rotate(135deg)" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span>Từ chối</a>
+      <a href="InCall.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 10px; color: #fff; font-size: 13.5px; font-weight: 600"><span style="width: 74px; height: 74px; border-radius: 50%; background: linear-gradient(180deg,#45D28A 0%,#27AE66 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px rgba(69,210,138,.16), 0 14px 28px -12px rgba(39,174,102,.9)"><svg class="ico lg" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span>Nghe máy</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

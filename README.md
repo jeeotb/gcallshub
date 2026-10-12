@@ -1,62 +1,63 @@
 # Gcalls ContactHub · Mobile app (mockup bàn giao)
 
-Bộ thiết kế app mobile cho tổng đài viên Gcalls, **giao diện sáng tím – trắng** (bản chính) cho 5 màn: Tổng quan, Danh bạ, Lịch sử, Công việc, Tài khoản. Kèm bản tối, prototype bấm được và đặc tả cho dev.
+App mobile cho tổng đài viên Gcalls: **25 màn hình**, giao diện sáng tím – trắng (phong cách "Elle") và giao diện tối dùng chung bố cục. Có prototype bấm được, hiệu ứng chuyển cảnh và đặc tả cho dev.
 
 > Đây là **mockup**, chưa phải app. Dữ liệu trong màn hình là dữ liệu giả.
 
 ## Xem nhanh
 
-| Tổng quan | Danh bạ | Lịch sử | Công việc |
+**Mở file [`index.html`](index.html)** (bấm đúp, không cần server): app nằm trong khung iPhone. Bạn có thể:
+- bấm tab và các nút để chuyển màn
+- cuộn bên trong máy; cuộn xuống thì thanh tab thu gọn thành nút logo, bấm logo để mở lại
+- đổi giữa giao diện Sáng và Tối
+- chọn nhanh bất kỳ module nào trong menu phía trên
+
+| Tổng quan | Danh bạ | Đang gọi | Hồ sơ khách hàng |
 |---|---|---|---|
-| ![](docs/screens/MainL.png) | ![](docs/screens/ContactsL.png) | ![](docs/screens/HistoryL.png) | ![](docs/screens/TasksL.png) |
+| ![](docs/screens/Main.png) | ![](docs/screens/Contacts.png) | ![](docs/screens/InCall.png) | ![](docs/screens/Customer.png) |
 
-Ảnh của tất cả các màn nằm trong [`docs/screens/`](docs/screens).
+Ảnh của cả 25 màn nằm trong [`docs/screens/`](docs/screens). Tên có hậu tố `-toi` là bản tối.
 
-## Chạy prototype
+## Các module
 
-Cần một web server tĩnh, vì trình duyệt không cho đọc file khi mở trực tiếp bằng `file://`:
-
-```bash
-cd prototype
-python3 -m http.server 8000      # hoặc: npx serve .
-```
-
-Sau đó mở:
-
-- http://localhost:8000/ để xem app trong khung iPhone: bấm tab, cuộn, đổi Sáng/Tối
-- http://localhost:8000/gallery.html để xem tất cả màn hình
-- http://localhost:8000/viewer.html?s=MainL để mở một màn và bấm thử (thanh tab và avatar chuyển màn)
-
-Cũng có thể bật **GitHub Pages** cho thư mục `prototype/` để chia sẻ link.
+| Nhóm | Màn hình |
+|---|---|
+| 4 tab chính + Tài khoản | Tổng quan · Danh bạ · Lịch sử · Công việc · Tài khoản |
+| Trạng thái, tìm kiếm, thông báo, khách hàng | Trạng thái trực · Tìm kiếm · Thông báo · Xem nhanh khách hàng · Hồ sơ khách hàng |
+| Bộ lọc, chi tiết cuộc gọi, công việc | Bộ lọc lịch sử · Chi tiết cuộc gọi · Bộ lọc công việc · Diễn biến công việc · Tạo nhắc hẹn |
+| Luồng gọi điện | Bàn phím quay số · Đang gọi · Cuộc gọi đến · Kết thúc cuộc gọi · Nhắn tin SMS |
+| Đăng nhập & trạng thái hệ thống | Đăng nhập (Keycloak SSO) · Cấp quyền lần đầu · Đang tải · Không có kết quả · Mất kết nối |
 
 ## Cấu trúc
 
 ```
+index.html           File duy nhất, tự chứa: khung iPhone + 25 màn + CSS + ảnh (sinh bởi tools/build_single.py)
+tools/
+  build_single.py    Đóng gói prototype/ thành index.html. Chạy lại sau mỗi lần sửa prototype/
 docs/
-  SPEC.md            Đặc tả: điều hướng, danh sách màn, design token, component, quy tắc, mô hình dữ liệu, tích hợp, câu hỏi mở
-  screens/*.png      Ảnh từng màn (390 × 844; Tổng quan và Tài khoản dài hơn). Hậu tố L = sáng (chính), D = tối
-prototype/
-  index.html         App trong khung iPhone (trang chính)
-  gallery.html       Thư viện màn hình
-  viewer.html        Xem một màn ở cỡ thật
-  dc-lite.js         Trình hiển thị nhỏ cho file .dc.html (chỉ dùng để xem mockup)
-  canvas.json        Danh sách màn, tiêu đề, vị trí và ghi chú thiết kế
-  screens/*.dc.html  Mã nguồn từng màn: HTML + CSS inline + logic hiển thị
+  SPEC.md            Đặc tả: điều hướng, danh sách màn, design token, component, quy tắc, dữ liệu, tích hợp
+  screens/*.png      Ảnh từng màn (sáng; -toi = tối)
+prototype/           Mã nguồn để chỉnh sửa
+  index.html         Khung iPhone (bản đọc file rời, cần server tĩnh)
+  gallery.html       Thư viện 25 màn (?night=1 để xem bản tối)
+  viewer.html        Xem một màn ở cỡ thật (?s=Main, &night=1)
+  dc-lite.js         Trình hiển thị file .dc.html + gắn giao diện sáng/tối + hiệu ứng chuyển màn
+  canvas.json        Danh sách màn, nhóm, tiêu đề
+  screens/*.dc.html  Mã nguồn từng màn (HTML + style inline + logic hiển thị)
   assets/
-    contacthub.css   Toàn bộ style và design token (:root)
-    icons/*.svg      Icon theo tên: phone, call-missed, nav-*, …
-    theme/*.svg      Hình nền và icon cho bản tối / sáng
-    deco/*.png       4 icon kính 3D (đã tô màu) trang trí 4 thẻ chỉ số
-    people/*.jpg     Ảnh đại diện khách hàng mẫu (p1–p5)
+    contacthub.css   Toàn bộ style và design token
+    icons/*.svg      Icon theo tên
+    deco/*.png       4 icon kính 3D cho 4 thẻ chỉ số
+    people/*.jpg     Ảnh đại diện khách hàng mẫu
+    theme/*.svg      Hình nền, icon phụ
 ```
+
+Muốn sửa giao diện: sửa trong `prototype/`, xem bằng `cd prototype && python3 -m http.server 8000`, rồi chạy `python3 tools/build_single.py` để cập nhật `index.html`.
 
 ## Cho dev
 
 1. Đọc [`docs/SPEC.md`](docs/SPEC.md) trước.
-2. Lấy kích thước, màu và khoảng cách trực tiếp từ `prototype/screens/*.dc.html` và `assets/contacthub.css`. Style viết inline nên tra từng phần tử rất nhanh.
-3. Có thể bỏ qua `dc-lite.js`. Nó chỉ để chạy mockup, không dùng cho production.
+2. Lấy kích thước, màu và khoảng cách từ `prototype/screens/*.dc.html` và `prototype/assets/contacthub.css`.
+3. `dc-lite.js` chỉ dùng để chạy mockup, không dùng cho production.
 4. Các ô `[NGOẶC VUÔNG]` trong màn hình là thông tin cần Gcalls xác nhận (mục 9 của SPEC).
-
-## Nguồn thiết kế
-
-Bản gốc nằm trên canvas thiết kế **ContactHub Redesign** (Claude Design). Khi thiết kế thay đổi, xuất lại các file `.dc.html` vào `prototype/screens/` rồi chụp lại ảnh.
+5. Ảnh người trong mockup là ảnh thật do khách hàng cung cấp, chỉ dùng minh hoạ; hỏi ý trước khi công khai repo.

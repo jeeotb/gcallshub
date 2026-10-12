@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bộ lọc lịch sử</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div style="position: absolute; inset: 0">
+    <dc-import name="History" hint-size="390px,844px"></dc-import>
+  </div>
+  <a class="scrim" href="History.dc.html" aria-label="Đóng"></a>
+  <div class="sheet" role="dialog" aria-label="Bộ lọc nâng cao" style="gap: 18px">
+    <div class="grab"></div>
+    <div class="sheet-head">
+      <div class="tt"><h2>Bộ lọc nâng cao</h2><div class="meta">Tìm đúng cuộc trò chuyện bạn cần</div></div>
+      <a class="icon-btn" href="History.dc.html" aria-label="Đóng"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></a>
+    </div>
+
+    <div>
+      <div class="field-label"><svg class="ico sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Khoảng thời gian</div>
+      <div class="grid2">
+        <button class="opt" type="button" style="min-height: 44px; justify-content: center">Hôm nay</button>
+        <button class="opt on" type="button" style="min-height: 44px; justify-content: center; font-weight: 700; color: #5B3FC4">7 ngày qua</button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: center">30 ngày qua</button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: center">Tùy chọn…</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="field-label"><svg class="ico sm" viewBox="0 0 24 24"><path d="M16 2h6v6M22 2l-7 7"></path><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"></path></svg>Chiều cuộc gọi</div>
+      <div class="seg">
+        <button class="on" type="button">Tất cả</button>
+        <button type="button">Gọi đến</button>
+        <button type="button">Gọi đi</button>
+      </div>
+    </div>
+
+    <label class="opt" style="min-height: 60px">
+      <span class="ev out" style="width: 36px; height: 36px"><svg class="ico sm" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v4"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column"><span class="ot">Chỉ hiện cuộc gọi có ghi âm</span><span class="od">Để nghe lại nội dung cuộc gọi</span></span>
+      <span class="toggle" role="switch" aria-checked="false" aria-label="Chỉ hiện cuộc gọi có ghi âm"></span>
+    </label>
+
+    <div>
+      <div class="field-label"><svg class="ico sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Thời lượng tối thiểu</div>
+      <div class="grid2">
+        <button class="opt on" type="button" style="min-height: 44px; justify-content: center; font-weight: 700; color: #5B3FC4">Bất kỳ</button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: center">Có đàm thoại</button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: center">Từ 1 phút</button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: center">Từ 3 phút</button>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="btn ghost" type="button"><svg class="ico sm" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Đặt lại</button>
+      <a class="btn primary" href="History.dc.html" style="flex: 1">Xem 11 kết quả</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

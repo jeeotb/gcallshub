@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Lịch sử đang tải</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}
+@keyframes skel{0%{opacity:.55}50%{opacity:1}100%{opacity:.55}}
+.sk{background:#E7E4F0;border-radius:8px;animation:skel 1.4s ease-in-out infinite}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div class="layer">
+    <header class="top">
+      <span class="logo-badge"><img src="assets/icons/logo-gcalls.svg" alt="Gcalls"></span>
+      <a class="status-pill" href="StatusSheet.dc.html" aria-label="Đổi trạng thái trực"><span class="live"></span>Sẵn sàng<span class="ext">· 102</span><svg class="ico sm" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></a>
+      <div class="grow"></div>
+      <a class="gbtn" href="Search.dc.html" aria-label="Tìm kiếm"><img class="i3d" src="assets/icons/search.svg" alt=""></a>
+      <a class="gbtn" href="Notifications.dc.html" aria-label="Thông báo"><img class="i3d" src="assets/icons/bell.svg" alt=""><span class="pip"></span></a>
+      <a class="me" href="Account.dc.html" aria-label="Tài khoản"><img class="me-photo" src="assets/avatar-ly-hoang.jpg" alt=""></a>
+    </header>
+
+    <div class="body" style="gap: 24px" aria-busy="true">
+      <div style="padding: 0 6px; display: flex; align-items: center; justify-content: space-between">
+        <div style="display: flex; align-items: baseline; gap: 10px"><h1 class="h1" style="margin: 0">Lịch sử</h1><span class="tag">7 ngày</span></div>
+        <a class="gbtn" href="HistoryFilter.dc.html" aria-label="Bộ lọc nâng cao" style="width: 46px; height: 46px"><img class="i3d" src="assets/icons/filter.svg" alt=""></a>
+      </div>
+
+      <div class="chips">
+        <button class="chip on" type="button">Tất cả</button>
+        <button class="chip" type="button">Cuộc gọi</button>
+        <button class="chip" type="button">Gọi nhỡ</button>
+        <button class="chip" type="button">Tin nhắn</button>
+      </div>
+
+      <div>
+        <div class="day"><span class="sk" style="width: 70px; height: 12px; display: block"></span></div>
+        <div class="card">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+            <div class="row">
+              <span class="sk" style="width: 38px; height: 38px; border-radius: 10px; flex: none"></span>
+              <div class="main" style="display: flex; flex-direction: column; gap: 8px"><span class="sk" style="height: 13px; width: {{ r.w1 }}"></span><span class="sk" style="height: 11px; width: {{ r.w2 }}"></span></div>
+              <span class="sk" style="width: 36px; height: 11px"></span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div class="meta" style="text-align: center">Đang tải lịch sử…</div>
+    </div>
+
+    <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ true }}">
+    <nav class="{{ navCls }}" aria-label="Điều hướng chính">
+      <a href="Main.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
+      <a href="Contacts.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
+      <a href="History.dc.html" class="on"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
+      <a href="Tasks.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
+      <button type="button" class="nav-fold" onClick="{{ foldNav }}" aria-label="Thu gọn thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span></button>
+    </nav>
+    </sc-if>
+    <sc-if value="{{ navClosed }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="{{ dockCls }}" onClick="{{ openNav }}" aria-label="Mở thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span><span class="dock-dot"></span></button>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    let nav = true;
+    try { nav = window.localStorage.getItem('gch-nav') !== 'closed'; } catch (e) { /* storage blocked */ }
+    this.state = { nav: nav };
+  }
+  renderVals() {
+    return {
+      navOpen: this.state.nav, navClosed: !this.state.nav,
+      navCls: 'nav' + (this.state.navAnim ? ' pop' : ''), dockCls: 'nav-dock' + (this.state.navAnim ? ' pop' : ''),
+      foldNav: () => { this.setState({ nav: false, navAnim: true }); setTimeout(() => this.setState({ navAnim: false }), 500); try { window.localStorage.setItem('gch-nav', 'closed'); } catch (e) {} },
+      openNav: () => { this.setState({ nav: true, navAnim: true }); setTimeout(() => this.setState({ navAnim: false }), 500); try { window.localStorage.setItem('gch-nav', 'open'); } catch (e) {} },
+      rows: [['58%', '30%'], ['44%', '22%'], ['66%', '34%'], ['50%', '18%'], ['40%', '26%']].map(([w1, w2]) => ({ w1, w2 })) };
+  }
+}
+</script>
+</body>
+</html>

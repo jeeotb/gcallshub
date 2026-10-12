@@ -1236,3 +1236,196 @@
 /* ảnh đại diện khách hàng */
 .av:has(.av-photo){padding:0;overflow:hidden;background:#EDE9FE!important}
 .av .av-photo{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+/* =====================================================================
+   v28 — font Inter + cỡ chữ theo tỉ lệ Elle; card & thanh tab kính mờ có grain;
+   style cho các module (sheet, form, header phụ…) ở cả sáng và tối
+   ===================================================================== */
+.app.lt{--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  font-family:"Inter","Be Vietnam Pro",system-ui,sans-serif;font-size:14px;letter-spacing:-.006em;line-height:1.5}
+.app.lt :where(button,input,textarea,select){font-family:inherit}
+/* cỡ chữ theo tỉ lệ ảnh mẫu: tiêu đề vừa, chữ thân 14, chữ phụ 12.5, đậm vừa phải */
+.app.lt .h1{font-size:26px;font-weight:500;letter-spacing:-.03em;line-height:1.2}
+.app.lt .h2{font-size:16px;font-weight:600;letter-spacing:-.015em}
+.app.lt .eyebrow{font-size:17px;font-weight:400;letter-spacing:-.015em}
+.app.lt .big{font-size:24px;font-weight:600;letter-spacing:-.03em}
+.app.lt .meta,.app.lt .row .sub,.app.lt .info .k,.app.lt .od,.app.lt .ed{font-size:12.5px}
+.app.lt .row .name,.app.lt .info .v,.app.lt .ot,.app.lt .et{font-size:14.5px;font-weight:600}
+.app.lt .chip,.app.lt .seg>*{font-size:13px;font-weight:500}
+.app.lt .btn{font-size:14px;font-weight:600}
+.app.lt .btn.sm{font-size:13px}
+.app.lt .tag{font-size:11.5px;font-weight:600}
+.app.lt .sheet-head h2{font-size:19px;font-weight:600;letter-spacing:-.02em}
+.app.lt .sub-top .t{font-size:15.5px;font-weight:600}
+.app.lt .nav a{font-size:11px;font-weight:500}
+.app.lt .tile .v,.app.lt .tile .v-rose{font-size:30px;font-weight:600;letter-spacing:-.035em}
+.app.lt .tile .l{font-size:12.5px;font-weight:500}
+.app.lt .day,.app.lt .letter{font-size:12px;font-weight:600;letter-spacing:.01em}
+.app.lt .field-label{font-size:12.5px;font-weight:600}
+.app.lt .act{font-size:12px;font-weight:500}
+
+/* card: kính mờ sáng + grain nhẹ */
+.app.lt .card,.app.lt .glass,.app.lt .rate{background:rgba(255,255,255,.66)!important;backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 0 0 1px rgba(124,97,255,.08),0 16px 34px -24px rgba(60,40,140,.35)}
+.app.lt .card::before,.app.lt .glass::before,.app.lt .rate::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;
+  background:var(--grain);opacity:.09;mix-blend-mode:multiply}
+.app.lt .body>.card:first-child::before{display:none}
+.app.lt .body>.card:first-child{backdrop-filter:none;-webkit-backdrop-filter:none;background:transparent!important}
+/* thanh tab: kính mờ sáng + grain */
+.app.lt .nav{background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 0 0 1px rgba(124,97,255,.10),0 18px 36px -18px rgba(91,67,224,.45)}
+.app.lt .nav::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:var(--grain);opacity:.1;mix-blend-mode:multiply}
+.app.lt .nav>*{position:relative}
+/* nút gọi tròn: icon trắng */
+.app.lt .call-btn{color:#fff}
+
+/* ---- module: sheet, form, header phụ (sáng) ---- */
+.app.lt .scrim{background:rgba(40,28,100,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.app.lt .sheet{background:rgba(255,255,255,.9);backdrop-filter:blur(26px) saturate(160%);-webkit-backdrop-filter:blur(26px) saturate(160%);border-radius:28px;
+  box-shadow:inset 0 0 0 1px #fff,0 -10px 40px -20px rgba(60,40,140,.45)}
+.app.lt .sheet::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:var(--grain);opacity:.07;mix-blend-mode:multiply}
+.app.lt .sheet>*{position:relative}
+.app.lt .sub-top{background:rgba(255,255,255,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:inset 0 -1px 0 rgba(124,97,255,.08)}
+.app.lt .opt{background:#fff;box-shadow:0 0 0 1px #ECEAF4}
+.app.lt .opt.on{background:var(--p-soft);box-shadow:0 0 0 1.5px var(--p)}
+.app.lt .opt.on .radio{box-shadow:inset 0 0 0 7px var(--p)}
+.app.lt .hint{background:rgba(255,255,255,.7);box-shadow:0 0 0 1px #ECEAF4}
+.app.lt .empty .ei{background:var(--p-soft);color:var(--p)}
+.app.lt .act .c{background:#fff;color:var(--p);box-shadow:0 0 0 1px #ECEAF4,0 8px 16px -12px rgba(60,40,140,.4)}
+.app.lt .act .c.call{background:linear-gradient(180deg,#45D28A 0%,#27AE66 100%);color:#fff;box-shadow:0 10px 20px -12px rgba(39,174,102,.9)}
+.app.lt textarea.input{border-radius:16px}
+
+/* ---- bản tối: các phần nền trắng của module chuyển sang nền tối ---- */
+.app.lt.night .card,.app.lt.night .glass,.app.lt.night .rate{background:rgba(255,255,255,.065)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),0 16px 34px -24px rgba(0,0,0,.8)}
+.app.lt.night .card::before,.app.lt.night .rate::before,.app.lt.night .sheet::before{mix-blend-mode:screen;opacity:.06;filter:invert(1)}
+.app.lt.night .body>.card:first-child{background:transparent!important}
+.app.lt.night .sheet{background:rgba(26,24,38,.94);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 -10px 40px -20px rgba(0,0,0,.8)}
+.app.lt.night .scrim{background:rgba(0,0,0,.45)}
+.app.lt.night .sub-top{background:rgba(20,18,31,.6);box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)}
+.app.lt.night .opt{background:rgba(255,255,255,.05);box-shadow:0 0 0 1px rgba(255,255,255,.08);color:var(--ink)}
+.app.lt.night .opt.on{background:rgba(124,97,255,.18);box-shadow:0 0 0 1.5px #9C87FF}
+.app.lt.night .radio{box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}
+.app.lt.night .input,.app.lt.night input.input,.app.lt.night textarea.input,.app.lt.night .card input{background:rgba(255,255,255,.07)!important;color:var(--ink)!important;box-shadow:0 0 0 1px rgba(255,255,255,.1)!important}
+.app.lt.night .input::placeholder,.app.lt.night input::placeholder,.app.lt.night textarea::placeholder{color:#8E8AA6}
+.app.lt.night .hint{background:rgba(255,255,255,.05);box-shadow:0 0 0 1px rgba(255,255,255,.08);color:var(--ink-2)}
+.app.lt.night .act .c:not(.call){background:rgba(255,255,255,.08);color:#C9BFFF;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.app.lt.night .act{color:var(--ink-2)}
+.app.lt.night .grab{background:rgba(255,255,255,.25)}
+.app.lt.night .toggle:not(.on){background:rgba(255,255,255,.18)}
+.app.lt.night .sk{background:rgba(255,255,255,.1)!important}
+.app.lt.night [style*="background: rgba(255,255,255,.6)"],.app.lt.night [style*="background: rgba(255,255,255,.55)"]{background:rgba(255,255,255,.06)!important}
+.app.lt.night [style*="background: rgba(255,255,255,.8)"]{background:rgba(255,255,255,.09)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)!important}
+.app.lt.night [style*="background: rgba(255,255,255,.8)"] span{color:var(--ink)!important}
+.app.lt.night [style*="background: #fff"]:not(.btn):not(.gbtn){background:rgba(255,255,255,.07)!important}
+.app.lt.night [style*="color: #757090"],.app.lt.night [style*="color: #4A4463"]{color:var(--ink-3)!important}
+.app.lt.night .sheet .meta,.app.lt.night .sheet .od{color:var(--ink-3)}
+.app.lt.night .sheet h2,.app.lt.night .sheet .ot,.app.lt.night .sheet .name{color:var(--ink)}
+.app.lt.night .nav{background:rgba(255,255,255,.78)}
+.app.lt.night .pop{background:rgba(26,24,38,.96)!important}
+/* 4 thẻ chỉ số: kính mờ pastel trong suốt + làm nhòe nền phía sau + grain */
+.app.lt .tile{backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.75),inset 0 1px 0 rgba(255,255,255,.9),0 16px 32px -22px rgba(60,40,140,.45)!important}
+.app.lt .tile:nth-child(1){background-color:rgba(250,211,238,.62)!important}
+.app.lt .tile:nth-child(2){background-color:rgba(217,211,255,.62)!important}
+.app.lt .tile:nth-child(3){background-color:rgba(255,232,163,.62)!important}
+.app.lt .tile:nth-child(4){background-color:rgba(200,242,234,.62)!important}
+.app.lt .tile::after{content:""!important;display:block!important;position:absolute;inset:0!important;width:auto!important;height:auto!important;border-radius:inherit!important;
+  z-index:-1;pointer-events:none;background:var(--grain)!important;opacity:.14!important;mix-blend-mode:multiply;transform:none!important}
+.app.lt.night .tile:nth-child(1){background-color:rgba(250,211,238,.78)!important}
+.app.lt.night .tile:nth-child(2){background-color:rgba(217,211,255,.78)!important}
+.app.lt.night .tile:nth-child(3){background-color:rgba(255,232,163,.78)!important}
+.app.lt.night .tile:nth-child(4){background-color:rgba(200,242,234,.78)!important}
+
+/* =====================================================================
+   v29 — chuyển cảnh: rời màn trượt trái + mờ dần, vào màn từ phải + hiện dần,
+   các khối hiện lần lượt; sheet trượt lên; icon/tab bấm mượt.
+   Hiệu ứng vào màn chỉ chạy khi có class .dc-enter (không phát lại khi render lại).
+   ===================================================================== */
+.app .body>*{animation:none}
+@keyframes dcOutL{to{opacity:0;transform:translateX(-42px)}}
+@keyframes dcInR{from{opacity:0;transform:translateX(42px)}to{opacity:1;transform:none}}
+@keyframes dcRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes dcFade{from{opacity:0}to{opacity:1}}
+@keyframes dcSheetUp{from{opacity:.4;transform:translateY(60%)}to{opacity:1;transform:none}}
+@keyframes dcPop{0%{opacity:0;transform:scale(.85)}60%{opacity:1;transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes dcNavIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+/* rời màn: nội dung (trừ thanh tab, nút nổi, nền) trượt sang trái và mờ dần */
+.dc-leave .dc-top>.app>:not(.wall):not(.layer):not(.scrim):not(.sheet),
+.dc-leave .dc-top>.app>.layer>:not(.nav):not(.nav-dock):not(.fab):not(.wall){animation:dcOutL .23s cubic-bezier(.4,0,.6,1) forwards}
+.dc-leave .dc-top>.app>.scrim,.dc-leave .dc-top>.app>.sheet{animation:dcOutL .23s ease forwards}
+/* vào màn: từ phải vào + hiện dần */
+.dc-enter .dc-top>.app:not(:has(>.sheet))>:not(.wall):not(.layer),
+.dc-enter .dc-top>.app>.layer>:not(.nav):not(.nav-dock):not(.fab):not(.wall):not(.body){animation:dcInR .42s cubic-bezier(.2,.8,.2,1) both}
+.dc-enter .dc-top>.app>.layer>.body{animation:dcInR .42s cubic-bezier(.2,.8,.2,1) both}
+/* các khối trong màn hiện lần lượt */
+.dc-enter .dc-top>.app>.layer>.body>*{animation:dcRise .55s cubic-bezier(.2,.8,.2,1) both}
+.dc-enter .dc-top>.app>.layer>.body>*:nth-child(2){animation-delay:.06s}.dc-enter .dc-top>.app>.layer>.body>*:nth-child(3){animation-delay:.12s}
+.dc-enter .dc-top>.app>.layer>.body>*:nth-child(4){animation-delay:.18s}.dc-enter .dc-top>.app>.layer>.body>*:nth-child(5){animation-delay:.24s}
+.dc-enter .dc-top>.app>.layer>.body>*:nth-child(6){animation-delay:.3s}.dc-enter .dc-top>.app>.layer>.body>*:nth-child(n+7){animation-delay:.36s}
+.dc-enter .dc-top>.app .tiles>*{animation:dcPop .5s cubic-bezier(.2,.8,.2,1) both}
+.dc-enter .dc-top>.app .tiles>*:nth-child(2){animation-delay:.08s}.dc-enter .dc-top>.app .tiles>*:nth-child(3){animation-delay:.16s}.dc-enter .dc-top>.app .tiles>*:nth-child(4){animation-delay:.24s}
+/* sheet: nền mờ hiện dần, sheet trượt lên */
+.dc-enter .dc-top>.app>.scrim{animation:dcFade .3s ease both}
+.dc-enter .dc-top>.app>.sheet{animation:dcSheetUp .45s cubic-bezier(.2,.9,.25,1) both}
+.dc-enter .dc-top>.app>.sheet>*{animation:dcRise .45s cubic-bezier(.2,.8,.2,1) both;animation-delay:.12s}
+/* thanh tab & nút logo: hiện ra mượt khi vào màn và khi thu gọn / mở */
+.dc-enter .dc-top>.app .nav,.app .nav.pop{animation:dcNavIn .4s cubic-bezier(.2,.8,.2,1) both}
+.dc-enter .dc-top>.app .nav-dock,.app .nav-dock.pop{animation:dcPop .42s cubic-bezier(.2,.8,.2,1) both}
+.dc-enter .dc-top>.app .fab{animation:dcPop .45s .2s cubic-bezier(.2,.8,.2,1) both}
+/* icon & tab khi bấm: co nhẹ + mờ, rồi trở lại mượt */
+.app .nav a .pill,.app .nav a .i3d,.app .gbtn,.app .me,.app .call-btn,.app .act .c,.app .chip,.app .btn,.app .fab,.app .tile,.app .nav-fold .mface,.app .nav-dock{
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease,filter .25s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease}
+.app .nav a:active .pill,.app .gbtn:active,.app .me:active,.app .call-btn:active,.app .act:active .c,.app .nav-fold:active .mface,.app .nav-dock:active{transform:scale(.88);opacity:.7}
+.app .chip:active,.app .btn:active,.app .fab:active{transform:scale(.96);opacity:.85}
+.app .tile:active{transform:scale(.97)}
+.app .nav a.on .pill{animation:dcPop .35s cubic-bezier(.2,.8,.2,1)}
+.dc-leave .app .nav a .pill{opacity:.75}
+@media (prefers-reduced-motion: reduce){.dc-enter *,.dc-leave *,.app .nav.pop,.app .nav-dock.pop{animation:none!important}}
+
+/* =====================================================================
+   v30 — tiết chế màu tím: tím chỉ cho nút chính, mục đang chọn, công tắc bật,
+   tab đang chọn và link nhỏ. Icon, nút gọi, avatar chữ, tag: trung tính.
+   ===================================================================== */
+.app.lt{--icon-dark:brightness(0) saturate(100%) opacity(.82);--neutral:#F3F3F6;--neutral-edge:#E7E6EE}
+/* icon trong ô: đen xám trên nền pastel nhạt / xám */
+.app.lt .ev .i3d,.app.lt .info .ic .i3d,.app.lt .gbtn .i3d,.app.lt .cal-btn .i3d,.app.lt .tag .i3d,.app.lt .sub .i3d{filter:var(--icon-dark)!important}
+.app.lt .ev,.app.lt .info .ic{background:var(--neutral)!important;color:#2B2838!important}
+.app.lt .ev.miss{background:#FFECEF!important}
+.app.lt .ev.in{background:#E9F7F0!important}
+.app.lt .ev.sms{background:#FFF2E6!important}
+.app.lt .info:nth-child(2) .ic{background:#EEF3FB!important}
+.app.lt .info:nth-child(3) .ic{background:#E9F7F0!important}
+.app.lt .ev svg,.app.lt .info .ic svg,.app.lt .empty .ei,.app.lt .empty .ei svg{color:#2B2838}
+.app.lt .empty .ei{background:var(--neutral)}
+/* nút gọi trong danh sách / thanh hành động: icon điện thoại đen, nền xám trắng */
+.app.lt .call-btn{background:var(--neutral)!important;color:#1E1B2E!important;box-shadow:0 0 0 1px var(--neutral-edge)!important}
+.app.lt .call-btn .i3d{filter:var(--icon-dark)!important}
+.app.lt .act .c,.app.lt .act .c.call{background:#fff!important;color:#1E1B2E!important;box-shadow:0 0 0 1px var(--neutral-edge),0 6px 14px -10px rgba(20,18,31,.25)!important}
+/* nút đầu trang: icon đen */
+.app.lt .gbtn,.app.lt .cal-btn{color:#1E1B2E}
+/* avatar chữ, tag: xám trung tính */
+.app.lt .av,.app.lt .row .av,.app.lt a>.av{background:var(--neutral)!important;color:#3A3748!important}
+.app.lt .tag:not(.warn):not(.bad):not(.ok):not(.good){background:var(--neutral)!important;color:#4A475C!important;box-shadow:none!important}
+/* nút "Bàn phím": trắng, chữ đen (nút tạo mới vẫn tím) */
+.app.lt .fab.dial{background:#fff!important;color:#1E1B2E!important;box-shadow:0 0 0 1px var(--neutral-edge),0 14px 26px -14px rgba(20,18,31,.35)!important}
+/* chip chưa chọn, thẻ lựa chọn: viền xám */
+.app.lt .chip:not(.on){box-shadow:0 0 0 1px var(--neutral-edge)}
+.app.lt .opt:not(.on){box-shadow:0 0 0 1px var(--neutral-edge)}
+/* icon chưa chọn trên thanh tab: đen nhạt */
+.app.lt .nav a:not(.on) .i3d{filter:brightness(0) opacity(.45)!important}
+/* bản tối: nền ô icon & nút gọi tối, icon sáng */
+.app.lt.night{--neutral:rgba(255,255,255,.08);--neutral-edge:rgba(255,255,255,.1)}
+.app.lt.night .ev .i3d,.app.lt.night .info .ic .i3d,.app.lt.night .call-btn .i3d,.app.lt.night .sub .i3d{filter:brightness(0) invert(1) opacity(.88)!important}
+.app.lt.night .ev,.app.lt.night .info .ic,.app.lt.night .ev.miss,.app.lt.night .ev.in,.app.lt.night .ev.sms,.app.lt.night .info:nth-child(2) .ic,.app.lt.night .info:nth-child(3) .ic{background:rgba(255,255,255,.08)!important;color:#EDEBF5!important}
+.app.lt.night .ev svg,.app.lt.night .info .ic svg,.app.lt.night .empty .ei svg{color:#EDEBF5}
+.app.lt.night .call-btn{color:#fff!important}
+.app.lt.night .av,.app.lt.night .row .av,.app.lt.night a>.av{color:#E6E3F2!important}
+.app.lt.night .act .c,.app.lt.night .act .c.call{background:rgba(255,255,255,.08)!important;color:#EDEBF5!important;box-shadow:0 0 0 1px rgba(255,255,255,.1)!important}
+.app.lt.night .tag:not(.warn):not(.bad):not(.ok):not(.good){background:rgba(255,255,255,.08)!important;color:#D6D3E4!important}
+/* nút bàn phím: chỉ là biểu tượng tròn */
+.app .fab.dial{width:56px;height:56px;padding:0;border-radius:50%!important;justify-content:center;gap:0}
+.app .fab.dial .ico{width:22px;height:22px}
+.app .fab.dial .ico{stroke-width:3.4}
+/* thanh tab khi mở: chỉ hiện 4 nút module, ẩn logo (thu gọn bằng cách cuộn xuống) */
+.app.lt .nav{grid-template-columns:repeat(4,minmax(0,1fr))!important;padding:8px 6px!important}
+.app.lt .nav-fold{display:none!important}

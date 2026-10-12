@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Gcalls ContactHub · Prototype</title>
 <style>
   :root { --bg: #E9E6F2; --ink: #1F1A33; --muted: #5E5878; --line: #D9D4E8; }
@@ -35,6 +36,7 @@
 (function () {
   var params = new URLSearchParams(location.search);
   if (params.get('bare')) document.body.classList.add('bare');
+  DcLite.setNight(params.get('night') === '1');
   var host = document.getElementById('host');
   var pick = document.getElementById('pick');
 
@@ -51,7 +53,7 @@
       if (!known[next]) return; // màn đã bỏ khỏi bộ mockup
       if (document.body.classList.contains('bare')) { location.href = 'viewer.html?s=' + next; return; }
       show(next, true);
-    }).catch(function (e) { host.innerHTML = '<div class="err">' + e.message + '</div>'; });
+    }, { animate: !!push, anchor: document.body }).catch(function (e) { host.innerHTML = '<div class="err">' + e.message + '</div>'; });
   }
 
   fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
@@ -62,7 +64,7 @@
       o.textContent = (c.boards[file] && c.boards[file].title) || o.value;
       pick.appendChild(o);
     });
-    var first = c.order[0].replace('.dc.html', '');
+    var first = 'Main';
     show(known[params.get('s')] ? params.get('s') : first, false);
   });
   pick.addEventListener('change', function () { show(pick.value, true); });
