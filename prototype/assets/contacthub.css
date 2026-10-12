@@ -1596,3 +1596,65 @@
   font-size:15px;font-weight:400;color:var(--ink-2,#55526A)}
 .dsug-more{font-size:15px;color:var(--ink-3,#85829A)}
 .dsug-add{color:var(--accent,#7B61FF)}
+
+/* =====================================================================
+   v36 — đồng bộ kính mờ (glassmorphism) + grain cho mọi lớp nổi:
+   sheet, nền mờ sau sheet, popover, header phụ, ô nhập, ô lựa chọn,
+   chip, phân đoạn, nút tròn, thanh hành động — cùng ngôn ngữ với thanh tab
+   ===================================================================== */
+.app.lt{
+  --grain-soft:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --g-fill:rgba(255,255,255,.4); --g-fill-strong:rgba(255,255,255,.55);
+  --g-edge:inset 0 0 0 1px rgba(255,255,255,.65),inset 0 1px 0 rgba(255,255,255,.85);
+  --g-blur:blur(24px) saturate(180%);
+}
+.app.lt.night{--g-fill:rgba(255,255,255,.07); --g-fill-strong:rgba(30,28,44,.55);
+  --g-edge:inset 0 0 0 1px rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.08)}
+/* nền mờ sau sheet: nhẹ để kính sheet còn thấy nội dung phía sau */
+.app.lt .scrim{background:rgba(40,28,100,.1)!important;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.app.lt.night .scrim{background:rgba(0,0,0,.28)!important}
+/* sheet & popover: kính mờ + grain */
+.app.lt .sheet,.app.lt .pop{background:var(--grain-soft),var(--g-fill-strong)!important;backdrop-filter:blur(30px) saturate(190%)!important;-webkit-backdrop-filter:blur(30px) saturate(190%)!important;
+  box-shadow:var(--g-edge),0 -12px 40px -22px rgba(60,40,140,.35)!important}
+.app.lt .sheet::before{opacity:0!important}
+.app.lt.night .sheet,.app.lt.night .pop{background:var(--grain-soft),var(--g-fill-strong)!important;box-shadow:var(--g-edge),0 -12px 40px -22px rgba(0,0,0,.8)!important}
+/* header màn phụ */
+.app.lt .sub-top{background:var(--grain-soft),rgba(255,255,255,.28)!important;backdrop-filter:var(--g-blur);-webkit-backdrop-filter:var(--g-blur);box-shadow:inset 0 -1px 0 rgba(255,255,255,.5)!important}
+.app.lt.night .sub-top{background:var(--grain-soft),rgba(20,18,31,.35)!important;box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)!important}
+/* lớp kính dùng chung cho các khối nhỏ */
+.app.lt :is(.input,input.input,textarea.input,.opt,.hint,.chip:not(.on),.seg,.status-pill,.logo-badge,.gbtn,.cal-btn,.icon-btn,.btn.ghost,.act .c,.call-btn,.dsug,.dact,.tag:not(.warn):not(.bad):not(.ok):not(.good)){
+  background:var(--grain-soft),var(--g-fill)!important;backdrop-filter:var(--g-blur);-webkit-backdrop-filter:var(--g-blur);box-shadow:var(--g-edge)!important}
+.app.lt .sub-top .icon-btn{background:transparent!important;box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none}
+/* mục đang chọn vẫn nổi bật */
+.app.lt .opt.on{background:var(--grain-soft),rgba(123,97,255,.12)!important;box-shadow:inset 0 0 0 1.5px var(--p),inset 0 1px 0 rgba(255,255,255,.7)!important}
+.app.lt.night .opt.on{background:var(--grain-soft),rgba(124,97,255,.2)!important;box-shadow:inset 0 0 0 1.5px #9C87FF!important}
+.app.lt .seg>.on{background:rgba(255,255,255,.9)!important;box-shadow:0 4px 12px -6px rgba(60,40,140,.3)!important}
+.app.lt.night .seg>.on{background:#fff!important;color:#5B43E0!important}
+/* card trong sheet: kính lồng kính, nhạt hơn để không bị đục */
+.app.lt .sheet .card,.app.lt .sheet [style*="background: rgba(255,255,255,.6)"]{background:var(--grain-soft),rgba(255,255,255,.3)!important;box-shadow:var(--g-edge)!important}
+.app.lt.night .sheet .card,.app.lt.night .sheet [style*="background: rgba(255,255,255,.6)"]{background:var(--grain-soft),rgba(255,255,255,.05)!important}
+/* thẻ thường (card) cùng lớp grain mịn, độ trong như cũ */
+.app.lt .card,.app.lt .rate{background-image:var(--grain-soft)!important}
+/* bản tối: chữ trên các khối kính tối phải sáng (trước đây bị ép chữ tối) */
+.app.lt.night :is(.chip:not(.on),.btn.ghost,.status-pill,.seg>*:not(.on),.tag:not(.warn):not(.bad):not(.ok):not(.good),.gbtn,.cal-btn,.icon-btn){--ink:#F1EFF8;--ink-2:#D6D3E4;--ink-3:#A7A3BC;color:#E6E3F2!important}
+.app.lt.night .opt.on .ot,.app.lt.night .opt .ot{color:#F1EFF8}
+.app.lt.night .chip:not(.on) .n{color:#C9C6DA}
+.app.lt.night [style*="color: #1F1A33"]{color:#F1EFF8!important}
+
+/* bàn phím quay số: kính mờ + grain như thanh tab */
+.app.lt .dkey{background:var(--grain-soft),rgba(255,255,255,.38)!important;backdrop-filter:blur(22px) saturate(190%)!important;-webkit-backdrop-filter:blur(22px) saturate(190%)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -8px 16px rgba(120,100,180,.08),0 8px 18px -12px rgba(40,30,90,.3)!important}
+.app.lt .dkey:active{background:var(--grain-soft),rgba(255,255,255,.7)!important}
+.app.lt.night .dkey{background:var(--grain-soft),rgba(255,255,255,.08)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.13),inset 0 1.5px 0 rgba(255,255,255,.14),0 8px 18px -12px rgba(0,0,0,.6)!important}
+.app.lt.night .dkey:active{background:var(--grain-soft),rgba(255,255,255,.2)!important}
+.app.lt.night .dk-d{color:#F1EFF8}
+.app.lt .dcall{background-image:var(--grain-soft),radial-gradient(circle at 35% 25%,#6EE7A2 0%,#34C474 45%,#22A65E 100%)!important}
+/* màn đang gọi / cuộc gọi đến: nút điều khiển, phím DTMF, thẻ thông tin = kính mờ + grain trên nền tím */
+.app.lt [style*="background: rgba(255,255,255,.12)"],.app.lt [style*="background: rgba(255,255,255,.1)"]{
+  background:var(--grain-soft),rgba(255,255,255,.14)!important;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 1px 0 rgba(255,255,255,.4)!important}
+/* phím DTMF khi đang gọi: tròn, số ở giữa, kính mờ */
+.app [style*="height: 54px; border-radius: 27px"]{width:62px;height:62px!important;border-radius:50%!important;margin:0 auto;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:300!important;font-size:26px!important}
+/* gợi ý dưới số chỉ là chữ, không khung */
+.app.lt .dsug,.app.lt.night .dsug{background:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.app.lt.night .dsug{color:#C9C6DA}

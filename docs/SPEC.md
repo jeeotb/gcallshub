@@ -89,7 +89,7 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 
 **Phân bổ màu tím:** chỉ dùng cho nút chính, mục / chip / tab đang chọn, công tắc bật, thẻ lựa chọn đang chọn và link nhỏ. Icon trong ô, nút gọi trong danh sách (icon điện thoại đen trên nền xám trắng `#F3F3F6`), nút đầu trang, avatar chữ và tag dùng màu trung tính.
 
-**Bề mặt kính:** card, thanh tab, sheet và 4 thẻ chỉ số dùng kính mờ (`backdrop-filter: blur(22–26px) saturate(160%)`), viền trắng trong 1px, kèm lớp grain (SVG noise, độ đậm 7–14%).
+**Bề mặt kính (đồng bộ toàn app):** card, thanh tab, sheet, popover, header màn phụ, ô nhập, ô lựa chọn, chip, phân đoạn, nút tròn, phím quay số, phím và nút điều khiển khi đang gọi, 4 thẻ chỉ số đều dùng kính mờ (`backdrop-filter: blur(22–26px) saturate(160%)`), viền trắng trong 1px, kèm lớp grain (SVG noise, độ đậm 7–14%).
 
 **Chuyển cảnh:** đổi module thì nội dung cũ trượt sang trái và mờ dần (230ms), màn mới vào từ phải và hiện dần (420ms), các khối hiện lần lượt cách nhau 60ms, 4 thẻ chỉ số bật ra lần lượt. Sheet trượt lên, nền mờ hiện dần. Nút và icon khi bấm co lại 0.88 và mờ nhẹ rồi trở lại. Thanh tab: cuộn xuống thì thu thành nút logo tròn, bấm logo để mở lại (chỉ hiện 4 nút module). Tắt chuyển động khi máy bật "Giảm chuyển động".
 
