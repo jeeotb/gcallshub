@@ -46,7 +46,7 @@ prototype/
     contacthub.css   Toàn bộ style và design token (:root)
     icons/*.svg      Icon theo tên: phone, call-missed, nav-*, …
     theme/*.svg      Hình nền và icon cho bản tối / sáng
-    deco/*.png       Ống nghe kính 3D (4 màu) trang trí 4 thẻ chỉ số
+    deco/*.png       4 icon kính 3D (đã tô màu) trang trí 4 thẻ chỉ số
 ```
 
 ## Cho dev

@@ -1166,10 +1166,10 @@
 .app.dk .tile::after,.app.lt .tile::after{display:none!important}
 .app.dk .tile::before,.app.lt .tile::before{right:-18px;top:-14px;bottom:auto;width:120px;height:120px;border-radius:0;box-shadow:none;
   background:center/contain no-repeat;transform:rotate(-6deg)}
-.app.dk .tile:nth-child(1)::before,.app.lt .tile:nth-child(1)::before{background-image:url(deco/phone-pink.png)}
-.app.dk .tile:nth-child(2)::before,.app.lt .tile:nth-child(2)::before{background-image:url(deco/phone-violet.png)}
-.app.dk .tile:nth-child(3)::before,.app.lt .tile:nth-child(3)::before{background-image:url(deco/phone-yellow.png)}
-.app.dk .tile:nth-child(4)::before,.app.lt .tile:nth-child(4)::before{background-image:url(deco/phone-mint.png)}
+.app.dk .tile:nth-child(1)::before,.app.lt .tile:nth-child(1)::before{background-image:url(deco/missed-pink.png)}
+.app.dk .tile:nth-child(2)::before,.app.lt .tile:nth-child(2)::before{background-image:url(deco/unassigned-violet.png)}
+.app.dk .tile:nth-child(3)::before,.app.lt .tile:nth-child(3)::before{background-image:url(deco/overdue-yellow.png)}
+.app.dk .tile:nth-child(4)::before,.app.lt .tile:nth-child(4)::before{background-image:url(deco/today-mint.png)}
 .app.dk .tile:hover::before,.app.lt .tile:hover::before{transform:rotate(-12deg) scale(1.05)}
 /* nút thu gọn / mở thanh tab: logo Gcalls tròn (thay mặt mascot) */
 .app.lt .mface{align-items:center;background:#fff;box-shadow:0 0 0 1px #E1D9FF,0 4px 10px -6px rgba(91,67,224,.5)}
@@ -1213,3 +1213,8 @@
 .app.lt.night .status-pill{color:#14121F}
 .app.lt.night .tile .num{color:#14121F}
 .app.lt.night .tile .v-rose{color:#C81E4A}
+
+/* 4 icon kính 3D riêng cho từng thẻ (gọi nhỡ / chưa nhận / quá hạn / hôm nay) */
+.app.lt .tile::before{right:-14px;top:-10px;width:108px;height:108px;transform:rotate(-4deg)}
+.app.lt .tile:hover::before{transform:rotate(-8deg) scale(1.05)}
+.app.lt .tile::before{right:-2px;top:-2px;width:100px;height:100px}
