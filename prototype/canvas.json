@@ -6,7 +6,7 @@
       "h": 1980,
       "is_interactive": true,
       "radius": 28,
-      "title": "D1 · Tổng quan (dark)",
+      "title": "D1 · Tổng quan (tối)",
       "w": 390,
       "x": 2560,
       "y": 0
@@ -15,7 +15,7 @@
       "h": 844,
       "is_interactive": true,
       "radius": 28,
-      "title": "D2 · Danh bạ (dark)",
+      "title": "D2 · Danh bạ (tối)",
       "w": 390,
       "x": 3030,
       "y": 0
@@ -24,7 +24,7 @@
       "h": 844,
       "is_interactive": true,
       "radius": 28,
-      "title": "D3 · Lịch sử (dark)",
+      "title": "D3 · Lịch sử (tối)",
       "w": 390,
       "x": 3500,
       "y": 0
@@ -33,7 +33,7 @@
       "h": 844,
       "is_interactive": true,
       "radius": 28,
-      "title": "D4 · Công việc (dark)",
+      "title": "D4 · Công việc (tối)",
       "w": 390,
       "x": 3970,
       "y": 0
@@ -42,7 +42,7 @@
       "h": 1160,
       "is_interactive": true,
       "radius": 28,
-      "title": "D5 · Tài khoản (dark)",
+      "title": "D5 · Tài khoản (tối)",
       "w": 390,
       "x": 4440,
       "y": 0
@@ -51,7 +51,7 @@
       "h": 1980,
       "is_interactive": true,
       "radius": 28,
-      "title": "L1 · Tổng quan (sáng)",
+      "title": "1 · Tổng quan",
       "w": 390,
       "x": 2560,
       "y": 2380
@@ -60,7 +60,7 @@
       "h": 844,
       "is_interactive": true,
       "radius": 28,
-      "title": "L2 · Danh bạ (sáng)",
+      "title": "2 · Danh bạ",
       "w": 390,
       "x": 3030,
       "y": 2380
@@ -69,7 +69,7 @@
       "h": 844,
       "is_interactive": true,
       "radius": 28,
-      "title": "L3 · Lịch sử (sáng)",
+      "title": "3 · Lịch sử",
       "w": 390,
       "x": 3500,
       "y": 2380
@@ -78,7 +78,7 @@
       "h": 844,
       "is_interactive": true,
       "radius": 28,
-      "title": "L4 · Công việc (sáng)",
+      "title": "4 · Công việc",
       "w": 390,
       "x": 3970,
       "y": 2380
@@ -87,7 +87,7 @@
       "h": 1160,
       "is_interactive": true,
       "radius": 28,
-      "title": "L5 · Tài khoản (sáng)",
+      "title": "5 · Tài khoản",
       "w": 390,
       "x": 4440,
       "y": 2380
@@ -120,16 +120,16 @@
     }
   },
   "order": [
-    "MainD.dc.html",
-    "ContactsD.dc.html",
-    "HistoryD.dc.html",
-    "TasksD.dc.html",
-    "AccountD.dc.html",
     "MainL.dc.html",
     "ContactsL.dc.html",
     "HistoryL.dc.html",
     "TasksL.dc.html",
-    "AccountL.dc.html"
+    "AccountL.dc.html",
+    "MainD.dc.html",
+    "ContactsD.dc.html",
+    "HistoryD.dc.html",
+    "TasksD.dc.html",
+    "AccountD.dc.html"
   ],
   "pages": [],
   "title": "ContactHub Redesign"

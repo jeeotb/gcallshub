@@ -968,65 +968,78 @@
 .dk .mascot-av .online{box-shadow:0 0 0 3px var(--bg)}
 
 /* =====================================================================
-   v22 — LIGHT glass (scoped to .app.lt): nền trắng sáng, khối cầu tím mờ,
-   card kính mờ (frosted glass), tím công nghệ, icon trắng trên nền tím
+   v23 — LIGHT "Elle" (scoped to .app.lt): trắng sáng, tím công nghệ,
+   card trắng viền mảnh, icon trong ô pastel, nút tím đặc bo tròn
    ===================================================================== */
-.app.lt{--ink:#1E1B4B;--ink-2:#4C4A73;--ink-3:#6E6C92;--line:rgba(109,40,217,.10);--accent:#7C3AED;--accent-d:#6D28D9;
-  --p-grad:linear-gradient(145deg,#A78BFA 0%,#7C3AED 55%,#5B21B6 100%);
-  --glass:rgba(255,255,255,.55);--glass-edge:inset 0 0 0 1px rgba(255,255,255,.95),inset 0 1px 0 #fff;
-  background:linear-gradient(180deg,#FBFAFF 0%,#F3F1FC 100%);color:var(--ink)}
-/* nền: khối cầu + cung tròn mờ */
-.app.lt .wall{background:none}
-.app.lt .wall::before,.app.lt .wall::after{display:none}
-.app.lt .wall i{display:block!important;position:absolute;border-radius:50%!important;opacity:1;animation:none!important;transform:none!important;box-shadow:none;right:auto;bottom:auto}
-.app.lt .wall .b1{left:150px!important;top:-250px!important;width:520px!important;height:520px!important;filter:blur(1px)!important;
-  background:radial-gradient(circle at 28% 72%,#fff 0%,rgba(245,243,255,.9) 45%,rgba(221,214,254,.55) 75%,rgba(196,181,253,.35) 100%)!important;
-  box-shadow:inset 30px -30px 70px rgba(139,92,246,.10),-10px 20px 60px -20px rgba(124,58,237,.18)!important}
-.app.lt .wall .b2{left:282px!important;top:250px!important;width:180px!important;height:180px!important;filter:blur(7px)!important;opacity:.9!important;
-  background:radial-gradient(circle at 35% 30%,#DDD6FE 0%,#A78BFA 35%,#7C3AED 75%,#6D28D9 100%)!important}
-.app.lt .wall .b3{left:-46px!important;top:560px!important;width:96px!important;height:96px!important;filter:blur(4px)!important;opacity:.85!important;
-  background:radial-gradient(circle at 60% 35%,#C4B5FD 0%,#8B5CF6 60%,#6D28D9 100%)!important}
-.app.lt .wall .b4{left:-210px!important;top:640px!important;width:480px!important;height:480px!important;filter:blur(1px)!important;
-  background:radial-gradient(circle at 70% 30%,#fff 0%,rgba(245,243,255,.85) 50%,rgba(221,214,254,.5) 100%)!important;
-  box-shadow:inset -30px 30px 70px rgba(139,92,246,.08)!important}
-.app.lt .wall .b5{left:40px!important;top:150px!important;width:320px!important;height:320px!important;filter:blur(70px)!important;opacity:.5!important;
-  background:rgba(167,139,250,.55)!important}
-/* card / surface: kính mờ */
-.app.lt .card,.app.lt .glass,.app.lt .pop,.app.lt .tile{background:var(--glass);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);
-  box-shadow:var(--glass-edge),0 22px 44px -26px rgba(76,29,149,.30)}
-.app.lt .card:hover,.app.lt .tile:hover{box-shadow:var(--glass-edge),inset 0 0 0 1.5px rgba(124,58,237,.35),0 22px 44px -26px rgba(76,29,149,.30)}
-.app.lt .card:active{background:rgba(255,255,255,.7)}
-.app.lt .body>.card:first-child{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
-.app.lt .status-pill,.app.lt .logo-badge,.app.lt .seg,.app.lt .chip:not(.on),.app.lt .input,.app.lt .btn.ghost,.app.lt .cal-btn,.app.lt .tag:not(.warn):not(.bad):not(.ok):not(.good){
-  background:rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--glass-edge),0 8px 18px -14px rgba(76,29,149,.35)}
-.app.lt .seg>.on{background:#fff;color:var(--ink)}
-/* nút & điểm nhấn tím */
-.app.lt .btn.primary,.app.lt .btn.white,.app.lt .fab,.app.lt .chip.on{background:var(--p-grad);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 14px 26px -14px rgba(109,40,217,.8)}
-.app.lt .link{color:var(--accent-d);text-decoration:none}
-.app.lt .toggle.on{background:#7C3AED}
-.app.lt .me{background:var(--p-grad);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-.app.lt .me.on{box-shadow:0 0 0 3px rgba(124,58,237,.3)}
-.app.lt .av,.app.lt .row .av,.app.lt a>.av{background:rgba(237,233,254,.85)!important;color:#5B21B6!important;box-shadow:inset 0 0 0 1px #fff!important}
-/* icon trắng trên nền tím */
-.app.lt .gbtn,.app.lt .ev,.app.lt .info .ic,.app.lt .tile .ti{background:var(--p-grad)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 8px 16px -10px rgba(109,40,217,.8)!important;backdrop-filter:none}
-.app.lt .ev.miss,.app.lt .tile:nth-child(1) .ti{background:linear-gradient(145deg,#FDA4AF 0%,#F43F5E 60%,#E11D48 100%)!important}
-.app.lt .ev.sms{background:linear-gradient(145deg,#A5B4FC 0%,#6366F1 60%,#4F46E5 100%)!important}
-.app.lt .call-btn{background:linear-gradient(180deg,#45D28A 0%,#27AE66 100%);box-shadow:0 8px 16px -10px rgba(39,174,102,.9)}
-.app.lt .gbtn .i3d,.app.lt .ev .i3d,.app.lt .info .ic .i3d,.app.lt .tile .ti .i3d,.app.lt .call-btn .i3d,.app.lt .nav .i3d,.app.lt .btn .i3d{filter:brightness(0) invert(1)!important}
-.app.lt .gbtn .pip{box-shadow:0 0 0 2px #fff}
-/* 4 thẻ chỉ số: kính mờ thay cho hình pastel */
-.app.lt .tile{background-image:none!important;background-color:transparent!important;color:var(--ink)}
-.app.lt .tile .v{color:var(--ink)}
+.app.lt{--ink:#14121F;--ink-2:#4A475C;--ink-3:#7B7891;--line:#EEECF5;--accent:#7B61FF;--accent-d:#5B43E0;
+  --p:#7B61FF;--p-grad:linear-gradient(180deg,#8D78FF 0%,#6F55F5 100%);--p-soft:#F3F0FF;--p-edge:#D9D1FF;
+  --card-edge:0 0 0 1px #ECEAF4;--card-shadow:0 10px 26px -20px rgba(60,40,140,.28);
+  background:#fff;color:var(--ink)}
+.app.lt .wall{background:
+  radial-gradient(70% 22% at 8% 0%,rgba(198,242,226,.55),transparent 70%),
+  radial-gradient(90% 26% at 92% 0%,rgba(196,181,255,.55),transparent 72%),
+  linear-gradient(180deg,#F7F5FF 0%,#fff 380px)}
+.app.lt .wall::before,.app.lt .wall::after,.app.lt .wall i{display:none!important}
+.app.lt .h1{font-weight:500;letter-spacing:-.03em}
+.app.lt .eyebrow{font-weight:400;color:var(--ink-2)}
+.app.lt .big{font-weight:600}
+.app.lt .link{color:var(--p);text-decoration:none;font-weight:600}
+/* card */
+.app.lt .card,.app.lt .glass,.app.lt .tile,.app.lt .pop{background:#fff;border-radius:20px;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:var(--card-edge),var(--card-shadow)}
+.app.lt .card:hover,.app.lt .tile:hover{box-shadow:0 0 0 1px var(--p-edge),var(--card-shadow)}
+.app.lt .card:active,.app.lt .tile:active{background:#FAF9FF}
+.app.lt .body>.card:first-child{background:transparent;box-shadow:none}
+.app.lt .row{border-top-color:var(--line)}
+/* header */
+.app.lt .logo-badge,.app.lt .status-pill{background:#fff;box-shadow:var(--card-edge)}
+.app.lt .gbtn,.app.lt .cal-btn{background:#fff;box-shadow:var(--card-edge)}
+.app.lt .me{background:var(--p-grad);color:#fff;box-shadow:0 8px 16px -10px rgba(111,85,245,.9)}
+.app.lt .me.on{box-shadow:0 0 0 3px var(--p-edge)}
+/* nút, chip, phân đoạn, input */
+.app.lt .btn.primary,.app.lt .btn.white,.app.lt .fab{background:var(--p-grad);color:#fff;border-radius:999px;box-shadow:0 12px 24px -14px rgba(111,85,245,.9)}
+.app.lt .btn.ghost{background:#fff;color:var(--ink);border-radius:999px;box-shadow:var(--card-edge)}
+.app.lt .chip{background:#fff;color:var(--ink-2);border-radius:999px;box-shadow:0 0 0 1px #E6E3F0}
+.app.lt .chip:hover{box-shadow:0 0 0 1px var(--p-edge);color:var(--p)}
+.app.lt .chip.on{background:var(--p-grad);color:#fff;box-shadow:0 8px 16px -10px rgba(111,85,245,.9)}
+.app.lt .seg{background:#F4F3F8;box-shadow:none;border-radius:999px}
+.app.lt .seg>.on{background:#fff;color:var(--p);box-shadow:0 1px 2px rgba(20,18,31,.06),0 4px 10px -6px rgba(60,40,140,.25)}
+.app.lt .input{background:#fff;border-radius:999px;box-shadow:0 0 0 1px #E6E3F0}
+.app.lt .tag:not(.warn):not(.bad):not(.ok):not(.good){background:var(--p-soft);color:var(--accent-d);box-shadow:none}
+.app.lt .toggle.on{background:var(--p)}
+/* icon: tím trên ô pastel */
+.app.lt .ev,.app.lt .info .ic,.app.lt .tile .ti{background:var(--p-soft)!important;box-shadow:none!important}
+.app.lt .ev.miss,.app.lt .tile:nth-child(1) .ti{background:#FFE9EE!important}
+.app.lt .ev.in,.app.lt .tile:nth-child(4) .ti{background:#E5F7EF!important}
+.app.lt .ev.sms,.app.lt .tile:nth-child(3) .ti{background:#FFF0E3!important}
+.app.lt .info:nth-child(2) .ic{background:#E8F1FF!important}
+.app.lt .info:nth-child(3) .ic{background:#E5F7EF!important}
+.app.lt .ev:has(.dot){background:#E5F7EF!important;color:#16A34A!important}
+.app.lt .ev .i3d,.app.lt .info .ic .i3d,.app.lt .tile .ti .i3d,.app.lt .gbtn .i3d,.app.lt .cal-btn .i3d{
+  filter:brightness(0) saturate(100%) invert(38%) sepia(86%) saturate(2700%) hue-rotate(238deg) brightness(101%) contrast(101%)!important}
+.app.lt .call-btn{background:var(--p-grad);border-radius:50%;box-shadow:0 8px 16px -10px rgba(111,85,245,.9)}
+.app.lt .call-btn .i3d{filter:brightness(0) invert(1)!important}
+.app.lt .av,.app.lt .row .av,.app.lt a>.av{background:var(--p-soft)!important;color:var(--accent-d)!important;box-shadow:none!important}
+/* 4 thẻ chỉ số: card trắng + ô icon pastel */
+.app.lt .tile{background-image:none!important;background-color:#fff!important;color:var(--ink);min-height:140px}
+.app.lt .tile .ti{left:16px;right:auto!important;top:16px;width:42px!important;height:42px!important;border-radius:14px!important}
+.app.lt .tile .v{color:var(--ink);font-weight:600}
 .app.lt .tile .v-rose{color:#E11D48}
-.app.lt .tile .l{color:var(--ink-2)}
-/* thanh tab: viên thuốc tím đậm, icon trắng */
-.app.lt .nav{background:linear-gradient(145deg,#7C3AED 0%,#5B21B6 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 36px -14px rgba(91,33,182,.7)}
-.app.lt .nav a .pill,.app.lt .nav a.on .pill{background:transparent!important}
-.app.lt .nav a.on .pill{background:rgba(255,255,255,.22)!important}
-.app.lt .nav a:not(.on) .i3d{opacity:.6}
-.app.lt .nav .badge{box-shadow:0 0 0 2px #6D28D9}
+.app.lt .tile .l{color:var(--ink-3);font-weight:500}
+/* thanh tab: nền trắng gradient tím nhẹ, ô tròn trắng + nhãn, tab đang chọn icon/nhãn tím (theo Elle) */
+.app.lt .nav{left:14px;right:14px;width:auto;transform:none;height:88px;padding:8px 6px;border-radius:28px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#F4F0FF 55%,#E7DFFF 100%);
+  box-shadow:0 0 0 1px #ECE7FB,0 18px 36px -18px rgba(91,67,224,.45)}
+.app.lt .nav a{font-size:11.5px;font-weight:600;gap:5px;color:var(--ink-3);border-radius:20px}
+.app.lt .nav a.on{color:var(--p)}
+.app.lt .nav .pill,.app.lt .nav a.on .pill{width:46px;height:46px;border-radius:50%;background:#fff!important;box-shadow:0 0 0 1px #E9E5F6,0 6px 14px -10px rgba(91,67,224,.5)}
+.app.lt .nav a.on .pill{box-shadow:0 0 0 1.5px #CFC4FF,0 8px 16px -10px rgba(91,67,224,.7)}
+.app.lt .nav a.on .pill::after{display:none}
+.app.lt .nav .i3d{width:22px}
+.app.lt .nav a.on .i3d{filter:brightness(0) saturate(100%) invert(38%) sepia(86%) saturate(2700%) hue-rotate(238deg) brightness(101%) contrast(101%)!important}
+.app.lt .nav a:not(.on) .i3d{filter:grayscale(1) brightness(.9) opacity(.55)!important}
+.app.lt .nav .badge{top:2px;margin-left:10px;box-shadow:0 0 0 2px #fff}
+.app.lt .fab{bottom:118px}
 /* biểu đồ */
-.app.lt .bchart .btip,.app.lt .bchart .btip::after{background:#1E1B4B}
-.app.lt .rbar{background:rgba(124,58,237,.12)}
-.app.lt .rate{background:var(--glass)!important}
-.app.lt .ev:has(.dot){background:linear-gradient(145deg,#6EE7B7 0%,#22C55E 60%,#16A34A 100%)!important;color:#fff!important}
+.app.lt .bchart .btip,.app.lt .bchart .btip::after{background:#14121F}
+.app.lt .rbar{background:#F1EFF8}
+.app.lt .rate{background:#fff!important}

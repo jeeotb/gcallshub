@@ -6,7 +6,7 @@ Tài liệu bàn giao cho dev. Mỗi màn có 3 thứ đi kèm nhau:
 - **Mã nguồn mockup**: `prototype/screens/<Tên>.dc.html`. Đây là HTML/CSS chuẩn. Phần logic hiển thị nằm trong khối `<script data-dc-script>` cuối file.
 - **Prototype bấm được**: `prototype/viewer.html?s=<Tên>`. Cách chạy xem ở `README.md`.
 
-> **Phạm vi hiện tại:** bộ mockup chỉ còn **5 màn chính ở giao diện tối** (`*D`), kèm bản sáng thử nghiệm (`*L`) để so sánh. Các màn khác nhắc tới trong tài liệu này (luồng gọi, sheet, đăng nhập, trạng thái hệ thống) đã được bỏ khỏi repo. Bản thiết kế sáng của chúng vẫn còn trên canvas và chưa có bản tối; phần mô tả được giữ lại để làm định hướng.
+> **Phạm vi hiện tại:** bộ mockup gồm **5 màn chính ở giao diện sáng tím – trắng** (`*L`, bản chính), kèm bản tối (`*D`). Các màn khác nhắc tới trong tài liệu này (luồng gọi, sheet, đăng nhập, trạng thái hệ thống) đã được bỏ khỏi repo. Bản thiết kế sáng của chúng vẫn còn trên canvas và chưa có bản tối; phần mô tả được giữ lại để làm định hướng.
 
 Mockup chỉ dùng **dữ liệu giả**. Ô ghi trong `[NGOẶC VUÔNG]` là thông tin bên Gcalls cần xác nhận (xem mục 9).
 
@@ -64,6 +64,22 @@ Luồng gọi:
 Trong prototype, các nút dẫn tới màn đã bỏ (tìm kiếm, thông báo, sheet, chi tiết…) không chuyển màn.
 
 ## 4. Design tokens
+
+**Giao diện sáng (bản chính)** — class `.app.lt`, tham khảo phong cách "Elle":
+
+| Token | Giá trị | Dùng cho |
+|---|---|---|
+| Tím chính | `#7B61FF`; nút: gradient `#8D78FF → #6F55F5` | Nút chính, chip đang chọn, avatar người dùng, tab đang chọn, link |
+| Tím đậm | `#5B43E0` | Chữ trên nền tím nhạt |
+| Tím nhạt | `#F3F0FF`; viền nhấn `#D9D1FF` | Ô icon, avatar khách, tag |
+| Nền | trắng `#FFFFFF`, đầu trang có quầng tím `#C4B5FF` và bạc hà `#C6F2E2` rất nhạt | |
+| Card | trắng, viền 1px `#ECEAF4`, bo 20, bóng rất nhẹ | |
+| Ô icon pastel | tím `#F3F0FF` · hồng `#FFE9EE` (gọi nhỡ) · bạc hà `#E5F7EF` (gọi đến, hôm nay, sẵn sàng) · cam nhạt `#FFF0E3` (SMS, quá hạn) · xanh nhạt `#E8F1FF` | Icon bên trong màu tím |
+| Chữ | `#14121F` / `#4A475C` / `#7B7891` | |
+| Thanh tab | nền trắng chuyển tím nhạt `#FFFFFF → #F4F0FF → #E7DFFF`, ô tròn trắng + nhãn; tab đang chọn icon và nhãn tím | |
+| Chip, phân đoạn | chip trắng viền mảnh, chip chọn tím đặc; phân đoạn nền `#F4F3F8`, mục chọn trắng chữ tím | |
+
+Bảng dưới đây là màu gốc của bộ thiết kế ban đầu:
 
 Lấy từ `prototype/assets/contacthub.css` (khối `:root`).
 

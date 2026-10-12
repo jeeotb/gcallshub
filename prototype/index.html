@@ -30,14 +30,14 @@
 <body>
 <header>
   <h1>Gcalls ContactHub · bộ màn hình mobile</h1>
-  <p>Giao diện tối cho 5 màn chính, kèm bản sáng thử nghiệm để so sánh. Bấm một màn để mở prototype ở cỡ thật (390 × 844).</p>
+  <p>Giao diện sáng tím – trắng cho 5 màn chính, kèm bản tối. Bấm một màn để mở prototype ở cỡ thật (390 × 844).</p>
 </header>
 <main id="groups"></main>
 <script>
 (function () {
   var GROUPS = [
-    { title: 'Giao diện tối', y: [0, 0], x: [2560, 9999] },
-    { title: 'Thử nghiệm: giao diện sáng', y: [2380, 2380], x: [2560, 9999] }
+    { title: 'Giao diện sáng (chính)', y: [2380, 2380], x: [2560, 9999] },
+    { title: 'Giao diện tối', y: [0, 0], x: [2560, 9999] }
   ];
   fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
     var host = document.getElementById('groups');
