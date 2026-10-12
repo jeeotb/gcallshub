@@ -73,7 +73,7 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 | 14 | `TaskTimeline` | Diễn biến công việc | Sheet: ghi chú nội bộ, dòng thời gian, Nhận việc |
 | 15 | `CreateReminder` | Tạo nhắc hẹn | Sheet: khách, nội dung, ghi chú, ngày giờ, ưu tiên, lặp lại |
 | 16 | `Dialer` | Bàn phím quay số | Kiểu iPhone: phím tròn 76px kính lỏng, số 32/400, chữ 9.5 giãn cách; nút gọi xanh 76px giữa, nhắn tin / xoá hai bên. Gõ từ 2 số: dưới dãy số hiện 1 dòng chữ xám kiểu iPhone (tên khách khớp nhất + "và N khác", chạm để xem nhanh; số mới thì "Thêm số"), không thẻ, không đẩy bàn phím; chọn đầu số gọi ra |
-| 17 | `InCall` | Đang gọi | Tắt mic, loa, giữ máy, chuyển tiếp, thêm người, ghi chú, DTMF |
+| 17 | `InCall` | Đang gọi | Tắt mic, loa, giữ máy, chuyển tiếp, thêm người, ghi chú. Bàn phím DTMF giống phím quay số (tròn 68, kính mờ, số 30/300); khi mở bàn phím thì ẩn thẻ việc đang mở |
 | 18 | `Incoming` | Cuộc gọi đến | Thông tin khách khi đổ chuông, Từ chối / Nghe, Nhắn bận / Nhắc gọi lại |
 | 19 | `AfterCall` | Kết thúc cuộc gọi | Kết quả, ghi chú, hoàn thành việc, hẹn gọi lại nhanh |
 | 20 | `SendSms` | Nhắn tin SMS | Sheet: mẫu tin, đếm ký tự / số tin |
@@ -86,6 +86,8 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 ## 4. Design tokens
 
 **Font:** Plus Jakarta Sans (đủ dấu tiếng Việt; dự phòng Inter), nét dịu: tiêu đề trang 26/400, tiêu đề mục 16/500, chữ thân 14/400, tên dòng 14.5/500, nút và chip 500, chữ phụ 12.5/400, nhãn thanh tab 11/400. Không dùng 700. Chữ chính `#2A2838`, phụ `#55526A` / `#85829A`.
+
+**Nút bấm (CTA):** mọi nút đều bo tròn hẳn hai đầu (999), gồm cả nút xanh Gọi lại.
 
 **Phân bổ màu tím:** chỉ dùng cho nút chính, mục / chip / tab đang chọn, công tắc bật, thẻ lựa chọn đang chọn và link nhỏ. Icon trong ô, nút gọi trong danh sách (icon điện thoại đen trên nền xám trắng `#F3F3F6`), nút đầu trang, avatar chữ và tag dùng màu trung tính.
 
