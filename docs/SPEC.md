@@ -84,7 +84,7 @@ Lấy từ `prototype/assets/contacthub.css` (khối `:root`).
 | Nền app | `#EEEAF9` | Cùng các mảng mờ tím chuyển động phía sau |
 | Nền màn gọi | `#3B2380 → #1A1036` | Đang gọi, Cuộc gọi đến |
 
-**Giao diện tối (đã chọn)** — class `.app.dk`: `--ink #F4F2F8`, `--ink-2 #C9C5D6`, `--ink-3 #9A95AA`, `--surf #1A1620` (thẻ), `--surf-2 #25212C` (nút, chip, input), nền `#0D0A11`, accent `#B9B0FF` / `#CFC8FF`, đường kẻ `rgba(255,255,255,.07)`. Bảng màu sáng ở trên là gốc của bản sáng, dùng để so sánh.
+**Giao diện tối (đã chọn)** — class `.app.dk`, kiểu SaaS trung tính (không mảng màu loang): nền `#0E0F13` (chỉ có một vầng tím rất nhạt ở mép trên), **thẻ / surface** `#1E1F26` với viền 1px `rgba(255,255,255,.08)`, phần tử trong thẻ (nút, chip, input, avatar) `#2A2B33`, chữ `#F4F2F8` / `#C7C8D1` / `#9B9CA8`, accent `#B9B0FF`, đường kẻ `rgba(255,255,255,.08)`. Bảng màu sáng ở trên là gốc của bản sáng, dùng để so sánh.
 
 **Chữ**: Be Vietnam Pro 400 / 500 / 600 / 700.
 
