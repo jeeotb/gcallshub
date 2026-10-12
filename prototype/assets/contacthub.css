@@ -1124,3 +1124,9 @@
 .app.dk .wall .b3{left:-90px!important;top:500px!important;width:240px!important;height:240px!important;background:radial-gradient(circle at 60% 35%,#45368F 0%,#2E2366 100%)!important;animation:orbB 23s ease-in-out infinite alternate!important}
 .app.dk .wall .b4{left:40px!important;top:380px!important;width:300px!important;height:300px!important;background:radial-gradient(circle at 40% 35%,#5A3A8E 0%,#3A2768 100%)!important;animation:orbC 29s ease-in-out infinite alternate!important}
 @media (prefers-reduced-motion: reduce){.app.dk .wall i{animation:none!important}}
+
+/* v25 — nền dịu hơn: blur mạnh hơn, giảm độ bão hòa và độ đậm */
+.app.lt .wall{opacity:.75!important;
+  filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='goo' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/><feColorMatrix in='b' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10'/></filter></svg>#goo") blur(28px) saturate(.6)!important}
+.app.dk .wall{opacity:.4!important;
+  filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='goo' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/><feColorMatrix in='b' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10'/></filter></svg>#goo") blur(36px) saturate(.6)!important}
