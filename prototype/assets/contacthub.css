@@ -1220,3 +1220,16 @@
 .app.lt .tile::before{right:-2px;top:-2px;width:100px;height:100px}
 /* bỏ icon nhỏ trong 4 thẻ chỉ số (đã có icon kính 3D) — áp cho cả bản sáng và tối */
 .app.lt .tile .ti,.app.dk .tile .ti{display:none!important}
+/* giữ mọi nút / avatar tròn luôn tròn đều: không co theo flex, tỉ lệ 1:1 */
+.top .gbtn,.top .me,.top .logo-badge,.call-btn,.more-btn,.av,.ev,.info .ic,.nav .pill,.mface,.nav-dock,.cal-btn,.icon-btn,.mascot-av{flex:none!important;aspect-ratio:1/1}
+.top .gbtn,.top .me{width:42px!important;height:42px!important;border-radius:50%!important}
+.top .logo-badge{width:38px!important;height:38px!important;border-radius:50%!important}
+.top .status-pill{flex:0 1 auto;min-width:0}
+/* bản tối: trạng thái rê chuột / chạm không được đổi sang nền trắng (chìm chữ) */
+.app.lt.night .row:hover,.app.lt.night a.row:hover{background:rgba(255,255,255,.05)!important}
+.app.lt.night .row:hover .name{color:#fff}
+.app.lt.night .row:active{background:rgba(255,255,255,.08)!important}
+.app.lt.night .card:hover{box-shadow:0 0 0 1px rgba(185,170,255,.4),var(--card-shadow)}
+.app.lt.night .preset:hover,.app.lt.night .pop-x:hover,.app.lt.night .cal-nav:hover,.app.lt.night .cal .c:hover span{background:rgba(255,255,255,.08)}
+.app.lt.night .preset,.app.lt.night .cal .c{color:var(--ink)}
+.app.lt.night .info:hover{background:rgba(255,255,255,.04)}
