@@ -979,9 +979,9 @@
   radial-gradient(70% 22% at 8% 0%,rgba(198,242,226,.55),transparent 70%),
   radial-gradient(90% 26% at 92% 0%,rgba(196,181,255,.55),transparent 72%),
   linear-gradient(180deg,#F7F5FF 0%,#fff 380px)}
-.app.lt .wall::before,.app.lt .wall::after,.app.lt .wall .b1,.app.lt .wall .b4,.app.lt .wall .b5{display:none!important}
+.app.lt .wall::before,.app.lt .wall::after,.app.lt .wall .b1,.app.lt .wall .b5{display:none!important}
 /* quả cầu tím phía sau, blur x3 để tan thành gradient */
-.app.lt .wall .b2,.app.lt .wall .b3{display:block!important;position:absolute;border-radius:50%!important;animation:none!important;transform:none!important;box-shadow:none!important;right:auto;bottom:auto}
+.app.lt .wall .b2,.app.lt .wall .b3,.app.lt .wall .b4{display:block!important;position:absolute;border-radius:50%!important;box-shadow:none!important;right:auto;bottom:auto;will-change:transform}
 .app.lt .wall .b2{left:270px!important;top:230px!important;width:200px!important;height:200px!important;filter:blur(21px)!important;opacity:.75!important;
   background:radial-gradient(circle at 35% 30%,#DDD6FE 0%,#A78BFA 35%,#7C3AED 75%,#6D28D9 100%)!important}
 .app.lt .wall .b3{left:-60px!important;top:540px!important;width:120px!important;height:120px!important;filter:blur(12px)!important;opacity:.7!important;
@@ -1049,3 +1049,45 @@
 .app.lt .bchart .btip,.app.lt .bchart .btip::after{background:#14121F}
 .app.lt .rbar{background:#F1EFF8}
 .app.lt .rate{background:#fff!important}
+
+/* thanh tab: cùng lề (20px) và độ bo (20px) với card, nền mờ trắng ở đáy, thu gọn thành nút mặt mascot */
+.app.lt .layer::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;pointer-events:none;z-index:4;
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.92) 45%,#fff 100%)}
+.app.lt .nav{left:20px;right:20px;bottom:20px;border-radius:20px;grid-template-columns:repeat(4,minmax(0,1fr)) 54px;padding:8px 8px 8px 4px}
+.app.lt .nav-fold{display:flex;align-items:center;justify-content:center;border-left:1px solid #E6E0FA;margin-left:4px}
+.app.lt .mface{width:42px;height:42px;border-radius:50%;overflow:hidden;display:flex;justify-content:center;align-items:flex-start;
+  background:radial-gradient(circle at 50% 30%,#fff 0%,#EDE7FF 100%);box-shadow:0 0 0 1px #E1D9FF}
+.app.lt .mface img{width:60px;max-width:none;margin-top:1px}
+.app.lt .nav-fold:hover .mface{box-shadow:0 0 0 2px #CFC4FF}
+.app.lt .nav-dock{position:absolute;right:20px;bottom:24px;z-index:6;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#FFFFFF 0%,#EFE9FF 100%);box-shadow:0 0 0 1px #E4DCFF,0 16px 30px -12px rgba(91,67,224,.6)}
+.app.lt .nav-dock .mface{width:50px;height:50px}
+.app.lt .nav-dock .mface img{width:72px}
+.app.lt .dock-dot{position:absolute;top:6px;right:6px;width:12px;height:12px;border-radius:50%;background:#E5486B;box-shadow:0 0 0 2px #fff}
+.app.lt .fab{bottom:120px}
+
+/* quả cầu nền: trôi và co giãn như ngẫu nhiên (mỗi quả một chu kỳ khác nhau) */
+.app.lt .wall .b4{left:60px!important;top:420px!important;width:150px!important;height:150px!important;filter:blur(24px)!important;opacity:.55!important;
+  background:radial-gradient(circle at 40% 35%,#F5D0FE 0%,#C084FC 50%,#8B5CF6 100%)!important}
+.app.lt .wall .b2{animation:orbA 19s ease-in-out infinite alternate!important}
+.app.lt .wall .b3{animation:orbB 23s ease-in-out infinite alternate!important}
+.app.lt .wall .b4{animation:orbC 29s ease-in-out infinite alternate!important}
+@keyframes orbA{
+  0%{transform:translate(0,0) scale(1)}
+  22%{transform:translate(-60px,70px) scale(1.35)}
+  47%{transform:translate(-150px,-40px) scale(.75)}
+  71%{transform:translate(-40px,190px) scale(1.2)}
+  100%{transform:translate(-120px,330px) scale(.9)}}
+@keyframes orbB{
+  0%{transform:translate(0,0) scale(1)}
+  30%{transform:translate(120px,-90px) scale(1.5)}
+  58%{transform:translate(60px,-260px) scale(.8)}
+  80%{transform:translate(210px,-140px) scale(1.25)}
+  100%{transform:translate(150px,60px) scale(1.05)}}
+@keyframes orbC{
+  0%{transform:translate(0,0) scale(.9)}
+  26%{transform:translate(140px,-200px) scale(1.4)}
+  52%{transform:translate(40px,-330px) scale(.7)}
+  77%{transform:translate(180px,120px) scale(1.3)}
+  100%{transform:translate(-20px,220px) scale(1)}}
+@media (prefers-reduced-motion: reduce){.app.lt .wall i{animation:none!important}}

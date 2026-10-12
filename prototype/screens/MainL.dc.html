@@ -224,12 +224,18 @@
       </div>
     </sc-if>
 
+    <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ true }}">
     <nav class="nav" aria-label="Điều hướng chính">
       <a href="MainL.dc.html" class="on"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
       <a href="ContactsL.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
       <a href="HistoryL.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
       <a href="TasksL.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
+      <button type="button" class="nav-fold" onClick="{{ foldNav }}" aria-label="Thu gọn thanh điều hướng"><span class="mface"><img src="assets/icons/mascot.svg" alt=""></span></button>
     </nav>
+    </sc-if>
+    <sc-if value="{{ navClosed }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="nav-dock" onClick="{{ openNav }}" aria-label="Mở thanh điều hướng"><span class="mface"><img src="assets/icons/mascot.svg" alt=""></span><span class="dock-dot"></span></button>
+    </sc-if>
   </div>
 </div>
 </x-dc>
@@ -237,7 +243,9 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { key: '7d', a: -6, b: 0, gran: 'day', sel: null, hov: false, pop: false, view: 'list', cm: 9, da: null, db: null, dg: null };
+    let nav = true;
+    try { nav = window.localStorage.getItem('gch-nav') !== 'closed'; } catch (e) { /* storage blocked */ }
+    this.state = { nav: nav, key: '7d', a: -6, b: 0, gran: 'day', sel: null, hov: false, pop: false, view: 'list', cm: 9, da: null, db: null, dg: null };
   }
   renderVals() {
     const DAY = 86400000, T0 = Date.UTC(2026, 9, 8);
@@ -383,6 +391,9 @@ class Component extends DCLogic {
     }));
     const MN = 'Tháng ' + (cm + 1) + ', 2026';
     return {
+      navOpen: this.state.nav, navClosed: !this.state.nav,
+      foldNav: () => { this.setState({ nav: false }); try { window.localStorage.setItem('gch-nav', 'closed'); } catch (e) {} },
+      openNav: () => { this.setState({ nav: true }); try { window.localStorage.setItem('gch-nav', 'open'); } catch (e) {} },
       qToday: S.key === 'today' ? 'on' : '', q7: S.key === '7d' ? 'on' : '', q30: S.key === '30d' ? 'on' : '', q90: S.key === '90d' ? 'on' : '',
       setToday: () => setP(byKey('today')), set7: () => setP(byKey('7d')), set30: () => setP(byKey('30d')), set90: () => setP(byKey('90d')),
       calCls: 'cal-btn' + (quick ? '' : ' on'),

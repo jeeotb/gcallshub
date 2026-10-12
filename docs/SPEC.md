@@ -76,7 +76,8 @@ Trong prototype, các nút dẫn tới màn đã bỏ (tìm kiếm, thông báo,
 | Card | trắng, viền 1px `#ECEAF4`, bo 20, bóng rất nhẹ | |
 | Ô icon pastel | tím `#F3F0FF` · hồng `#FFE9EE` (gọi nhỡ) · bạc hà `#E5F7EF` (gọi đến, hôm nay, sẵn sàng) · cam nhạt `#FFF0E3` (SMS, quá hạn) · xanh nhạt `#E8F1FF` | Icon bên trong màu tím |
 | Chữ | `#14121F` / `#4A475C` / `#7B7891` | |
-| Thanh tab | nền trắng chuyển tím nhạt `#FFFFFF → #F4F0FF → #E7DFFF`, ô tròn trắng + nhãn; tab đang chọn icon và nhãn tím | |
+| Thanh tab | nền trắng chuyển tím nhạt `#FFFFFF → #F4F0FF → #E7DFFF`, ô tròn trắng + nhãn; tab đang chọn icon và nhãn tím. Cùng lề 20px và bo 20px với card; đáy màn có lớp mờ trắng để nội dung trôi dưới thanh tab không lộ mép | Nút mặt mascot ở cuối thanh: bấm để thu gọn thành nút tròn góc phải dưới (chấm đỏ khi có việc mới), bấm lại để mở. Trạng thái thu gọn được nhớ giữa các tab |
+| Nền động | 3 quả cầu tím / tím hồng, blur 12–24px, trôi và co giãn chậm (chu kỳ 19s / 23s / 29s, so le) | Tắt chuyển động khi máy bật "Giảm chuyển động" |
 | Chip, phân đoạn | chip trắng viền mảnh, chip chọn tím đặc; phân đoạn nền `#F4F3F8`, mục chọn trắng chữ tím | |
 
 Bảng dưới đây là màu gốc của bộ thiết kế ban đầu:
