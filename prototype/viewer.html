@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gcalls ContactHub · Prototype</title>
+<style>
+  :root { --bg: #E9E6F2; --ink: #1F1A33; --muted: #5E5878; --line: #D9D4E8; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Be Vietnam Pro", system-ui, sans-serif; }
+  .bar { position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--line); }
+  .bar a { color: #5B3FC4; font-weight: 600; text-decoration: none; }
+  .bar select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); max-width: 100%; }
+  .bar .sp { flex: 1; }
+  .bar .hint { font-size: 13px; color: var(--muted); }
+  .stage { display: flex; justify-content: center; padding: 24px 16px 48px; }
+  .phone { border-radius: 28px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(31,26,51,.45), 0 0 0 1px rgba(31,26,51,.08); }
+  body.bare .bar { display: none; }
+  body.bare .stage { padding: 0; }
+  body.bare .phone { border-radius: 0; box-shadow: none; }
+  .err { padding: 24px; color: #B00020; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html">← Tất cả màn hình</a>
+  <select id="pick" aria-label="Chọn màn hình"></select>
+  <span class="sp"></span>
+  <span class="hint">Bấm như trên điện thoại: nút, tab, sheet đều chuyển màn.</span>
+</div>
+<div class="stage"><div class="phone" id="host"></div></div>
+<script src="dc-lite.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  if (params.get('bare')) document.body.classList.add('bare');
+  var host = document.getElementById('host');
+  var pick = document.getElementById('pick');
+
+  function show(name, push) {
+    if (push) {
+      var q = new URLSearchParams(location.search); q.set('s', name);
+      history.pushState({ s: name }, '', '?' + q.toString());
+    }
+    pick.value = name;
+    window.scrollTo(0, 0);
+    DcLite.mount(host, name, function (next) {
+      if (document.body.classList.contains('bare')) { location.href = 'viewer.html?s=' + next; return; }
+      show(next, true);
+    }).catch(function (e) { host.innerHTML = '<div class="err">' + e.message + '</div>'; });
+  }
+
+  fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
+    c.order.forEach(function (file) {
+      var o = document.createElement('option');
+      o.value = file.replace('.dc.html', '');
+      o.textContent = (c.boards[file] && c.boards[file].title) || o.value;
+      pick.appendChild(o);
+    });
+    show(params.get('s') || 'Main', false);
+  });
+  pick.addEventListener('change', function () { show(pick.value, true); });
+  window.addEventListener('popstate', function () { show(new URLSearchParams(location.search).get('s') || 'Main', false); });
+})();
+</script>
+</body>
+</html>

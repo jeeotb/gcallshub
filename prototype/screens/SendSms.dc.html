@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Nhắn tin SMS</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div style="position: absolute; inset: 0">
+    <dc-import name="Customer" hint-size="390px,844px"></dc-import>
+  </div>
+  <a class="scrim" href="Customer.dc.html" aria-label="Đóng"></a>
+  <div class="sheet" role="dialog" aria-label="Nhắn tin SMS" style="gap: 16px">
+    <div class="grab"></div>
+    <div class="sheet-head" style="align-items: center; gap: 12px">
+      <span class="av" style="width: 44px; height: 44px; font-size: 15px">AH</span>
+      <div class="tt"><h2 style="font-size: 18px">Nhắn tin cho Anh Hoàng</h2><div class="meta num">0901 234 567</div></div>
+      <a class="icon-btn" href="Customer.dc.html" aria-label="Đóng"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></a>
+    </div>
+
+    <button class="input" type="button" style="height: 44px; justify-content: space-between; color: #1F1A33">
+      <span style="display: flex; align-items: center; gap: 8px"><span class="meta">Gửi từ</span><b style="font-weight: 600">[BRANDNAME / ĐẦU SỐ SMS]</b></span>
+      <svg class="ico sm" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+
+    <div>
+      <div class="field-label">Mẫu tin</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{ tpls }}" as="t" hint-placeholder-count="3">
+          <button type="button" class="{{ t.cls }}" onClick="{{ t.pick }}">{{ t.name }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div>
+      <label class="field-label" for="sms-body">Nội dung</label>
+      <textarea id="sms-body" class="input area" style="resize: none; height: 124px; color: #1F1A33; line-height: 1.5" value="{{ text }}" onChange="{{ edit }}"></textarea>
+      <div class="meta num" style="display: flex; justify-content: space-between; margin-top: 8px"><span>{{ count }}</span><span>Không dấu để tiết kiệm phí</span></div>
+    </div>
+
+    <div class="foot">
+      <a class="btn ghost" href="Customer.dc.html" style="flex: 1">Huỷ</a>
+      <a class="btn primary" href="Customer.dc.html" style="flex: 2"><svg class="ico sm" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"></path><path d="M22 2 11 13"></path></svg>Gửi tin</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tpl: 0, text: null };
+  }
+  renderVals() {
+    const T = [
+      { name: 'Xác nhận lịch hẹn', body: 'Chao anh Hoang, Gcalls xac nhan lich hen cua anh vao [GIO] ngay [NGAY]. Can ho tro vui long goi lai so nay. Cam on anh!' },
+      { name: 'Gọi nhỡ', body: 'Chao anh Hoang, chung toi vua goi nhung chua lien lac duoc. Anh vui long goi lai khi thuan tien. Cam on anh!' },
+      { name: 'Cảm ơn', body: 'Cam on anh Hoang da trao doi voi chung toi hom nay. Chuc anh mot ngay tot lanh!' }
+    ];
+    const S = this.state;
+    const text = S.text != null ? S.text : T[S.tpl].body;
+    const n = text.length;
+    const parts = n <= 160 ? 1 : Math.ceil(n / 153);
+    return {
+      tpls: T.map((t, k) => ({ name: t.name, cls: 'chip' + (S.text == null && S.tpl === k ? ' on' : ''), pick: () => this.setState({ tpl: k, text: null }) })),
+      text,
+      edit: (e) => this.setState({ text: e.target.value }),
+      count: n + ' ký tự · ' + parts + ' tin'
+    };
+  }
+}
+</script>
+</body>
+</html>

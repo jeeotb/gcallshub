@@ -1,0 +1,466 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Account.dc.html": {
+      "h": 1160,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Tài khoản (mở từ avatar góc trên)",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "CallDetail.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Chi tiết cuộc gọi",
+      "w": 390,
+      "x": 470,
+      "y": 3560
+    },
+    "ContactQuick.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Xem nhanh khách hàng",
+      "w": 390,
+      "x": 1410,
+      "y": 2260
+    },
+    "Contacts.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "2 · Danh bạ",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "CreateReminder.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Tạo nhắc hẹn",
+      "w": 390,
+      "x": 1880,
+      "y": 3560
+    },
+    "Customer.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Hồ sơ khách hàng",
+      "w": 390,
+      "x": 1880,
+      "y": 2260
+    },
+    "History.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "3 · Lịch sử",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "HistoryFilter.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Bộ lọc lịch sử",
+      "w": 390,
+      "x": 0,
+      "y": 3560
+    },
+    "Main.dc.html": {
+      "h": 1980,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "1 · Tổng quan",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Notifications.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Thông báo",
+      "w": 390,
+      "x": 940,
+      "y": 2260
+    },
+    "Search.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Tìm kiếm",
+      "w": 390,
+      "x": 470,
+      "y": 2260
+    },
+    "StatusSheet.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Trạng thái trực (dùng chung)",
+      "w": 390,
+      "x": 0,
+      "y": 2260
+    },
+    "TaskFilter.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Bộ lọc công việc",
+      "w": 390,
+      "x": 940,
+      "y": 3560
+    },
+    "TaskTimeline.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Diễn biến công việc",
+      "w": 390,
+      "x": 1410,
+      "y": 3560
+    },
+    "Tasks.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "4 · Công việc",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    },
+    "MainD.dc.html": {
+      "h": 1980,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "D1 · Tổng quan (dark)",
+      "w": 390,
+      "x": 2560,
+      "y": 0
+    },
+    "ContactsD.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "D2 · Danh bạ (dark)",
+      "w": 390,
+      "x": 3030,
+      "y": 0
+    },
+    "HistoryD.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "D3 · Lịch sử (dark)",
+      "w": 390,
+      "x": 3500,
+      "y": 0
+    },
+    "TasksD.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "D4 · Công việc (dark)",
+      "w": 390,
+      "x": 3970,
+      "y": 0
+    },
+    "AccountD.dc.html": {
+      "h": 1160,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "D5 · Tài khoản (dark)",
+      "w": 390,
+      "x": 4440,
+      "y": 0
+    },
+    "MainL.dc.html": {
+      "h": 1980,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "L1 · Tổng quan (sáng)",
+      "w": 390,
+      "x": 2560,
+      "y": 2380
+    },
+    "ContactsL.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "L2 · Danh bạ (sáng)",
+      "w": 390,
+      "x": 3030,
+      "y": 2380
+    },
+    "HistoryL.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "L3 · Lịch sử (sáng)",
+      "w": 390,
+      "x": 3500,
+      "y": 2380
+    },
+    "TasksL.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "L4 · Công việc (sáng)",
+      "w": 390,
+      "x": 3970,
+      "y": 2380
+    },
+    "AccountL.dc.html": {
+      "h": 1160,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "L5 · Tài khoản (sáng)",
+      "w": 390,
+      "x": 4440,
+      "y": 2380
+    },
+    "Dialer.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Bàn phím quay số",
+      "w": 390,
+      "x": 0,
+      "y": 4924
+    },
+    "InCall.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Đang gọi",
+      "w": 390,
+      "x": 470,
+      "y": 4924
+    },
+    "Incoming.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Cuộc gọi đến",
+      "w": 390,
+      "x": 940,
+      "y": 4924
+    },
+    "AfterCall.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Kết thúc cuộc gọi (ghi kết quả)",
+      "w": 390,
+      "x": 1410,
+      "y": 4924
+    },
+    "SendSms.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Nhắn tin SMS",
+      "w": 390,
+      "x": 1880,
+      "y": 4924
+    },
+    "Login.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Đăng nhập (Keycloak SSO)",
+      "w": 390,
+      "x": 0,
+      "y": 6288
+    },
+    "Permissions.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Cấp quyền lần đầu",
+      "w": 390,
+      "x": 470,
+      "y": 6288
+    },
+    "HistoryLoading.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Lịch sử · đang tải",
+      "w": 390,
+      "x": 940,
+      "y": 6288
+    },
+    "SearchEmpty.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Tìm kiếm · không có kết quả",
+      "w": 390,
+      "x": 1410,
+      "y": 6288
+    },
+    "Offline.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "Mất kết nối tổng đài",
+      "w": 390,
+      "x": 1880,
+      "y": 6288
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-08T08:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "s1": {
+      "fill": "orange",
+      "maxH": 844,
+      "text": "VẤN ĐỀ CHÍNH → THAY ĐỔI\n\n1. Logo: header đang ghép logo Qranty (file qrantyLogo.svg) cạnh Gcalls → chỉ giữ biểu tượng Gcalls.\n\n2. Trạng thái trực nằm 2 nơi và không khớp: Hôm nay có 3 mức (Sẵn sàng / Tạm nghỉ / Hết ca), Tài khoản có 4 mức (Hoạt động / Nghỉ trưa / Không làm phiền / Im lặng). Máy nhánh: Hôm nay ghi 102, Tài khoản ghi “Chưa cấu hình”. → 1 nút trạng thái trên thanh trên cùng, có ở mọi tab, 1 bộ trạng thái, 1 nguồn dữ liệu.\n\n3. Điều hướng: 4/5 nút chỉ có icon, nút Việc cần làm tách rời → 4 tab có nhãn: Tổng quan / Danh bạ / Lịch sử / Công việc (đổi tên “Hôm nay” vì không nói rõ chức năng), Tài khoản chuyển thành avatar góc trên; badge cho gọi nhỡ, việc chưa nhận. Bỏ 3 nút tắt trùng với thanh điều hướng ở thẻ tím.\n\n4. Hôm nay: thẻ tím chiếm nửa màn hình nhưng báo “không có việc” trong khi có 852 việc chưa nhận; “Cần bạn chú ý” trống dù có 1 cuộc gọi nhỡ. → 4 chỉ số bấm được + hàng đợi cần xử lý.\n\n5. Danh bạ: mỗi khách có dải tag “Gcalls / Gcalls Cloud” lặp lại; tiêu đề A–Z trên trang 25 dòng nên mỗi chữ chỉ 1–2 người; Ghim / SMS / Gọi giấu sau thao tác vuốt (không dùng được trên máy tính). → hàng gọn, nút Gọi hiện sẵn, ô tìm kiếm đầu danh sách, nguồn dữ liệu thành bộ lọc.\n\n6. Việc cần làm: “Lịch trình đang nhẹ nhàng” sai ngữ cảnh; nút “Nhận việc” full-width ở mọi thẻ quá nặng; nút + trôi ra mép phải trên desktop.\n\n7. Tài khoản: “SECURITY”, “Gender: male” chưa Việt hoá; Đăng xuất to như CTA chính; chữ phụ 10–11px xám nhạt khó đọc → tối thiểu 12.5px, đủ tương phản.",
+      "w": 460,
+      "x": -560,
+      "y": 0
+    },
+    "s2": {
+      "fill": "orange",
+      "maxH": 844,
+      "text": "HÀNG 2\n\n• Trạng thái: gộp còn 4 mức dùng chung (Sẵn sàng / Tạm nghỉ / Không làm phiền / Hết ca). “Im lặng — chỉ rung” thực chất là cài đặt thông báo → thành công tắc riêng.\n\n• Tìm kiếm: giữ nguyên danh sách khách gần đây + gọi nhanh; bỏ lớp nền tối toàn màn hình.\n\n• Thông báo: mới có trạng thái rỗng → thiết kế thêm trạng thái có dữ liệu, chấm tím = chưa đọc.\n\n• Hồ sơ khách hàng: khối tím chiếm ~45% màn hình; thiếu Nhắc hẹn và Ghim (có ở Xem nhanh nhưng không có ở Hồ sơ) → cùng 1 thanh 4 hành động ở cả 2 nơi.\n\n• Màu nút Gọi không thống nhất (xanh lá ở Xem nhanh, xanh dương ở Chi tiết cuộc gọi, tím ở chỗ khác) → Gọi luôn xanh lá, mọi hành động khác dùng tím thương hiệu #673AB7.",
+      "w": 460,
+      "x": -560,
+      "y": 2260
+    },
+    "s3": {
+      "fill": "orange",
+      "maxH": 844,
+      "text": "HÀNG 3\n\n• Lịch sử: hiện “11 tương tác” nhưng danh sách trắng 2–3 giây → skeleton khi tải.\n\n• Bộ lọc: nút áp dụng ghi luôn số kết quả; bộ lọc đang bật hiện thành thẻ có nút ✕ ngay trên danh sách.\n\n• Ghi âm: phát ngay trong sheet (play, thanh tiến độ, tốc độ) thay vì 1 nút riêng.\n\n• Thẻ việc trùng: “Ms. Emily Smith — Gọi lại” lặp 2 lần liên tiếp → kiểm tra dữ liệu / gộp.\n\nLỖI TƯƠNG TÁC GHI NHẬN KHI TEST\n• Sau khi đóng sheet (Esc / bấm nền), lần bấm đầu tiên bị “nuốt”, phải bấm 2 lần.\n• Bấm chuông / kính lúp khi trang vừa tải không phản hồi.\n\nGIỮ NGUYÊN 100% TÍNH NĂNG\nMọi màn hình, bộ lọc, nút và trường dữ liệu của bản hiện tại đều có mặt; chỉ sắp xếp lại, gộp chỗ trùng và đổi cách trình bày.",
+      "w": 460,
+      "x": -560,
+      "y": 3560
+    },
+    "t1": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "4 tab chính + Tài khoản",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t2": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Trạng thái, tìm kiếm, thông báo, khách hàng",
+      "w": 240,
+      "x": 0,
+      "y": 2040
+    },
+    "t3": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Bộ lọc, chi tiết cuộc gọi, công việc",
+      "w": 240,
+      "x": 0,
+      "y": 3300
+    },
+    "t4": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Thử nghiệm: giao diện tối theo ảnh tham khảo",
+      "w": 240,
+      "x": 2560,
+      "y": -300
+    },
+    "t5": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Thử nghiệm: bản sáng theo ảnh tham khảo",
+      "w": 240,
+      "x": 2560,
+      "y": 2160
+    },
+    "t6": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Luồng gọi điện",
+      "w": 240,
+      "x": 0,
+      "y": 4664
+    },
+    "t7": {
+      "kind": "title1",
+      "maxW": 2270,
+      "text": "Đăng nhập & trạng thái hệ thống",
+      "w": 240,
+      "x": 0,
+      "y": 6028
+    },
+    "s4": {
+      "fill": "green",
+      "maxH": 844,
+      "w": 460,
+      "x": -560,
+      "y": 4924,
+      "text": "HÀNG 4 · LUỒNG GỌI ĐIỆN (bổ sung)\n\n• Bàn phím: mở từ nút xanh “Bàn phím” ở Danh bạ và Lịch sử. Gõ ≥2 số → gợi ý khách khớp trong danh bạ; chọn đầu số gọi ra ngay trên đầu.\n\n• Đang gọi: tắt mic, loa ngoài, giữ máy, chuyển tiếp, thêm người, ghi chú; bàn phím DTMF cho IVR. Hiện việc đang mở của khách. Nút ⌄ thu nhỏ cuộc gọi về app (thanh cuộc gọi nổi).\n\n• Cuộc gọi đến: tra khách theo số ngay khi đổ chuông, hiện lần tương tác trước + việc đang mở. Nhắn “đang bận” / nhắc gọi lại không cần nghe.\n\n• Kết thúc cuộc gọi: ghi kết quả + ghi chú, đánh dấu xong việc liên quan, hẹn gọi lại nhanh (chọn “Hẹn gọi lại” tự bật nhắc hẹn). Bỏ qua được.\n\n• Nhắn tin SMS: dùng chung cho nút Nhắn tin ở Hồ sơ, Xem nhanh, Bàn phím, Cuộc gọi đến. Mẫu tin, đếm ký tự / số tin.\n\nNút Gọi trong Danh bạ giờ dẫn sang màn Đang gọi."
+    },
+    "s5": {
+      "fill": "green",
+      "maxH": 844,
+      "w": 460,
+      "x": -560,
+      "y": 6288,
+      "text": "HÀNG 5 · ĐĂNG NHẬP & TRẠNG THÁI\n\n• Đăng nhập: nhập mã tổng đài (nhớ cho lần sau) → chuyển sang Keycloak SSO.\n\n• Cấp quyền: Micro + Thông báo bắt buộc (nút “Bắt đầu” khoá đến khi bật); Chạy nền khuyến nghị; Danh bạ máy tuỳ chọn.\n\n• Đang tải: skeleton giữ nguyên bố cục danh sách, áp dụng cho Lịch sử, Danh bạ, Công việc.\n\n• Không có kết quả: nếu chuỗi tìm là số điện thoại → cho Gọi / Nhắn ngay.\n\n• Mất kết nối: trạng thái trực chuyển “Ngoại tuyến” (chấm xám), băng cảnh báo có đếm ngược + Thử lại, nút Gọi bị khoá; vẫn xem dữ liệu đã lưu.\n\nÔ trong [NGOẶC VUÔNG] là dữ liệu cần bên Gcalls xác nhận (đầu số hiển thị, brandname SMS)."
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Contacts.dc.html",
+    "History.dc.html",
+    "Tasks.dc.html",
+    "Account.dc.html",
+    "StatusSheet.dc.html",
+    "Search.dc.html",
+    "Notifications.dc.html",
+    "ContactQuick.dc.html",
+    "Customer.dc.html",
+    "HistoryFilter.dc.html",
+    "CallDetail.dc.html",
+    "TaskFilter.dc.html",
+    "TaskTimeline.dc.html",
+    "CreateReminder.dc.html",
+    "MainD.dc.html",
+    "ContactsD.dc.html",
+    "HistoryD.dc.html",
+    "TasksD.dc.html",
+    "AccountD.dc.html",
+    "MainL.dc.html",
+    "ContactsL.dc.html",
+    "HistoryL.dc.html",
+    "TasksL.dc.html",
+    "AccountL.dc.html",
+    "Dialer.dc.html",
+    "InCall.dc.html",
+    "Incoming.dc.html",
+    "AfterCall.dc.html",
+    "SendSms.dc.html",
+    "Login.dc.html",
+    "Permissions.dc.html",
+    "HistoryLoading.dc.html",
+    "SearchEmpty.dc.html",
+    "Offline.dc.html"
+  ],
+  "pages": [],
+  "title": "ContactHub Redesign"
+}

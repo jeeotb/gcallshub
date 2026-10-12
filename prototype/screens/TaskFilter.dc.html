@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bộ lọc công việc</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div style="position: absolute; inset: 0">
+    <dc-import name="Tasks" hint-size="390px,844px"></dc-import>
+  </div>
+  <a class="scrim" href="Tasks.dc.html" aria-label="Đóng"></a>
+  <div class="sheet" role="dialog" aria-label="Bộ lọc công việc">
+    <div class="grab"></div>
+    <div class="sheet-head">
+      <div class="tt"><h2>Bộ lọc công việc</h2><div class="meta">Thu gọn danh sách theo nhịp làm việc của bạn</div></div>
+      <a class="icon-btn" href="Tasks.dc.html" aria-label="Đóng"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></a>
+    </div>
+
+    <div>
+      <div class="field-label">Trạng thái</div>
+      <div class="seg">
+        <button class="on" type="button">Cần xử lý</button>
+        <button type="button">Đã xong</button>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 20px; border-bottom: 1px solid rgba(124,92,224,.12)">
+      <button type="button" style="height: 40px; font-weight: 700; color: #5B3FC4; box-shadow: inset 0 -2px 0 #7C5CE0">Thời gian</button>
+      <button type="button" style="height: 40px; font-weight: 600; color: #757090">Loại công việc</button>
+    </div>
+
+    <div>
+      <div class="field-label"><svg class="ico sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Theo ngày</div>
+      <div class="grid2">
+        <button class="opt on" type="button" style="text-align: left"><span style="display: flex; flex-direction: column"><span class="ot">Tất cả</span><span class="od">Mọi ngày</span></span></button>
+        <button class="opt" type="button" style="text-align: left"><span style="display: flex; flex-direction: column"><span class="ot">Quá hạn</span><span class="od">Ưu tiên xử lý</span></span></button>
+        <button class="opt" type="button" style="text-align: left"><span style="display: flex; flex-direction: column"><span class="ot">Hôm nay</span><span class="od">Trong ngày</span></span></button>
+        <button class="opt" type="button" style="text-align: left"><span style="display: flex; flex-direction: column"><span class="ot">Sắp tới</span><span class="od">Đã lên lịch</span></span></button>
+        <button class="opt" type="button" style="text-align: left"><span style="display: flex; flex-direction: column"><span class="ot">Chưa hẹn</span><span class="od">Linh hoạt</span></span></button>
+      </div>
+    </div>
+
+    <div>
+      <div class="field-label"><svg class="ico sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Khung giờ <span class="meta" style="font-weight: 500">· giờ Việt Nam</span></div>
+      <div class="grid2">
+        <button class="opt on" type="button" style="min-height: 44px; justify-content: space-between"><span class="ot" style="font-size: 14px">Cả ngày</span><span class="od">24 giờ</span></button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: space-between"><span class="ot" style="font-size: 14px">Buổi sáng</span><span class="od">0–12h</span></button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: space-between"><span class="ot" style="font-size: 14px">Buổi chiều</span><span class="od">12–18h</span></button>
+        <button class="opt" type="button" style="min-height: 44px; justify-content: space-between"><span class="ot" style="font-size: 14px">Buổi tối</span><span class="od">Sau 18h</span></button>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="btn ghost" type="button"><svg class="ico sm" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Đặt lại</button>
+      <a class="btn primary" href="Tasks.dc.html" style="flex: 1">Xem 852 việc</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

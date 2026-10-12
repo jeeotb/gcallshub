@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tổng quan · Light</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="assets/contacthub.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="app lt" style="height: 1980px">
+  <div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div class="layer">
+    <header class="top">
+      <span class="logo-badge"><img src="assets/icons/logo-gcalls.svg" alt="Gcalls"></span>
+      <a class="status-pill" href="StatusSheet.dc.html" aria-label="Đổi trạng thái trực"><span class="live"></span>Sẵn sàng<span class="ext">· 102</span><svg class="ico sm" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></a>
+      <div class="grow"></div>
+      <a class="gbtn" href="Search.dc.html" aria-label="Tìm kiếm"><img class="i3d" src="assets/icons/search.svg" alt=""></a>
+      <a class="gbtn" href="Notifications.dc.html" aria-label="Thông báo"><img class="i3d" src="assets/icons/bell.svg" alt=""><span class="pip"></span></a>
+      <a class="me" href="AccountL.dc.html" aria-label="Tài khoản">L</a>
+    </header>
+
+    <div class="body">
+      <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 16px; overflow: visible">
+        <div style="display: flex; align-items: center; gap: 16px">
+          <div class="mascot-av">
+            <div class="clip">
+              <svg viewBox="48 34 304 236" aria-hidden="true" style="width: 84px; margin-bottom: 10px">
+                <defs>
+                  <radialGradient id="mzH" cx="38%" cy="26%" r="82%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".55" stop-color="#F5F3FC"></stop><stop offset="1" stop-color="#D8D0F0"></stop></radialGradient>
+                  <radialGradient id="mzW" cx="40%" cy="20%" r="90%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".6" stop-color="#F2EFFA"></stop><stop offset="1" stop-color="#D3CAEC"></stop></radialGradient>
+                  <linearGradient id="mzP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9563F5"></stop><stop offset=".55" stop-color="#7C3AED"></stop><stop offset="1" stop-color="#5426B8"></stop></linearGradient>
+                  <radialGradient id="mzB" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#B08CFF"></stop><stop offset=".6" stop-color="#7C3AED"></stop><stop offset="1" stop-color="#5222A8"></stop></radialGradient>
+                  <linearGradient id="mzV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6430D4"></stop><stop offset="1" stop-color="#3A1290"></stop></linearGradient>
+                  <linearGradient id="mzE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A8FF"></stop><stop offset="1" stop-color="#5EE0F5"></stop></linearGradient>
+                </defs>
+                <g class="m-fig">
+                  <g class="m-head">
+                    <rect x="56" y="140" width="28" height="62" rx="11" fill="url(#mzB)"></rect>
+                    <rect x="316" y="140" width="28" height="62" rx="11" fill="url(#mzB)"></rect>
+                    <path d="M104 96 L112 50 C113 42 120 40 126 44 L170 66 Z" fill="url(#mzH)"></path>
+                    <path d="M296 96 L288 50 C287 42 280 40 274 44 L230 66 Z" fill="url(#mzH)"></path>
+                    <path d="M200 50 C292 50 336 94 336 160 C336 226 286 254 200 254 C114 254 64 226 64 160 C64 94 108 50 200 50 Z" fill="url(#mzH)"></path>
+                    <path d="M118 86 C148 64 186 60 216 62" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none"></path>
+                    <path d="M200 116 C256 114 306 118 312 148 C318 180 294 212 256 218 C230 222 216 212 200 212 C184 212 170 222 144 218 C106 212 82 180 88 148 C94 118 144 114 200 116 Z" fill="url(#mzV)"></path>
+                    <rect class="m-eye" x="140" y="138" width="24" height="42" rx="12" fill="url(#mzE)"></rect>
+                    <rect class="m-eye" x="236" y="138" width="24" height="42" rx="12" fill="url(#mzE)"></rect>
+                    <path d="M180 194 C190 210 214 210 224 192 C212 200 192 201 180 194 Z" fill="#7FE3F5"></path>
+                    <path d="M330 196 C332 230 296 246 258 244" stroke="#7C3AED" stroke-width="5" stroke-linecap="round" fill="none"></path>
+                    <circle cx="248" cy="244" r="15" fill="url(#mzB)"></circle>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="online"></span>
+          </div>
+          <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+            <div class="eyebrow" style="margin: 0">Chào buổi chiều</div>
+            <div class="big">ly.hoang</div>
+            <div class="say"><span class="wave"><i></i><i></i><i></i><i></i></span><span><b class="num" style="color: #E5486B">1</b> cuộc gọi nhỡ</span></div>
+          </div>
+        </div>
+        <a class="btn primary block" href="HistoryL.dc.html">Xem ngay<svg class="ico sm" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></a>
+      </div>
+
+      <section style="display: flex; flex-direction: column; gap: 16px">
+        <div class="sec-head"><h2 class="h2">Hiệu suất cuộc gọi</h2></div>
+        <div class="rangebar">
+          <div class="seg">
+            <button type="button" class="{{ qToday }}" onClick="{{ setToday }}">Hôm nay</button>
+            <button type="button" class="{{ q7 }}" onClick="{{ set7 }}">7 ngày</button>
+            <button type="button" class="{{ q30 }}" onClick="{{ set30 }}">30 ngày</button>
+            <button type="button" class="{{ q90 }}" onClick="{{ set90 }}">90 ngày</button>
+          </div>
+          <button type="button" class="{{ calCls }}" onClick="{{ openPop }}" aria-label="Chọn khoảng thời gian khác"><img class="i3d" src="assets/icons/calendar.svg" alt=""></button>
+        </div>
+        <sc-if value="{{ showNote }}" hint-placeholder-val="{{ false }}">
+          <div class="range-note"><span>Đang xem <b>{{ rangeText }}</b> · {{ rangeDays }}</span><button type="button" onClick="{{ set7 }}">Bỏ lọc</button></div>
+        </sc-if>
+
+        <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <div>
+            <div class="meta">Tổng cuộc gọi · {{ rangeLabel }}</div>
+            <div style="display: flex; align-items: baseline; gap: 10px"><span class="num" style="font-size: 32px; font-weight: 700; letter-spacing: -.03em; line-height: 1.15">{{ total }}</span><span class="meta num">TB {{ avgDur }}/cuộc</span></div>
+          </div>
+          <div class="lg">
+            <span><i style="background: #6E4FD8"></i>Gọi đi <b class="num" style="color: #1F1A33">{{ sumOut }}</b></span>
+            <span><i style="background: #14A39A"></i>Gọi đến <b class="num" style="color: #1F1A33">{{ sumIn }}</b></span>
+            <span style="margin-left: auto" class="meta">{{ granText }}</span>
+          </div>
+          <div class="{{ chartCls }}" role="img" aria-label="Biểu đồ cột chồng số cuộc gọi đi và gọi đến theo {{ granLabel }}, {{ rangeLabel }}">
+            <div class="btip" style="left: {{ tipX }}px; transform: translateX({{ tipShift }}); --cx: {{ caretX }}">
+              <div class="d">{{ tipLabel }}</div>
+              <div class="r"><i style="background: #6E4FD8"></i><b>{{ tipOut }}</b> Gọi đi</div>
+              <div class="r"><i style="background: #14A39A"></i><b>{{ tipIn }}</b> Gọi đến</div>
+            </div>
+            <div class="plot">
+              <div class="grid" style="bottom: 100%"><span>{{ t3 }}</span></div>
+              <div class="grid" style="bottom: 66.667%"><span>{{ t2 }}</span></div>
+              <div class="grid" style="bottom: 33.333%"><span>{{ t1 }}</span></div>
+              <div class="grid base" style="bottom: 0"><span style="left: 14px">0</span></div>
+              <div class="bars" style="--bw: {{ bw }}px" onMouseLeave="{{ unhover }}">
+                <sc-for list="{{ buckets }}" as="b" hint-placeholder-count="7">
+                  <button type="button" class="{{ b.cls }}" aria-label="{{ b.aria }}" onMouseEnter="{{ b.pick }}" onFocus="{{ b.pick }}" onClick="{{ b.pick }}">
+                    <span class="stack" style="gap: {{ b.gap }}px"><i class="s-in" style="height: {{ b.hIn }}px"></i><i class="{{ b.outCls }}" style="height: {{ b.hOut }}px"></i></span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+            <div class="{{ xlCls }}">
+              <sc-for list="{{ buckets }}" as="b" hint-placeholder-count="7"><span>{{ b.x }}</span></sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates">
+          <div class="card rate">
+            <div class="rl"><i style="background: #6E4FD8"></i>Bắt máy · gọi đi</div>
+            <div class="rv num">{{ rOut }}%</div>
+            <div class="rbar"><i style="width: {{ rOut }}%; background: #6E4FD8"></i></div>
+            <div class="meta num">{{ aOut }} / {{ sumOut }} cuộc</div>
+          </div>
+          <div class="card rate">
+            <div class="rl"><i style="background: #14A39A"></i>Bắt máy · gọi đến</div>
+            <div class="rv num">{{ rIn }}%</div>
+            <div class="rbar"><i style="width: {{ rIn }}%; background: #14A39A"></i></div>
+            <div class="meta num">{{ aIn }} / {{ sumIn }} cuộc</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 16px">
+        <div class="sec-head"><h2 class="h2">Việc cần làm</h2><a class="link" href="TasksL.dc.html">Công việc</a></div>
+        <div class="tiles">
+          <a class="tile" href="HistoryL.dc.html"><span class="ti red"><img class="i3d" src="assets/icons/call-missed.svg" alt=""></span><span class="v v-rose num">1</span><span class="l">Gọi nhỡ</span></a>
+          <a class="tile" href="TasksL.dc.html"><span class="ti"><img class="i3d" src="assets/icons/task-unassigned.svg" alt=""></span><span class="v num">852</span><span class="l">Chưa nhận</span></a>
+          <a class="tile" href="TasksL.dc.html"><span class="ti"><img class="i3d" src="assets/icons/task-overdue.svg" alt=""></span><span class="v num">0</span><span class="l">Quá hạn</span></a>
+          <a class="tile" href="TasksL.dc.html"><span class="ti"><img class="i3d" src="assets/icons/calendar.svg" alt=""></span><span class="v num">1</span><span class="l">Hôm nay</span></a>
+        </div>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 16px">
+        <div class="sec-head"><h2 class="h2">Cần chú ý</h2><a class="link" href="TasksL.dc.html">Tất cả</a></div>
+        <div class="chips">
+          <button class="chip on" type="button">Tất cả</button>
+          <button class="chip" type="button">Gọi nhỡ <span class="n">1</span></button>
+          <button class="chip" type="button">Quá hạn</button>
+          <button class="chip" type="button">Nhắc hẹn <span class="n">1</span></button>
+        </div>
+        <div class="card">
+          <a class="row" href="CallDetail.dc.html">
+            <span class="ev miss"><img class="i3d" src="assets/icons/call-missed.svg" alt=""></span>
+            <div class="main"><div class="name">Trần Thu Hà</div><div class="sub"><span class="red">Gọi nhỡ</span></div></div>
+            <span class="time">21:20</span>
+          </a>
+          <a class="row" href="TaskTimeline.dc.html">
+            <span class="ev out"><img class="i3d" src="assets/icons/clock.svg" alt=""></span>
+            <div class="main"><div class="name">Lê Văn Phúc</div><div class="sub">Nhắc hẹn</div></div>
+            <span class="time">15:00</span>
+          </a>
+        </div>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 16px">
+        <div class="sec-head"><h2 class="h2">Gần đây</h2><a class="link" href="Search.dc.html">Tra cứu</a></div>
+        <div class="card" style="padding: 18px 8px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px">
+          <a href="ContactQuick.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 8px"><span class="av lg" style="width: 54px; height: 54px; font-size: 17px">NT</span><span style="font-size: 12.5px; font-weight: 500">Thiên</span></a>
+          <a href="ContactQuick.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 8px"><span class="av lg" style="width: 54px; height: 54px; font-size: 17px">HT</span><span style="font-size: 12.5px; font-weight: 500">Tài</span></a>
+          <a href="ContactQuick.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 8px"><span class="av lg" style="width: 54px; height: 54px; font-size: 17px">TH</span><span style="font-size: 12.5px; font-weight: 500">Hà</span></a>
+          <a href="ContactQuick.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 8px"><span class="av lg" style="width: 54px; height: 54px; font-size: 17px">LP</span><span style="font-size: 12.5px; font-weight: 500">Phúc</span></a>
+        </div>
+      </section>
+    </div>
+
+    <sc-if value="{{ popOpen }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="pop-scrim" aria-label="Đóng" onClick="{{ closePop }}"></button>
+      <div class="pop" role="dialog" aria-label="Khoảng thời gian" style="top: {{ popTop }}px">
+        <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+          <div class="pop-head"><h3>Khoảng thời gian</h3><button type="button" class="pop-x" aria-label="Đóng" onClick="{{ closePop }}"><svg class="ico sm" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div>
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{ presets }}" as="p" hint-placeholder-count="7">
+              <button type="button" class="{{ p.cls }}" onClick="{{ p.pick }}"><span>{{ p.name }}</span><span style="display: flex; align-items: center"><span class="pd">{{ p.desc }}</span><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: {{ p.ck }}"><path d="m5 12 5 5 9-10"></path></svg></span></button>
+            </sc-for>
+          </div>
+          <div class="hair"></div>
+          <button type="button" class="preset" onClick="{{ goCal }}"><span style="display: flex; align-items: center; gap: 10px"><img class="i3d" src="assets/icons/calendar.svg" alt="" style="width: 20px">Tùy chỉnh khoảng ngày</span><svg class="ico sm" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></button>
+        </sc-if>
+        <sc-if value="{{ isCal }}" hint-placeholder-val="{{ false }}">
+          <div class="pop-head">
+            <button type="button" class="pop-x" aria-label="Quay lại" onClick="{{ goList }}" style="width: auto; padding: 0 6px 0 0; gap: 2px; color: var(--ink); font-weight: 700; font-size: 16px"><svg class="ico sm" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"></path></svg>Tùy chỉnh</button>
+            <button type="button" class="pop-x" aria-label="Đóng" onClick="{{ closePop }}"><svg class="ico sm" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+          </div>
+          <div class="cal-head">
+            <button type="button" class="{{ prevCls }}" aria-label="Tháng trước" onClick="{{ prevM }}"><svg class="ico sm" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"></path></svg></button>
+            <b>{{ monthName }}</b>
+            <button type="button" class="{{ nextCls }}" aria-label="Tháng sau" onClick="{{ nextM }}"><svg class="ico sm" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></button>
+          </div>
+          <div class="cal">
+            <span class="wd">T2</span><span class="wd">T3</span><span class="wd">T4</span><span class="wd">T5</span><span class="wd">T6</span><span class="wd">T7</span><span class="wd">CN</span>
+            <sc-for list="{{ cells }}" as="c" hint-placeholder-count="35">
+              <button type="button" class="{{ c.cls }}" onClick="{{ c.pick }}" aria-label="{{ c.aria }}"><span>{{ c.t }}</span></button>
+            </sc-for>
+          </div>
+          <div class="gran">
+            <span>Nhóm theo</span>
+            <div class="seg">
+              <sc-for list="{{ grans }}" as="g" hint-placeholder-count="4">
+                <button type="button" class="{{ g.cls }}" onClick="{{ g.pick }}">{{ g.name }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div class="hair"></div>
+          <div class="pop-foot">
+            <div class="sum"><b>{{ draftText }}</b><br>{{ draftDays }}</div>
+            <button type="button" class="btn ghost" onClick="{{ clearDraft }}">Đặt lại</button>
+            <button type="button" class="{{ applyCls }}" onClick="{{ apply }}">Áp dụng</button>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="MainL.dc.html" class="on"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
+      <a href="ContactsL.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
+      <a href="HistoryL.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
+      <a href="TasksL.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
+    </nav>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1980}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { key: '7d', a: -6, b: 0, gran: 'day', sel: null, hov: false, pop: false, view: 'list', cm: 9, da: null, db: null, dg: null };
+  }
+  renderVals() {
+    const DAY = 86400000, T0 = Date.UTC(2026, 9, 8);
+    const WD = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+    const WDF = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+    const dt = (o) => new Date(T0 + o * DAY);
+    const p2 = (n) => (n < 10 ? '0' : '') + n;
+    const dm = (o) => { const d = dt(o); return p2(d.getUTCDate()) + '/' + p2(d.getUTCMonth() + 1); };
+    const rnd = (n) => { const x = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return x - Math.floor(x); };
+    const FO = [12, 18, 9, 22, 31, 40, 27], FI = [6, 9, 5, 11, 10, 14, 11];
+    const day = (o) => {
+      let out, inn;
+      if (o >= -6 && o <= 0) { out = FO[o + 6]; inn = FI[o + 6]; }
+      else {
+        const wd = dt(o).getUTCDay();
+        const f = wd === 0 ? 0.35 : (wd === 6 ? 0.55 : 1);
+        const tr = 1 + o / 420;
+        out = Math.round((16 + rnd(o) * 22) * f * tr);
+        inn = Math.round((6 + rnd(o + 500) * 9) * f * tr);
+      }
+      const ao = Math.round(out * (o >= -6 && o <= 0 ? 0.41 : 0.34 + rnd(o + 900) * 0.14));
+      const ai = Math.round(inn * (o >= -6 && o <= 0 ? 0.76 : 0.68 + rnd(o + 1300) * 0.14));
+      const dur = o >= -6 && o <= 0 ? 68 : 55 + rnd(o + 1700) * 30;
+      return { out, inn, ao, ai, dur };
+    };
+    const HW = [3, 6, 8, 7, 4, 3, 6, 8, 7, 5, 2];
+    const split = (tot) => {
+      const s = HW.reduce((x, y) => x + y, 0);
+      const raw = HW.map((w) => tot * w / s);
+      const fl = raw.map(Math.floor);
+      let left = tot - fl.reduce((x, y) => x + y, 0);
+      raw.map((r, k) => [r - fl[k], k]).sort((x, y) => y[0] - x[0]).forEach(([, k]) => { if (left > 0) { fl[k]++; left--; } });
+      return fl;
+    };
+    const span = (a, b) => b - a + 1;
+    const autoGran = (n) => (n === 1 ? 'hour' : n <= 31 ? 'day' : n <= 92 ? 'week' : 'month');
+    const okGran = (n) => ({ hour: n === 1, day: n >= 2 && n <= 62, week: n >= 8, month: n >= 45 });
+    const GN = { hour: 'giờ', day: 'ngày', week: 'tuần', month: 'tháng' };
+
+    const S = this.state;
+    const n = span(S.a, S.b);
+    // ---- build buckets
+    let bk = [];
+    if (S.gran === 'hour') {
+      const d = day(S.a), so = split(d.out), si = split(d.inn);
+      bk = HW.map((w, k) => ({ out: so[k], inn: si[k], x: (k % 2 === 0 ? (8 + k) + 'h' : ''), label: (8 + k) + ':00–' + (9 + k) + ':00 · ' + dm(S.a) }));
+    } else if (S.gran === 'day') {
+      for (let o = S.a; o <= S.b; o++) {
+        const d = day(o), w = dt(o).getUTCDay();
+        bk.push({ out: d.out, inn: d.inn, x: n <= 7 ? WD[w] : dm(o), label: (o === 0 ? 'Hôm nay' : WDF[w]) + ' ' + dm(o) });
+      }
+    } else if (S.gran === 'week') {
+      for (let s = S.a; s <= S.b; s += 7) {
+        const e = Math.min(s + 6, S.b); let out = 0, inn = 0;
+        for (let o = s; o <= e; o++) { const d = day(o); out += d.out; inn += d.inn; }
+        bk.push({ out, inn, x: dm(s), label: 'Tuần ' + dm(s) + ' – ' + dm(e) });
+      }
+    } else {
+      let cur = null;
+      for (let o = S.a; o <= S.b; o++) {
+        const m = dt(o).getUTCMonth(), d = day(o);
+        if (!cur || cur.m !== m) { cur = { m, out: 0, inn: 0, x: 'Th' + (m + 1), label: 'Tháng ' + (m + 1) + '/2026' }; bk.push(cur); }
+        cur.out += d.out; cur.inn += d.inn;
+      }
+    }
+    // ---- totals for the whole range
+    let sumOut = 0, sumIn = 0, aOut = 0, aIn = 0, durW = 0;
+    for (let o = S.a; o <= S.b; o++) { const d = day(o); sumOut += d.out; sumIn += d.inn; aOut += d.ao; aIn += d.ai; durW += d.dur * (d.out + d.inn); }
+    const total = sumOut + sumIn;
+    const avg = total ? Math.round(durW / total) : 0;
+    // ---- scale
+    const max = Math.max(1, ...bk.map((b) => b.out + b.inn));
+    const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 5000];
+    const st = steps.find((s) => s * 3 >= max) || 10000;
+    const top = st * 3, H = 132;
+    const N = bk.length;
+    const sel = S.sel == null || S.sel >= N ? N - 1 : S.sel;
+    const lstep = Math.ceil(N / 7);
+    const slotW = 282 / N;
+    const bw = Math.round(Math.max(3, Math.min(22, slotW * 0.62)));
+    const buckets = bk.map((b, k) => {
+      const hOut = Math.round(b.out / top * H * 10) / 10, hIn = Math.round(b.inn / top * H * 10) / 10;
+      return {
+        x: S.gran === 'hour' ? b.x : ((N - 1 - k) % lstep === 0 ? b.x : ''),
+        aria: b.label + ': ' + b.out + ' gọi đi, ' + b.inn + ' gọi đến',
+        cls: 'slot' + (k === sel ? ' on' : ''),
+        hOut, hIn, gap: b.inn > 0 && b.out > 0 ? 2 : 0,
+        outCls: 's-out' + (b.inn === 0 ? ' solo' : ''),
+        pick: () => this.setState({ sel: k, hov: true })
+      };
+    });
+    const frac = (sel + 0.5) / N;
+    const tb = bk[sel];
+    // ---- presets
+    const P = [
+      { key: 'today', name: 'Hôm nay', a: 0, b: 0 },
+      { key: 'yday', name: 'Hôm qua', a: -1, b: -1 },
+      { key: '7d', name: '7 ngày qua', a: -6, b: 0 },
+      { key: '30d', name: '30 ngày qua', a: -29, b: 0 },
+      { key: '90d', name: '90 ngày qua', a: -89, b: 0 },
+      { key: 'tm', name: 'Tháng này', a: -7, b: 0 },
+      { key: 'lm', name: 'Tháng trước', a: -37, b: -8 }
+    ];
+    const setP = (p) => this.setState({ key: p.key, a: p.a, b: p.b, gran: autoGran(span(p.a, p.b)), sel: null, hov: false, pop: false });
+    const byKey = (k) => P.find((p) => p.key === k);
+    const rangeTxt = (a, b) => (a === b ? dm(a) : dm(a) + ' – ' + dm(b));
+    const cur = byKey(S.key);
+    const quick = ['today', '7d', '30d', '90d'].indexOf(S.key) >= 0;
+    // ---- calendar
+    const cm = S.cm, first = Date.UTC(2026, cm, 1), dim = new Date(Date.UTC(2026, cm + 1, 0)).getUTCDate();
+    const lead = (new Date(first).getUTCDay() + 6) % 7;
+    const cells = [];
+    for (let k = 0; k < lead; k++) cells.push({ cls: 'c blank', t: '', aria: '', pick: () => {} });
+    for (let d = 1; d <= dim; d++) {
+      const o = Math.round((Date.UTC(2026, cm, d) - T0) / DAY);
+      let c = 'c';
+      if (o > 0) c += ' dis';
+      if (o === 0) c += ' today';
+      if (S.da != null) {
+        if (o === S.da) c += ' a';
+        if (S.db != null && o === S.db) c += ' b';
+        if (S.db == null && o === S.da) c += ' b';
+        if (S.db != null && o > S.da && o < S.db) c += ' in';
+      }
+      cells.push({
+        cls: c, t: String(d), aria: dm(o),
+        pick: () => {
+          if (o > 0) return;
+          if (S.da == null || S.db != null) this.setState({ da: o, db: null });
+          else if (o < S.da) this.setState({ da: o, db: S.da });
+          else this.setState({ db: o });
+        }
+      });
+    }
+    const dA = S.da, dB = S.db == null ? S.da : S.db;
+    const dn = dA == null ? 0 : span(dA, dB);
+    const ok = okGran(dn);
+    const dgran = S.dg && ok[S.dg] ? S.dg : autoGran(dn || 1);
+    const grans = ['hour', 'day', 'week', 'month'].map((g) => ({
+      name: g === 'hour' ? 'Giờ' : g === 'day' ? 'Ngày' : g === 'week' ? 'Tuần' : 'Tháng',
+      cls: (dn && dgran === g ? 'on' : '') + (dn && ok[g] ? '' : ' dis'),
+      pick: () => this.setState({ dg: g })
+    }));
+    const MN = 'Tháng ' + (cm + 1) + ', 2026';
+    return {
+      qToday: S.key === 'today' ? 'on' : '', q7: S.key === '7d' ? 'on' : '', q30: S.key === '30d' ? 'on' : '', q90: S.key === '90d' ? 'on' : '',
+      setToday: () => setP(byKey('today')), set7: () => setP(byKey('7d')), set30: () => setP(byKey('30d')), set90: () => setP(byKey('90d')),
+      calCls: 'cal-btn' + (quick ? '' : ' on'),
+      showNote: !quick,
+      rangeText: rangeTxt(S.a, S.b),
+      rangeDays: n === 1 ? '1 ngày' : n + ' ngày',
+      rangeLabel: cur ? cur.name.toLowerCase().replace('7 ngày qua', '7 ngày').replace('30 ngày qua', '30 ngày').replace('90 ngày qua', '90 ngày') : rangeTxt(S.a, S.b),
+      total, sumOut, sumIn,
+      avgDur: Math.floor(avg / 60) + 'p' + p2(avg % 60),
+      granLabel: GN[S.gran], granText: "Theo " + GN[S.gran],
+      chartCls: 'bchart' + (S.hov ? ' dim' : ''),
+      buckets, bw, xlCls: N > 12 ? "xl dense" : "xl",
+      unhover: () => this.setState({ hov: false, sel: null }),
+      t1: st, t2: st * 2, t3: st * 3,
+      tipX: 28 + frac * 282,
+      tipShift: frac < 0.2 ? '-12%' : (frac > 0.8 ? '-88%' : '-50%'),
+      caretX: frac < 0.2 ? '12%' : (frac > 0.8 ? '88%' : '50%'),
+      tipLabel: tb.label, tipOut: tb.out, tipIn: tb.inn,
+      aOut, aIn,
+      rOut: sumOut ? Math.round(aOut / sumOut * 100) : 0,
+      rIn: sumIn ? Math.round(aIn / sumIn * 100) : 0,
+      // popover
+      popOpen: S.pop, isList: S.view === 'list', isCal: S.view === 'cal', popTop: 414,
+      openPop: () => this.setState({ pop: true, view: 'list' }),
+      closePop: () => this.setState({ pop: false }),
+      goList: () => this.setState({ view: 'list' }),
+      goCal: () => this.setState({ view: 'cal', da: S.a, db: S.b, dg: null, cm: dt(S.b).getUTCMonth() }),
+      presets: P.map((p) => ({ name: p.name, desc: rangeTxt(p.a, p.b), cls: 'preset' + (p.key === S.key ? ' on' : ''), ck: p.key === S.key ? 1 : 0, pick: () => setP(p) })),
+      monthName: MN, cells,
+      prevCls: 'cal-nav' + (cm <= 0 ? ' dis' : ''), nextCls: 'cal-nav' + (cm >= 9 ? ' dis' : ''),
+      prevM: () => this.setState({ cm: Math.max(0, cm - 1) }), nextM: () => this.setState({ cm: Math.min(9, cm + 1) }),
+      grans,
+      draftText: dA == null ? 'Chọn ngày bắt đầu' : (S.db == null ? dm(dA) + ' → …' : dm(dA) + ' → ' + dm(dB)),
+      draftDays: dA == null ? 'Tối đa đến hôm nay' : (S.db == null ? 'Chọn ngày kết thúc' : dn + ' ngày, xem theo ' + GN[dgran]),
+      applyCls: 'btn primary' + (dA == null ? ' dis' : ''),
+      clearDraft: () => this.setState({ da: null, db: null, dg: null }),
+      apply: () => { if (dA == null) return; this.setState({ key: 'custom', a: dA, b: dB, gran: dgran, sel: null, hov: false, pop: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
