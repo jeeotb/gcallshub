@@ -1130,3 +1130,35 @@
   filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='goo' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/><feColorMatrix in='b' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10'/></filter></svg>#goo") blur(28px) saturate(.6)!important}
 .app.dk .wall{opacity:.4!important;
   filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='goo' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/><feColorMatrix in='b' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10'/></filter></svg>#goo") blur(36px) saturate(.6)!important}
+
+/* =====================================================================
+   v26 — 4 thẻ chỉ số (cả sáng & tối): nền pastel, nội dung căn một lề trái,
+   trang trí bằng "một góc điện thoại" (viền máy + màn hình + tai thỏ)
+   ===================================================================== */
+.app.dk .tiles,.app.lt .tiles{gap:12px}
+.app.dk .tile,.app.lt .tile{position:relative;overflow:hidden;isolation:isolate;min-height:150px;padding:18px;border-radius:24px;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:2px;
+  background-image:none!important;color:#14121F;backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),0 14px 28px -20px rgba(40,20,90,.45)}
+.app.dk .tile:nth-child(1),.app.lt .tile:nth-child(1){background-color:#FAD3EE!important;--bezel:#E9A3CC;--glass:#FFF1F9;--edge:#F6C2E1}
+.app.dk .tile:nth-child(2),.app.lt .tile:nth-child(2){background-color:#D9D3FF!important;--bezel:#A99BF5;--glass:#F4F1FF;--edge:#C9BFFF}
+.app.dk .tile:nth-child(3),.app.lt .tile:nth-child(3){background-color:#FFE8A3!important;--bezel:#EFC25A;--glass:#FFF8E1;--edge:#FBD983}
+.app.dk .tile:nth-child(4),.app.lt .tile:nth-child(4){background-color:#C8F2EA!important;--bezel:#7FD6C6;--glass:#EFFCF9;--edge:#A9E9DC}
+/* góc điện thoại: khung máy bo tròn ló ra ở góc dưới phải */
+.app.dk .tile::before,.app.lt .tile::before{content:"";display:block!important;position:absolute;z-index:-1;right:-58px;bottom:-78px;width:150px;height:190px;border-radius:42px;opacity:1;
+  background:linear-gradient(160deg,var(--glass) 0%,var(--edge) 100%);
+  box-shadow:0 0 0 7px var(--bezel),0 0 0 8px rgba(255,255,255,.6),-14px -10px 24px -6px rgba(40,20,90,.18);pointer-events:none;transition:transform .35s ease}
+/* tai thỏ (Dynamic Island) */
+.app.dk .tile::after,.app.lt .tile::after{content:"";display:block!important;position:absolute;z-index:-1;right:12px;bottom:92px;width:40px;height:12px;border-radius:7px;opacity:1;
+  background:#14121F;box-shadow:none;inset:auto 12px 92px auto;pointer-events:none;transition:transform .35s ease}
+.app.dk .tile:hover::before,.app.lt .tile:hover::before,.app.dk .tile:hover::after,.app.lt .tile:hover::after{transform:translate(-4px,-4px)}
+/* icon góc trên trái, cùng lề với số */
+.app.dk .tile .ti,.app.lt .tile .ti{position:absolute;left:18px!important;top:18px!important;right:auto!important;margin:0;
+  width:42px!important;height:42px!important;border-radius:14px!important;display:flex!important;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.85)!important;box-shadow:inset 0 0 0 1px #fff,0 6px 14px -8px rgba(40,20,90,.35)!important}
+.app.dk .tile .ti .i3d,.app.lt .tile .ti .i3d{width:22px;filter:none!important}
+.app.dk .tile .v,.app.lt .tile .v,.app.dk .tile .v-rose,.app.lt .tile .v-rose{margin:0;font-size:32px;font-weight:700;line-height:1.05;letter-spacing:-.03em;color:#14121F}
+.app.dk .tile .v-rose,.app.lt .tile .v-rose{color:#C81E4A}
+.app.dk .tile .l,.app.lt .tile .l{margin:0;font-size:13px;font-weight:600;color:rgba(20,18,31,.7)}
+.app.dk .tile::before,.app.lt .tile::before{right:-53px;bottom:-62px;width:120px;height:160px;border-radius:34px;box-shadow:0 0 0 6px var(--bezel),0 0 0 7px rgba(255,255,255,.6),-10px -8px 20px -6px rgba(40,20,90,.18)}
+.app.dk .tile::after,.app.lt .tile::after{inset:auto -6px 80px auto;width:30px;height:9px;border-radius:5px}
