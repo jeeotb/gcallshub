@@ -47,6 +47,7 @@ prototype/
     icons/*.svg      Icon theo tên: phone, call-missed, nav-*, …
     theme/*.svg      Hình nền và icon cho bản tối / sáng
     deco/*.png       4 icon kính 3D (đã tô màu) trang trí 4 thẻ chỉ số
+    people/*.jpg     Ảnh đại diện khách hàng mẫu (p1–p5)
 ```
 
 ## Cho dev

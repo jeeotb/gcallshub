@@ -1233,3 +1233,6 @@
 .app.lt.night .preset:hover,.app.lt.night .pop-x:hover,.app.lt.night .cal-nav:hover,.app.lt.night .cal .c:hover span{background:rgba(255,255,255,.08)}
 .app.lt.night .preset,.app.lt.night .cal .c{color:var(--ink)}
 .app.lt.night .info:hover{background:rgba(255,255,255,.04)}
+/* ảnh đại diện khách hàng */
+.av:has(.av-photo){padding:0;overflow:hidden;background:#EDE9FE!important}
+.av .av-photo{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
