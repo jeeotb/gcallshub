@@ -31,20 +31,12 @@
       <span class="num" style="font-size: 34px; font-weight: 600; letter-spacing: .02em; color: #1F1A33">{{ shown }}</span>
     </div>
 
-    <div style="min-height: 74px">
+    <div class="dsug-slot">
       <sc-if value="{{ hasMatch }}" hint-placeholder-val="{{ true }}">
-        <div class="card">
-          <sc-for list="{{ matches }}" as="m" hint-placeholder-count="1">
-            <a class="row" href="ContactQuick.dc.html" style="min-height: 64px; padding-top: 10px; padding-bottom: 10px">
-              <span class="av" style="width: 38px; height: 38px; font-size: 13px">{{ m.i }}</span>
-              <div class="main"><div class="name">{{ m.n }}</div><div class="sub num">{{ m.f }}</div></div>
-              <span class="meta">Khớp danh bạ</span>
-            </a>
-          </sc-for>
-        </div>
+        <a class="dsug" href="ContactQuick.dc.html">{{ top.n }}<span class="dsug-more">{{ more }}</span></a>
       </sc-if>
       <sc-if value="{{ noMatch }}" hint-placeholder-val="{{ false }}">
-        <div class="hint" style="justify-content: center">Số mới, chưa có trong danh bạ</div>
+        <a class="dsug dsug-add" href="Customer.dc.html">Thêm số</a>
       </sc-if>
     </div>
   </div>
@@ -74,22 +66,24 @@ class Component extends DCLogic {
   }
   renderVals() {
     const C = [
-      { n: 'Anh Hoàng', p: '0901234567', i: 'AH' },
-      { n: 'Bảo Ngọc', p: '0912345678', i: 'BN' },
-      { n: 'Dũng Trần', p: '0983111222', i: 'DT' },
-      { n: 'Dương Lan', p: '0904555010', i: 'DL' },
-      { n: 'Hoàng Nam', p: '0888743000', i: 'HN' },
-      { n: 'Nguyễn Thiên – ĐH Quốc Tế', p: '0364562493', i: 'NT' },
-      { n: 'Trần Thu Hà', p: '0845676622', i: 'TH' },
-      { n: 'Lê Văn Phúc', p: '0909476126', i: 'LP' }
+      { n: 'Anh Hoàng', p: '0901234567', img: 'assets/people/p2.jpg' },
+      { n: 'Bảo Ngọc', p: '0912345678', img: 'assets/people/p1.jpg' },
+      { n: 'Dũng Trần', p: '0983111222', img: 'assets/people/p3.jpg' },
+      { n: 'Dương Lan', p: '0904555010', img: 'assets/people/p4.jpg' },
+      { n: 'Hoàng Nam', p: '0888743000', img: 'assets/people/p5.jpg' },
+      { n: 'Nguyễn Thiên – ĐH Quốc Tế', p: '0364562493', img: 'assets/people/p5.jpg' },
+      { n: 'Trần Thu Hà', p: '0845676622', img: 'assets/people/p1.jpg' },
+      { n: 'Lê Văn Phúc', p: '0909476126', img: 'assets/people/p2.jpg' }
     ];
     const fmt = (s) => [s.slice(0, 4), s.slice(4, 7), s.slice(7, 10), s.slice(10)].filter(Boolean).join(' ');
     const num = this.state.num;
-    const matches = num.length >= 2 ? C.filter((c) => c.p.indexOf(num) >= 0).slice(0, 2).map((c) => ({ n: c.n, i: c.i, f: fmt(c.p) })) : [];
+    const all = num.length >= 2 ? C.filter((c) => c.p.indexOf(num) >= 0).sort((x, y) => x.p.indexOf(num) - y.p.indexOf(num)) : [];
+    const matches = all.slice(0, 1);
     const K = [['1', ''], ['2', 'ABC'], ['3', 'DEF'], ['4', 'GHI'], ['5', 'JKL'], ['6', 'MNO'], ['7', 'PQRS'], ['8', 'TUV'], ['9', 'WXYZ'], ['*', ''], ['0', '+'], ['#', '']];
     return {
       shown: num ? fmt(num) : 'Nhập số',
-      matches,
+      top: matches[0] || { n: '', img: '' },
+      more: all.length > 1 ? ' và ' + (all.length - 1) + ' khác' : '',
       hasMatch: matches.length > 0,
       noMatch: num.length >= 2 && matches.length === 0,
       keys: K.map(([d, l]) => ({ d, l, press: () => { if (this.state.num.length < 13) this.setState({ num: this.state.num + d }); } })),

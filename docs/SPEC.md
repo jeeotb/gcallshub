@@ -72,7 +72,7 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 | 13 | `TaskFilter` | Bộ lọc công việc | Sheet |
 | 14 | `TaskTimeline` | Diễn biến công việc | Sheet: ghi chú nội bộ, dòng thời gian, Nhận việc |
 | 15 | `CreateReminder` | Tạo nhắc hẹn | Sheet: khách, nội dung, ghi chú, ngày giờ, ưu tiên, lặp lại |
-| 16 | `Dialer` | Bàn phím quay số | Kiểu iPhone: phím tròn 76px kính lỏng, số 32/400, chữ 9.5 giãn cách; nút gọi xanh 76px giữa, nhắn tin / xoá hai bên. Gõ từ 2 số gợi ý khách trùng số; chọn đầu số gọi ra |
+| 16 | `Dialer` | Bàn phím quay số | Kiểu iPhone: phím tròn 76px kính lỏng, số 32/400, chữ 9.5 giãn cách; nút gọi xanh 76px giữa, nhắn tin / xoá hai bên. Gõ từ 2 số: dưới dãy số hiện 1 dòng chữ xám kiểu iPhone (tên khách khớp nhất + "và N khác", chạm để xem nhanh; số mới thì "Thêm số"), không thẻ, không đẩy bàn phím; chọn đầu số gọi ra |
 | 17 | `InCall` | Đang gọi | Tắt mic, loa, giữ máy, chuyển tiếp, thêm người, ghi chú, DTMF |
 | 18 | `Incoming` | Cuộc gọi đến | Thông tin khách khi đổ chuông, Từ chối / Nghe, Nhắn bận / Nhắc gọi lại |
 | 19 | `AfterCall` | Kết thúc cuộc gọi | Kết quả, ghi chú, hoàn thành việc, hẹn gọi lại nhanh |
