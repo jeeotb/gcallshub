@@ -66,7 +66,7 @@
 <body>
 <header>
   <h1>Gcalls ContactHub</h1>
-  <p>Prototype app tổng đài viên. Bấm các tab, nút mặt mascot để thu gọn thanh điều hướng, cuộn trong màn hình.</p>
+  <p>Prototype app tổng đài viên. Bấm các tab và nút để chuyển màn, cuộn trong màn hình.</p>
   <div class="controls">
     <button type="button" id="t-light" aria-pressed="true">Giao diện sáng</button>
     <button type="button" id="t-dark" aria-pressed="false">Giao diện tối</button>
@@ -130,16 +130,6 @@
   }
   window.addEventListener('resize', fit);
 
-  // cuộn xuống: thanh tab thu gọn thành nút logo; bấm logo để mở lại
-  var lastY = 0;
-  scroll.addEventListener('scroll', function () {
-    var y = scroll.scrollTop;
-    if (y > lastY + 12 && y > 60) {
-      var fold = host.querySelector('.nav-fold');
-      if (fold) fold.click();
-    }
-    lastY = y;
-  }, { passive: true });
 
   function start(c) {
     c.groups.forEach(function (g) {

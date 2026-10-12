@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <div class="body" style="gap: 14px; padding-bottom: 24px">
+  <div class="body" style="gap: 14px; padding-bottom: 130px">
     <div class="seg" role="tablist">
       <button type="button" class="{{ t1 }}" onClick="{{ goInfo }}">Thông tin</button>
       <button type="button" class="{{ t2 }}" onClick="{{ goAct }}">Tương tác <span class="n">4</span></button>
@@ -93,6 +93,12 @@
       </div>
     </sc-if>
   </div>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="Main.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
+      <a href="Contacts.dc.html" class="on"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
+      <a href="History.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
+      <a href="Tasks.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
+    </nav>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>

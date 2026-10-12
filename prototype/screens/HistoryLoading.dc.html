@@ -52,21 +52,14 @@
           </sc-for>
         </div>
       </div>
-      <div class="meta" style="text-align: center">Đang tải lịch sử…</div>
     </div>
 
-    <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ true }}">
-    <nav class="{{ navCls }}" aria-label="Điều hướng chính">
+    <nav class="nav" aria-label="Điều hướng chính">
       <a href="Main.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-overview.svg" alt=""></span>Tổng quan</a>
       <a href="Contacts.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-contacts.svg" alt=""></span>Danh bạ</a>
       <a href="History.dc.html" class="on"><span class="pill"><img class="i3d" src="assets/icons/nav-history.svg" alt=""></span><span class="badge">1</span>Lịch sử</a>
       <a href="Tasks.dc.html"><span class="pill"><img class="i3d" src="assets/icons/nav-tasks.svg" alt=""></span><span class="badge">99+</span>Công việc</a>
-      <button type="button" class="nav-fold" onClick="{{ foldNav }}" aria-label="Thu gọn thanh điều hướng"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"></path></svg></button>
     </nav>
-    </sc-if>
-    <sc-if value="{{ navClosed }}" hint-placeholder-val="{{ false }}">
-      <button type="button" class="{{ dockCls }}" onClick="{{ openNav }}" aria-label="Mở thanh điều hướng"><span class="mface"><img src="assets/icons/logo-gcalls.svg" alt=""></span><span class="dock-dot"></span></button>
-    </sc-if>
   </div>
 </div>
 </x-dc>
@@ -74,16 +67,10 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    let nav = true;
-    try { nav = window.localStorage.getItem('gch-nav') !== 'closed'; } catch (e) { /* storage blocked */ }
-    this.state = { nav: nav };
+    this.state = {};
   }
   renderVals() {
     return {
-      navOpen: this.state.nav, navClosed: !this.state.nav,
-      navCls: 'nav' + (this.state.navAnim ? ' pop' : ''), dockCls: 'nav-dock' + (this.state.navAnim ? ' pop' : ''),
-      foldNav: () => { this.setState({ nav: false, navAnim: true }); setTimeout(() => this.setState({ navAnim: false }), 500); try { window.localStorage.setItem('gch-nav', 'closed'); } catch (e) {} },
-      openNav: () => { this.setState({ nav: true, navAnim: true }); setTimeout(() => this.setState({ navAnim: false }), 500); try { window.localStorage.setItem('gch-nav', 'open'); } catch (e) {} },
       rows: [['58%', '30%'], ['44%', '22%'], ['66%', '34%'], ['50%', '18%'], ['40%', '26%']].map(([w1, w2]) => ({ w1, w2 })) };
   }
 }

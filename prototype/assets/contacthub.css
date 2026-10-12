@@ -1513,3 +1513,30 @@
 .app.lt.night .dkey:active{background:rgba(255,255,255,.22)}
 .app.lt.night .dact{background:rgba(255,255,255,.08);color:#E6E3F2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
 .dpad-wrap{bottom:60px}
+
+/* =====================================================================
+   v34 — thanh tab luôn hiển thị: 4 viên kính giãn đều, gương mờ + grain
+   ===================================================================== */
+.app.lt .nav{gap:10px!important;padding:7px!important;
+  background:rgba(255,255,255,.18)!important;backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%)}
+.app.lt .nav a,.app.lt .nav a:first-child,.app.lt .nav a:last-child{margin:0!important;width:60px;height:60px}
+.app.lt .nav .pill,.app.lt .nav a.on .pill{width:60px!important;height:60px!important;position:relative;overflow:hidden;
+  background:rgba(255,255,255,.3)!important;backdrop-filter:blur(16px) saturate(170%);-webkit-backdrop-filter:blur(16px) saturate(170%)}
+.app.lt .nav .pill::before{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;background:var(--grain);opacity:.16;mix-blend-mode:multiply}
+.app.lt .nav .pill::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:radial-gradient(120% 80% at 30% 10%,rgba(255,255,255,.7),rgba(255,255,255,0) 55%)}
+.app.lt .nav .pill .i3d{position:relative;z-index:1}
+.app.lt .nav a.on .pill{background:rgba(255,255,255,.96)!important}
+.app.lt .nav a.on .pill::before{opacity:.06}
+.app.lt .nav .badge{right:2px;top:0}
+.app.lt.night .nav .pill{background:rgba(255,255,255,.1)!important}
+.app.lt.night .nav .pill::before{mix-blend-mode:screen;filter:invert(1);opacity:.1}
+.app.lt.night .nav .pill::after{background:radial-gradient(120% 80% at 30% 10%,rgba(255,255,255,.18),rgba(255,255,255,0) 55%)}
+.app.lt.night .nav a.on .pill{background:#fff!important}
+/* các màn vừa gắn thanh tab: chừa chỗ ở đáy */
+.dpad-wrap{bottom:104px!important;gap:12px}
+.dpad{grid-template-columns:repeat(3,68px);gap:11px 24px}
+.dkey{width:68px;height:68px}
+.dk-d{font-size:29px}
+.dcall{width:64px;height:64px}
+.dact{width:46px;height:46px}

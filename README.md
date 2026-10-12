@@ -8,7 +8,7 @@ App mobile cho tổng đài viên Gcalls: **25 màn hình**, giao diện sáng t
 
 **Mở file [`index.html`](index.html)** (bấm đúp, không cần server): app nằm trong khung iPhone. Bạn có thể:
 - bấm tab và các nút để chuyển màn
-- cuộn bên trong máy; cuộn xuống thì thanh tab thu gọn thành nút logo, bấm logo để mở lại
+- cuộn bên trong máy; thanh tab luôn hiển thị để quay về bất kỳ module nào
 - đổi giữa giao diện Sáng và Tối
 - chọn nhanh bất kỳ module nào trong menu phía trên
 
