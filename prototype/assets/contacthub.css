@@ -979,7 +979,13 @@
   radial-gradient(70% 22% at 8% 0%,rgba(198,242,226,.55),transparent 70%),
   radial-gradient(90% 26% at 92% 0%,rgba(196,181,255,.55),transparent 72%),
   linear-gradient(180deg,#F7F5FF 0%,#fff 380px)}
-.app.lt .wall::before,.app.lt .wall::after,.app.lt .wall i{display:none!important}
+.app.lt .wall::before,.app.lt .wall::after,.app.lt .wall .b1,.app.lt .wall .b4,.app.lt .wall .b5{display:none!important}
+/* quả cầu tím phía sau, blur x3 để tan thành gradient */
+.app.lt .wall .b2,.app.lt .wall .b3{display:block!important;position:absolute;border-radius:50%!important;animation:none!important;transform:none!important;box-shadow:none!important;right:auto;bottom:auto}
+.app.lt .wall .b2{left:270px!important;top:230px!important;width:200px!important;height:200px!important;filter:blur(21px)!important;opacity:.75!important;
+  background:radial-gradient(circle at 35% 30%,#DDD6FE 0%,#A78BFA 35%,#7C3AED 75%,#6D28D9 100%)!important}
+.app.lt .wall .b3{left:-60px!important;top:540px!important;width:120px!important;height:120px!important;filter:blur(12px)!important;opacity:.7!important;
+  background:radial-gradient(circle at 60% 35%,#C4B5FD 0%,#8B5CF6 60%,#6D28D9 100%)!important}
 .app.lt .h1{font-weight:500;letter-spacing:-.03em}
 .app.lt .eyebrow{font-weight:400;color:var(--ink-2)}
 .app.lt .big{font-weight:600}
