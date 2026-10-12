@@ -85,7 +85,7 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 
 ## 4. Design tokens
 
-**Font:** Inter (đủ dấu tiếng Việt), 400 / 500 / 600. Cỡ chữ: tiêu đề trang 26/500, tiêu đề mục 16/600, chữ thân 14, tên dòng 14.5/600, chữ phụ 12.5, chip 13/500, nhãn thanh tab 11.
+**Font:** Plus Jakarta Sans (đủ dấu tiếng Việt; dự phòng Inter), nét dịu: tiêu đề trang 26/400, tiêu đề mục 16/500, chữ thân 14/400, tên dòng 14.5/500, nút và chip 500, chữ phụ 12.5/400, nhãn thanh tab 11/400. Không dùng 700. Chữ chính `#2A2838`, phụ `#55526A` / `#85829A`.
 
 **Phân bổ màu tím:** chỉ dùng cho nút chính, mục / chip / tab đang chọn, công tắc bật, thẻ lựa chọn đang chọn và link nhỏ. Icon trong ô, nút gọi trong danh sách (icon điện thoại đen trên nền xám trắng `#F3F3F6`), nút đầu trang, avatar chữ và tag dùng màu trung tính.
 

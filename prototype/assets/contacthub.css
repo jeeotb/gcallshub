@@ -1429,3 +1429,22 @@
 /* thanh tab khi mở: chỉ hiện 4 nút module, ẩn logo (thu gọn bằng cách cuộn xuống) */
 .app.lt .nav{grid-template-columns:repeat(4,minmax(0,1fr))!important;padding:8px 6px!important}
 .app.lt .nav-fold{display:none!important}
+
+/* =====================================================================
+   v31 — font dịu: Plus Jakarta Sans, nét mảnh hơn, chữ đen dịu
+   ===================================================================== */
+.app.lt{font-family:"Plus Jakarta Sans","Inter","Be Vietnam Pro",system-ui,sans-serif;letter-spacing:-.003em;--ink:#2A2838;--ink-2:#55526A;--ink-3:#85829A}
+.app.lt.night{--ink:#F1EFF8;--ink-2:#C9C6DA;--ink-3:#9A96B2}
+.app.lt .h1{font-weight:400;letter-spacing:-.025em}
+.app.lt .h2{font-weight:500}
+.app.lt .eyebrow{font-weight:400}
+.app.lt .big{font-weight:500;letter-spacing:-.02em}
+.app.lt .row .name,.app.lt .info .v,.app.lt .ot,.app.lt .et,.app.lt .sheet-head h2,.app.lt .sub-top .t{font-weight:500}
+.app.lt .btn,.app.lt .btn.sm,.app.lt .chip,.app.lt .seg>*,.app.lt .tag,.app.lt .field-label,.app.lt .day,.app.lt .letter{font-weight:500}
+.app.lt .tile .v,.app.lt .tile .v-rose{font-weight:500;letter-spacing:-.03em}
+.app.lt .tile .l,.app.lt .nav a,.app.lt .act{font-weight:400}
+.app.lt .num{font-variant-numeric:tabular-nums}
+.app.lt [style*="font-weight: 700"]{font-weight:600!important}
+.app.lt [style*="font-weight: 600"]{font-weight:500!important}
+.app.lt .tile .v,.app.lt .tile .num{color:#2A2838}
+.app.lt .tile .v-rose,.app.lt .tile .v-rose.num{color:#D23A62}
