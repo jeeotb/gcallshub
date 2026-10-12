@@ -55,7 +55,7 @@ Luồng gọi:
 
 | File (tối / sáng) | Màn | Mở từ | Ghi chú dev |
 |---|---|---|---|
-| `MainD` / `MainL` | Tổng quan | Tab 1 | Biểu đồ cột chồng gọi đi/đến. Chọn khoảng thời gian (Hôm nay/7/30/90 ngày, tuỳ chỉnh có lịch, nhóm theo giờ/ngày/tuần/tháng). 4 ô chỉ số bấm được. Danh sách "Cần chú ý". Khách gần đây. |
+| `MainD` / `MainL` | Tổng quan | Tab 1 | Thứ tự (bản tối): lời chào → 4 thẻ Việc cần làm → Hiệu suất cuộc gọi → Cần chú ý → Gần đây. Biểu đồ cột chồng gọi đi/đến. Chọn khoảng thời gian (Hôm nay/7/30/90 ngày, tuỳ chỉnh có lịch, nhóm theo giờ/ngày/tuần/tháng). 4 ô chỉ số bấm được. Danh sách "Cần chú ý". Khách gần đây. |
 | `ContactsD` / `ContactsL` | Danh bạ | Tab 2 | Tìm ngay trong danh sách. Lọc theo nguồn dữ liệu. Tab Khách hàng / Nhóm. Nhóm theo chữ cái A–Z. Nút Gọi luôn hiện sẵn. |
 | `HistoryD` / `HistoryL` | Lịch sử | Tab 3 | Chip lọc Tất cả / Cuộc gọi / Gọi nhỡ / Tin nhắn. Nhóm theo ngày. Icon thể hiện đi / đến / nhỡ / SMS, có icon ghi âm. |
 | `TasksD` / `TasksL` | Công việc | Tab 4 | Vòng tiến độ + Quá hạn / Hôm nay / Chưa nhận. Phân đoạn Đang mở / Hôm nay / Đã xong. Thẻ việc có nút Nhận việc. FAB Nhắc hẹn. |

@@ -69,6 +69,16 @@
       </div>
 
       <section style="display: flex; flex-direction: column; gap: 16px">
+        <div class="sec-head"><h2 class="h2">Việc cần làm</h2><a class="link" href="TasksD.dc.html">Công việc</a></div>
+        <div class="tiles">
+          <a class="tile" href="HistoryD.dc.html"><span class="ti red"><img class="i3d" src="assets/icons/call-missed.svg" alt=""></span><span class="v v-rose num">1</span><span class="l">Gọi nhỡ</span></a>
+          <a class="tile" href="TasksD.dc.html"><span class="ti"><img class="i3d" src="assets/icons/task-unassigned.svg" alt=""></span><span class="v num">852</span><span class="l">Chưa nhận</span></a>
+          <a class="tile" href="TasksD.dc.html"><span class="ti"><img class="i3d" src="assets/icons/task-overdue.svg" alt=""></span><span class="v num">0</span><span class="l">Quá hạn</span></a>
+          <a class="tile" href="TasksD.dc.html"><span class="ti"><img class="i3d" src="assets/icons/calendar.svg" alt=""></span><span class="v num">1</span><span class="l">Hôm nay</span></a>
+        </div>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 16px">
         <div class="sec-head"><h2 class="h2">Hiệu suất cuộc gọi</h2></div>
         <div class="rangebar">
           <div class="seg">
@@ -131,16 +141,6 @@
             <div class="rbar"><i style="width: {{ rIn }}%; background: #26A99C"></i></div>
             <div class="meta num">{{ aIn }} / {{ sumIn }} cuộc</div>
           </div>
-        </div>
-      </section>
-
-      <section style="display: flex; flex-direction: column; gap: 16px">
-        <div class="sec-head"><h2 class="h2">Việc cần làm</h2><a class="link" href="TasksD.dc.html">Công việc</a></div>
-        <div class="tiles">
-          <a class="tile" href="HistoryD.dc.html"><span class="ti red"><img class="i3d" src="assets/icons/call-missed.svg" alt=""></span><span class="v v-rose num">1</span><span class="l">Gọi nhỡ</span></a>
-          <a class="tile" href="TasksD.dc.html"><span class="ti"><img class="i3d" src="assets/icons/task-unassigned.svg" alt=""></span><span class="v num">852</span><span class="l">Chưa nhận</span></a>
-          <a class="tile" href="TasksD.dc.html"><span class="ti"><img class="i3d" src="assets/icons/task-overdue.svg" alt=""></span><span class="v num">0</span><span class="l">Quá hạn</span></a>
-          <a class="tile" href="TasksD.dc.html"><span class="ti"><img class="i3d" src="assets/icons/calendar.svg" alt=""></span><span class="v num">1</span><span class="l">Hôm nay</span></a>
         </div>
       </section>
 
@@ -405,7 +405,7 @@ class Component extends DCLogic {
       rOut: sumOut ? Math.round(aOut / sumOut * 100) : 0,
       rIn: sumIn ? Math.round(aIn / sumIn * 100) : 0,
       // popover
-      popOpen: S.pop, isList: S.view === 'list', isCal: S.view === 'cal', popTop: 414,
+      popOpen: S.pop, isList: S.view === 'list', isCal: S.view === 'cal', popTop: 803,
       openPop: () => this.setState({ pop: true, view: 'list' }),
       closePop: () => this.setState({ pop: false }),
       goList: () => this.setState({ view: 'list' }),
