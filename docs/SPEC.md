@@ -6,6 +6,8 @@ Tài liệu bàn giao cho dev. Mỗi màn có 3 thứ đi kèm nhau:
 - **Mã nguồn mockup**: `prototype/screens/<Tên>.dc.html`. Đây là HTML/CSS chuẩn. Phần logic hiển thị nằm trong khối `<script data-dc-script>` cuối file.
 - **Prototype bấm được**: `prototype/viewer.html?s=<Tên>`. Cách chạy xem ở `README.md`.
 
+> **Phạm vi hiện tại:** bộ mockup chỉ còn **5 màn chính ở giao diện tối** (`*D`), kèm bản sáng thử nghiệm (`*L`) để so sánh. Các màn khác nhắc tới trong tài liệu này (luồng gọi, sheet, đăng nhập, trạng thái hệ thống) đã được bỏ khỏi repo. Bản thiết kế sáng của chúng vẫn còn trên canvas và chưa có bản tối; phần mô tả được giữ lại để làm định hướng.
+
 Mockup chỉ dùng **dữ liệu giả**. Ô ghi trong `[NGOẶC VUÔNG]` là thông tin bên Gcalls cần xác nhận (xem mục 9).
 
 ---
@@ -51,34 +53,15 @@ Luồng gọi:
 
 ## 3. Danh sách màn hình
 
-| # | File | Màn | Mở từ | Ghi chú dev |
-|---|------|-----|-------|-------------|
-| 1 | `Main` | Tổng quan | Tab 1 | Biểu đồ cột chồng gọi đi/đến. Chọn khoảng thời gian (Hôm nay/7/30/90 ngày, tuỳ chỉnh có lịch, nhóm theo giờ/ngày/tuần/tháng). 4 ô chỉ số bấm được. Danh sách "Cần chú ý". Khách gần đây. |
-| 2 | `Contacts` | Danh bạ | Tab 2 | Tìm ngay trong danh sách. Lọc theo nguồn dữ liệu. Tab Khách hàng / Nhóm. Nhóm theo chữ cái A–Z. Nút Gọi luôn hiện sẵn. FAB Bàn phím. |
-| 3 | `History` | Lịch sử | Tab 3 | Chip lọc Tất cả / Cuộc gọi / Gọi nhỡ / Tin nhắn. Nhóm theo ngày. Icon thể hiện đi / đến / nhỡ / SMS, có icon ghi âm. FAB Bàn phím. |
-| 4 | `Tasks` | Công việc | Tab 4 | Vòng tiến độ + Quá hạn / Hôm nay / Chưa nhận. Phân đoạn Đang mở / Hôm nay / Đã xong. Thẻ việc có nút Nhận việc. FAB Nhắc hẹn. |
-| 5 | `Account` | Tài khoản | Avatar | Trạng thái trực, máy nhánh, tổng đài, SSO, ngôn ngữ, chỉ rung, đăng xuất. |
-| 6 | `StatusSheet` | Trạng thái trực | Pill trạng thái | 4 mức: Sẵn sàng / Tạm nghỉ / Không làm phiền / Hết ca. Công tắc "Chỉ rung" tách riêng. |
-| 7 | `Search` | Tìm kiếm | Icon kính lúp | Khách gần đây + gọi nhanh. Tìm khi gõ từ 2 ký tự. |
-| 8 | `Notifications` | Thông báo | Icon chuông | Tất cả / Chưa đọc. Chấm tím = chưa đọc. Chạm vào để mở đúng việc / cuộc gọi. |
-| 9 | `ContactQuick` | Xem nhanh KH | "⋯" ở Danh bạ, Khách gần đây | 4 hành động: Gọi / Nhắn / Nhắc hẹn / Ghim. |
-| 10 | `Customer` | Hồ sơ KH | Xem nhanh, Chi tiết cuộc gọi | Tab Thông tin / Tương tác / Nhắc nhở. Có cùng thanh 4 hành động như Xem nhanh. |
-| 11 | `HistoryFilter` | Bộ lọc lịch sử | Nút lọc ở Lịch sử | Nút Áp dụng hiện luôn số kết quả. |
-| 12 | `CallDetail` | Chi tiết cuộc gọi | Dòng trong Lịch sử | Trình phát ghi âm ngay trong sheet (phát, thanh tua, tốc độ). |
-| 13 | `TaskFilter` | Bộ lọc công việc | Nút lọc ở Công việc | |
-| 14 | `TaskTimeline` | Diễn biến công việc | Thẻ việc | |
-| 15 | `CreateReminder` | Tạo nhắc hẹn | FAB, Hồ sơ, Kết thúc cuộc gọi | Chọn khách, nội dung, ghi chú, ngày giờ, ưu tiên, lặp lại. |
-| 16 | `Dialer` | Bàn phím | FAB xanh | Gõ từ 2 số trở lên sẽ gợi ý khách trùng số trong danh bạ. Chọn đầu số gọi ra. Nút xoá, nhắn tin, gọi. |
-| 17 | `InCall` | Đang gọi | Gọi đi / Nghe máy | Đồng hồ, chỉ báo ghi âm, việc đang mở của khách. Tắt mic, loa ngoài, giữ máy, chuyển tiếp, thêm người, ghi chú. Bàn phím DTMF. Nút ⌄ thu nhỏ cuộc gọi. |
-| 18 | `Incoming` | Cuộc gọi đến | Push VoIP | Tra khách theo số ngay khi đổ chuông. Hiện lần tương tác trước, việc đang mở, nguồn dữ liệu. Có nút "Nhắn đang bận" và "Nhắc gọi lại". |
-| 19 | `AfterCall` | Kết thúc cuộc gọi | Sau khi gác máy | Ghi kết quả, ghi chú, hoàn thành việc liên quan, hẹn gọi lại nhanh. Chọn kết quả "Hẹn gọi lại" thì tự bật nhắc hẹn. |
-| 20 | `SendSms` | Nhắn SMS | Nút Nhắn tin ở mọi nơi | Chọn mẫu tin, đếm ký tự và số tin (160 / 153 ký tự mỗi tin). |
-| 21 | `Login` | Đăng nhập | Mở app lần đầu | Nhập mã tổng đài (app nhớ cho lần sau), rồi đăng nhập Keycloak SSO. |
-| 22 | `Permissions` | Cấp quyền | Sau đăng nhập | Micro và Thông báo là bắt buộc; nút "Bắt đầu" bị khoá đến khi bật đủ. Chạy nền: khuyến nghị. Danh bạ máy: tuỳ chọn. |
-| 23 | `HistoryLoading` | Đang tải | Mọi danh sách | Khung xương (skeleton) giữ đúng bố cục danh sách. Không để trang trắng. |
-| 24 | `SearchEmpty` | Không có kết quả | Tìm kiếm | Nếu chuỗi tìm là số điện thoại thì cho Gọi / Nhắn ngay. |
-| 25 | `Offline` | Mất kết nối | Mất SIP/mạng | Trạng thái chuyển "Ngoại tuyến" (chấm xám). Băng cảnh báo có đếm ngược và nút Thử lại. Nút Gọi bị khoá nhưng vẫn xem được dữ liệu đã lưu. |
-| — | `*D`, `*L` | Bản tối / sáng | — | Hai phương án giao diện thử nghiệm cho 5 màn chính, chưa chốt. |
+| File (tối / sáng) | Màn | Mở từ | Ghi chú dev |
+|---|---|---|---|
+| `MainD` / `MainL` | Tổng quan | Tab 1 | Biểu đồ cột chồng gọi đi/đến. Chọn khoảng thời gian (Hôm nay/7/30/90 ngày, tuỳ chỉnh có lịch, nhóm theo giờ/ngày/tuần/tháng). 4 ô chỉ số bấm được. Danh sách "Cần chú ý". Khách gần đây. |
+| `ContactsD` / `ContactsL` | Danh bạ | Tab 2 | Tìm ngay trong danh sách. Lọc theo nguồn dữ liệu. Tab Khách hàng / Nhóm. Nhóm theo chữ cái A–Z. Nút Gọi luôn hiện sẵn. |
+| `HistoryD` / `HistoryL` | Lịch sử | Tab 3 | Chip lọc Tất cả / Cuộc gọi / Gọi nhỡ / Tin nhắn. Nhóm theo ngày. Icon thể hiện đi / đến / nhỡ / SMS, có icon ghi âm. |
+| `TasksD` / `TasksL` | Công việc | Tab 4 | Vòng tiến độ + Quá hạn / Hôm nay / Chưa nhận. Phân đoạn Đang mở / Hôm nay / Đã xong. Thẻ việc có nút Nhận việc. FAB Nhắc hẹn. |
+| `AccountD` / `AccountL` | Tài khoản | Avatar | Trạng thái trực, máy nhánh, tổng đài, SSO, ngôn ngữ, chỉ rung, đăng xuất. |
+
+Trong prototype, các nút dẫn tới màn đã bỏ (tìm kiếm, thông báo, sheet, chi tiết…) không chuyển màn.
 
 ## 4. Design tokens
 
@@ -101,7 +84,7 @@ Lấy từ `prototype/assets/contacthub.css` (khối `:root`).
 | Nền app | `#EEEAF9` | Cùng các mảng mờ tím chuyển động phía sau |
 | Nền màn gọi | `#3B2380 → #1A1036` | Đang gọi, Cuộc gọi đến |
 
-Bản tối (`.app.dk`): `--ink #F4F2F8`, `--surf #1A1620`, `--surf-2 #25212C`, nền `#0D0A11`, accent `#B9B0FF`.
+**Giao diện tối (đã chọn)** — class `.app.dk`: `--ink #F4F2F8`, `--ink-2 #C9C5D6`, `--ink-3 #9A95AA`, `--surf #1A1620` (thẻ), `--surf-2 #25212C` (nút, chip, input), nền `#0D0A11`, accent `#B9B0FF` / `#CFC8FF`, đường kẻ `rgba(255,255,255,.07)`. Bảng màu sáng ở trên là gốc của bản sáng, dùng để so sánh.
 
 **Chữ**: Be Vietnam Pro 400 / 500 / 600 / 700.
 
@@ -215,7 +198,7 @@ Số liệu ở màn Tổng quan: tổng cuộc gọi, gọi đi / đến, tỉ 
 - Danh sách "Kết quả cuộc gọi" có cấu hình theo từng tenant không?
 - Chuyển tiếp / thêm người: chuyển tới máy nhánh, hàng đợi hay số ngoài?
 - Có cần ghi âm theo đồng ý của khách (thông báo đầu cuộc gọi) không?
-- Bản tối / sáng (`*D`, `*L`): chốt một bản hay hỗ trợ cả hai theo cài đặt hệ thống?
+- Đã chọn giao diện tối. Có cần thêm bản sáng theo cài đặt hệ thống không?
 
 ## 10. Trợ năng
 

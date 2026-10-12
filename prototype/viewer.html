@@ -27,7 +27,7 @@
   <a href="index.html">← Tất cả màn hình</a>
   <select id="pick" aria-label="Chọn màn hình"></select>
   <span class="sp"></span>
-  <span class="hint">Bấm như trên điện thoại: nút, tab, sheet đều chuyển màn.</span>
+  <span class="hint">Bấm như trên điện thoại: thanh tab và avatar chuyển màn.</span>
 </div>
 <div class="stage"><div class="phone" id="host"></div></div>
 <script src="dc-lite.js"></script>
@@ -38,6 +38,8 @@
   var host = document.getElementById('host');
   var pick = document.getElementById('pick');
 
+  var known = {};
+
   function show(name, push) {
     if (push) {
       var q = new URLSearchParams(location.search); q.set('s', name);
@@ -46,6 +48,7 @@
     pick.value = name;
     window.scrollTo(0, 0);
     DcLite.mount(host, name, function (next) {
+      if (!known[next]) return; // màn đã bỏ khỏi bộ mockup
       if (document.body.classList.contains('bare')) { location.href = 'viewer.html?s=' + next; return; }
       show(next, true);
     }).catch(function (e) { host.innerHTML = '<div class="err">' + e.message + '</div>'; });
@@ -55,13 +58,15 @@
     c.order.forEach(function (file) {
       var o = document.createElement('option');
       o.value = file.replace('.dc.html', '');
+      known[o.value] = true;
       o.textContent = (c.boards[file] && c.boards[file].title) || o.value;
       pick.appendChild(o);
     });
-    show(params.get('s') || 'Main', false);
+    var first = c.order[0].replace('.dc.html', '');
+    show(known[params.get('s')] ? params.get('s') : first, false);
   });
   pick.addEventListener('change', function () { show(pick.value, true); });
-  window.addEventListener('popstate', function () { show(new URLSearchParams(location.search).get('s') || 'Main', false); });
+  window.addEventListener('popstate', function () { var s = new URLSearchParams(location.search).get('s'); if (known[s]) show(s, false); });
 })();
 </script>
 </body>

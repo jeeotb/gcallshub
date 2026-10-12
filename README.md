@@ -1,14 +1,14 @@
 # Gcalls ContactHub · Mobile app (mockup bàn giao)
 
-Bộ thiết kế app mobile cho tổng đài viên Gcalls: **35 màn hình** (25 màn chính và bản tối / sáng thử nghiệm cho 5 màn), kèm prototype bấm được và đặc tả cho dev.
+Bộ thiết kế app mobile cho tổng đài viên Gcalls, **giao diện tối**: 5 màn chính (Tổng quan, Danh bạ, Lịch sử, Công việc, Tài khoản), kèm bản sáng thử nghiệm để so sánh, prototype bấm được và đặc tả cho dev.
 
 > Đây là **mockup**, chưa phải app. Dữ liệu trong màn hình là dữ liệu giả.
 
 ## Xem nhanh
 
-| Tổng quan | Danh bạ | Đang gọi | Kết thúc cuộc gọi |
+| Tổng quan | Danh bạ | Lịch sử | Công việc |
 |---|---|---|---|
-| ![](docs/screens/Main.png) | ![](docs/screens/Contacts.png) | ![](docs/screens/InCall.png) | ![](docs/screens/AfterCall.png) |
+| ![](docs/screens/MainD.png) | ![](docs/screens/ContactsD.png) | ![](docs/screens/HistoryD.png) | ![](docs/screens/TasksD.png) |
 
 Ảnh của tất cả các màn nằm trong [`docs/screens/`](docs/screens).
 
@@ -23,8 +23,8 @@ python3 -m http.server 8000      # hoặc: npx serve .
 
 Sau đó mở:
 
-- http://localhost:8000/ để xem tất cả màn hình theo nhóm, kèm ghi chú thiết kế
-- http://localhost:8000/viewer.html?s=Main để mở một màn và bấm thử: tab, sheet, nút gọi, bàn phím đều chuyển màn
+- http://localhost:8000/ để xem tất cả màn hình
+- http://localhost:8000/viewer.html?s=MainD để mở một màn và bấm thử (thanh tab và avatar chuyển màn)
 
 Cũng có thể bật **GitHub Pages** cho thư mục `prototype/` để chia sẻ link.
 
@@ -33,7 +33,7 @@ Cũng có thể bật **GitHub Pages** cho thư mục `prototype/` để chia s�
 ```
 docs/
   SPEC.md            Đặc tả: điều hướng, danh sách màn, design token, component, quy tắc, mô hình dữ liệu, tích hợp, câu hỏi mở
-  screens/*.png      Ảnh từng màn (390 × 844; Tổng quan và Tài khoản dài hơn)
+  screens/*.png      Ảnh từng màn (390 × 844; Tổng quan và Tài khoản dài hơn). Hậu tố D = tối, L = sáng
 prototype/
   index.html         Thư viện màn hình
   viewer.html        Xem một màn ở cỡ thật

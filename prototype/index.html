@@ -30,18 +30,13 @@
 <body>
 <header>
   <h1>Gcalls ContactHub · bộ màn hình mobile</h1>
-  <p>Mockup bàn giao cho dev. Bấm một màn để mở prototype tương tác (390 × 844). Ghi chú thiết kế của từng nhóm nằm ngay dưới tiêu đề nhóm.</p>
+  <p>Giao diện tối cho 5 màn chính, kèm bản sáng thử nghiệm để so sánh. Bấm một màn để mở prototype ở cỡ thật (390 × 844).</p>
 </header>
 <main id="groups"></main>
 <script>
 (function () {
   var GROUPS = [
-    { title: '4 tab chính + Tài khoản', y: [0, 1999], x: [0, 2300], note: 's1' },
-    { title: 'Trạng thái, tìm kiếm, thông báo, khách hàng', y: [2260, 2260], note: 's2' },
-    { title: 'Bộ lọc, chi tiết cuộc gọi, công việc', y: [3560, 3560], note: 's3' },
-    { title: 'Luồng gọi điện', y: [4924, 4924], note: 's4' },
-    { title: 'Đăng nhập & trạng thái hệ thống', y: [6288, 6288], note: 's5' },
-    { title: 'Thử nghiệm: giao diện tối', y: [0, 0], x: [2560, 9999] },
+    { title: 'Giao diện tối', y: [0, 0], x: [2560, 9999] },
     { title: 'Thử nghiệm: giao diện sáng', y: [2380, 2380], x: [2560, 9999] }
   ];
   fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
