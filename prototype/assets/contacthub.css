@@ -1448,3 +1448,39 @@
 .app.lt [style*="font-weight: 600"]{font-weight:500!important}
 .app.lt .tile .v,.app.lt .tile .num{color:#2A2838}
 .app.lt .tile .v-rose,.app.lt .tile .v-rose.num{color:#D23A62}
+
+/* =====================================================================
+   v32 — thanh tab "liquid glass": cụm viên kính tròn ở giữa, chỉ icon,
+   tab đang chọn = viên trắng đặc; các viên khác kính mờ, sát nhau như giọt nước
+   ===================================================================== */
+.app.lt .nav{left:0!important;right:0!important;margin:0 auto;width:max-content!important;height:auto!important;transform:none;
+  display:flex!important;gap:0;padding:6px!important;border-radius:999px!important;
+  background:rgba(255,255,255,.22)!important;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),inset 0 1px 0 rgba(255,255,255,.8),0 14px 34px -14px rgba(40,30,90,.45)!important}
+.app.lt .nav::before{opacity:.06}
+.app.lt .nav a{font-size:0!important;gap:0;width:62px;height:62px;margin:0 -3px;border-radius:50%;position:relative}
+.app.lt .nav a:first-child{margin-left:0}.app.lt .nav a:last-child{margin-right:0}
+.app.lt .nav .pill,.app.lt .nav a.on .pill{width:62px!important;height:62px!important;border-radius:50%!important;
+  background:rgba(255,255,255,.34)!important;backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),inset 0 2px 6px rgba(255,255,255,.55),inset 0 -6px 12px rgba(120,110,160,.12)!important}
+.app.lt .nav a.on{z-index:2}
+.app.lt .nav a.on .pill{background:#fff!important;box-shadow:inset 0 0 0 1px #fff,0 10px 22px -10px rgba(30,20,70,.45),0 2px 6px rgba(30,20,70,.08)!important}
+.app.lt .nav .i3d{width:24px}
+.app.lt .nav a:not(.on) .i3d{filter:brightness(0) opacity(.42)!important}
+.app.lt .nav a.on .i3d{filter:brightness(0) opacity(.85)!important}
+.app.lt .nav .badge{top:4px;left:auto;right:6px;margin-left:0;z-index:3;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
+.app.lt .nav a:active .pill{transform:scale(.9)}
+/* bản tối: kính trắng mờ trên nền tối */
+.app.lt.night .nav{background:rgba(255,255,255,.1)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 14px 34px -14px rgba(0,0,0,.8)!important}
+.app.lt.night .nav .pill{background:rgba(255,255,255,.12)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),inset 0 2px 6px rgba(255,255,255,.08)!important}
+.app.lt.night .nav a.on .pill{background:#fff!important}
+.app.lt.night .nav a:not(.on) .i3d{filter:brightness(0) invert(1) opacity(.6)!important}
+/* nút thu gọn: viên kính nhỏ có mũi tên xuống, ở cuối cụm tab */
+.app.lt .nav-fold{display:flex!important;align-items:center;justify-content:center;flex:none;width:44px;height:44px;margin:9px 4px 9px 8px;border-left:0!important;border-radius:50%;
+  color:#2A2838;background:rgba(255,255,255,.34);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),inset 0 2px 6px rgba(255,255,255,.5)}
+.app.lt .nav-fold .ico{width:18px;height:18px;stroke-width:2.2;opacity:.7}
+.app.lt .nav-fold:active{transform:scale(.88)}
+.app.lt.night .nav-fold{color:#fff;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+/* nút thu gọn dính liền cụm tab (liquid) */
+.app.lt .nav-fold{width:50px;height:50px;margin:6px 0 6px -8px!important;position:relative;z-index:1}
