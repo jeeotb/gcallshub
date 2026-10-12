@@ -1,1 +1,10 @@
-{ "cleanUrls": true, "rewrites": [{ "source": "/brand", "destination": "/design/brand-guidelines.html" }] }
+{
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/brand", "destination": "/design/brand-guidelines.html" }
+  ]
+}
