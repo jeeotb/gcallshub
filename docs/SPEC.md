@@ -72,7 +72,7 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 | 13 | `TaskFilter` | Bộ lọc công việc | Sheet |
 | 14 | `TaskTimeline` | Diễn biến công việc | Sheet: ghi chú nội bộ, dòng thời gian, Nhận việc |
 | 15 | `CreateReminder` | Tạo nhắc hẹn | Sheet: khách, nội dung, ghi chú, ngày giờ, ưu tiên, lặp lại |
-| 16 | `Dialer` | Bàn phím quay số | Gõ từ 2 số gợi ý khách trùng số; chọn đầu số gọi ra |
+| 16 | `Dialer` | Bàn phím quay số | Kiểu iPhone: phím tròn 76px kính lỏng, số 32/400, chữ 9.5 giãn cách; nút gọi xanh 76px giữa, nhắn tin / xoá hai bên. Gõ từ 2 số gợi ý khách trùng số; chọn đầu số gọi ra |
 | 17 | `InCall` | Đang gọi | Tắt mic, loa, giữ máy, chuyển tiếp, thêm người, ghi chú, DTMF |
 | 18 | `Incoming` | Cuộc gọi đến | Thông tin khách khi đổ chuông, Từ chối / Nghe, Nhắn bận / Nhắc gọi lại |
 | 19 | `AfterCall` | Kết thúc cuộc gọi | Kết quả, ghi chú, hoàn thành việc, hẹn gọi lại nhanh |
@@ -104,7 +104,7 @@ Giữ nguyên chức năng như mô tả ở mục 2. Mọi màn có bản sáng
 | Card | trắng, viền 1px `#ECEAF4`, bo 20, bóng rất nhẹ | |
 | Ô icon pastel | tím `#F3F0FF` · hồng `#FFE9EE` (gọi nhỡ) · bạc hà `#E5F7EF` (gọi đến, hôm nay, sẵn sàng) · cam nhạt `#FFF0E3` (SMS, quá hạn) · xanh nhạt `#E8F1FF` | Icon bên trong màu tím |
 | Chữ | `#14121F` / `#4A475C` / `#7B7891` | |
-| Thanh tab (liquid glass) | Cụm viên kính tròn 62px ở giữa đáy màn, chỉ có icon, các viên chồng nhẹ lên nhau như giọt nước. Tab đang chọn: viên trắng đặc, icon đậm; tab khác: kính mờ trong suốt, icon xám. Cuối cụm có viên nhỏ 50px mũi tên xuống, dính liền cụm | Bấm mũi tên hoặc cuộn xuống: thu thành nút logo Gcalls tròn góc phải dưới (chấm đỏ khi có việc mới). Bấm logo: mở lại. Trạng thái được nhớ giữa các màn |
+| Thanh tab (liquid glass) | Cụm viên kính tròn 62px ở giữa đáy màn, chỉ có icon, các viên chồng nhẹ lên nhau như giọt nước. Tab đang chọn: viên trắng đặc, icon đậm; tab khác: kính mờ trong suốt, icon xám. Rìa phải cụm có một mũi tên nhỏ (không có viên tròn) để thu gọn | Bấm mũi tên ở rìa hoặc cuộn xuống: thu thành nút logo Gcalls tròn góc phải dưới (chấm đỏ khi có việc mới). Bấm logo: mở lại. Trạng thái được nhớ giữa các màn |
 | 4 thẻ chỉ số (Việc cần làm) | Nền pastel: hồng `#FAD3EE` (gọi nhỡ), tím `#D9D3FF` (chưa nhận), vàng `#FFE8A3` (quá hạn), bạc hà `#C8F2EA` (hôm nay). Không có icon nhỏ (chỉ dùng icon kính 3D); số 32px/700 và nhãn 13px/600 ở dưới, cùng lề trái 18px. Trang trí: 4 icon kính 3D riêng, tô theo màu thẻ (`assets/deco/`: `missed-pink` ống nghe + X, `unassigned-violet` người + dấu cộng, `overdue-yellow` đồng hồ báo thức + !, `today-mint` lịch + ✓; PNG nền trong suốt 420px), cùng tông màu với thẻ, đặt ở góc trên phải, xoay -6° | Dùng chung cho bản sáng và tối |
 | Nền động (liquid) | 4 khối tím nhạt (bản tối: tím trầm, mờ 55%), đường kính 240–400px, trôi và co giãn chậm (chu kỳ 19 / 23 / 25 / 29s, so le). Bộ lọc gooey (Gaussian blur 22 + ngưỡng alpha) để các khối chạm nhau thì dính lại như giọt nước, sau đó blur thêm 28px (tối: 36px), giảm độ bão hòa còn 60%, độ đậm 75% (tối: 40%) cho dịu mắt | Tắt chuyển động khi máy bật "Giảm chuyển động". Trên native: dùng shader / Lottie hoặc ảnh động pre-render để nhẹ máy |
 | Chip, phân đoạn | chip trắng viền mảnh, chip chọn tím đặc; phân đoạn nền `#F4F3F8`, mục chọn trắng chữ tím | |

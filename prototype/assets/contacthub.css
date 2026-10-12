@@ -1484,3 +1484,32 @@
 .app.lt.night .nav-fold{color:#fff;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
 /* nút thu gọn dính liền cụm tab (liquid) */
 .app.lt .nav-fold{width:50px;height:50px;margin:6px 0 6px -8px!important;position:relative;z-index:1}
+/* nút thu gọn: chỉ mũi tên nhỏ ở rìa phải cụm tab, không có viên tròn */
+.app.lt .nav-fold{width:24px!important;height:62px!important;margin:0 0 0 2px!important;padding:0;border-radius:0 999px 999px 0;
+  background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important}
+.app.lt .nav-fold .ico{width:16px;height:16px;stroke-width:2.4;opacity:.55}
+.app.lt.night .nav-fold{background:none!important;box-shadow:none!important}
+
+/* =====================================================================
+   v33 — bàn phím quay số kiểu iPhone: phím tròn 76px, kính lỏng (liquid glass)
+   ===================================================================== */
+.dpad-wrap{position:absolute;left:0;right:0;bottom:34px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.dpad{display:grid;grid-template-columns:repeat(3,76px);gap:16px 26px;justify-content:center}
+.dkey{width:76px;height:76px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;gap:3px;
+  background:rgba(255,255,255,.42);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.75),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -8px 16px rgba(120,100,180,.10),0 8px 18px -12px rgba(40,30,90,.35);
+  transition:transform .18s cubic-bezier(.2,.8,.2,1),background-color .18s ease}
+.dkey:active{transform:scale(.92);background:rgba(255,255,255,.72)}
+.dk-d{font-size:32px;font-weight:400;letter-spacing:-.01em;color:var(--ink,#2A2838)}
+.dk-l{font-size:9.5px;font-weight:600;letter-spacing:.2em;color:var(--ink-3,#85829A);min-height:10px}
+.dpad-actions{align-items:center;justify-items:center}
+.dact{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink-2,#55526A);
+  background:rgba(255,255,255,.3);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.dcall{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;
+  background:radial-gradient(circle at 35% 25%,#6EE7A2 0%,#34C474 45%,#22A65E 100%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 0 -6px 14px rgba(0,80,40,.25),0 14px 26px -12px rgba(34,166,94,.85);transition:transform .18s ease}
+.dcall:active,.dact:active{transform:scale(.92)}
+.app.lt.night .dkey{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),inset 0 1.5px 0 rgba(255,255,255,.18),0 8px 18px -12px rgba(0,0,0,.6)}
+.app.lt.night .dkey:active{background:rgba(255,255,255,.22)}
+.app.lt.night .dact{background:rgba(255,255,255,.08);color:#E6E3F2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.dpad-wrap{bottom:60px}
