@@ -1162,3 +1162,15 @@
 .app.dk .tile .l,.app.lt .tile .l{margin:0;font-size:13px;font-weight:600;color:rgba(20,18,31,.7)}
 .app.dk .tile::before,.app.lt .tile::before{right:-53px;bottom:-62px;width:120px;height:160px;border-radius:34px;box-shadow:0 0 0 6px var(--bezel),0 0 0 7px rgba(255,255,255,.6),-10px -8px 20px -6px rgba(40,20,90,.18)}
 .app.dk .tile::after,.app.lt .tile::after{inset:auto -6px 80px auto;width:30px;height:9px;border-radius:5px}
+/* v26b — trang trí: ống nghe điện thoại kính 3D, mỗi thẻ một màu (thay cho góc điện thoại) */
+.app.dk .tile::after,.app.lt .tile::after{display:none!important}
+.app.dk .tile::before,.app.lt .tile::before{right:-16px;top:-12px;bottom:auto;width:112px;height:112px;border-radius:0;box-shadow:none;
+  background:center/contain no-repeat;transform:rotate(-6deg)}
+.app.dk .tile:nth-child(1)::before,.app.lt .tile:nth-child(1)::before{background-image:url(deco/phone-pink.svg)}
+.app.dk .tile:nth-child(2)::before,.app.lt .tile:nth-child(2)::before{background-image:url(deco/phone-violet.svg)}
+.app.dk .tile:nth-child(3)::before,.app.lt .tile:nth-child(3)::before{background-image:url(deco/phone-yellow.svg)}
+.app.dk .tile:nth-child(4)::before,.app.lt .tile:nth-child(4)::before{background-image:url(deco/phone-mint.svg)}
+.app.dk .tile:hover::before,.app.lt .tile:hover::before{transform:rotate(-12deg) scale(1.05)}
+/* nút thu gọn / mở thanh tab: logo Gcalls tròn (thay mặt mascot) */
+.app.lt .mface{align-items:center;background:#fff;box-shadow:0 0 0 1px #E1D9FF,0 4px 10px -6px rgba(91,67,224,.5)}
+.app.lt .mface img,.app.lt .nav-dock .mface img{width:72%;max-width:none;margin:0}
