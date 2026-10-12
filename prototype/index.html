@@ -3,70 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gcalls ContactHub · Bộ màn hình</title>
+<title>Gcalls ContactHub</title>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #F4F2FA; --ink: #1F1A33; --muted: #5E5878; --line: #DDD8EC; --brand: #5B3FC4; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; --brand: #CFC8FF; } .note, .thumb { background: #1C1824 !important; } }
-  :root[data-theme="dark"] { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; --brand: #CFC8FF; }
-  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Be Vietnam Pro", system-ui, sans-serif; }
-  header { padding: 32px 16px 8px; max-width: 1240px; margin: 0 auto; }
-  h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -.02em; }
-  header p { margin: 0; color: var(--muted); max-width: 720px; }
-  main { max-width: 1240px; margin: 0 auto; padding: 8px 16px 64px; }
-  section { margin-top: 36px; }
-  h2 { font-size: 19px; margin: 0 0 6px; }
-  .note { white-space: pre-line; color: var(--muted); font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 10px 0 16px; max-width: 860px; }
-  details.note summary { cursor: pointer; font-weight: 600; color: var(--ink); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(214px, 1fr)); gap: 20px; }
-  .item { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit; }
-  .thumb { position: relative; width: 214px; height: 463px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 18px 30px -24px rgba(31,26,51,.5); }
-  .thumb iframe { position: absolute; left: 0; top: 0; width: 390px; height: 844px; border: 0; transform: scale(.5487); transform-origin: 0 0; pointer-events: none; }
-  .item b { font-size: 14px; }
-  .item span { font-size: 12.5px; color: var(--muted); }
-  .item:hover b { color: var(--brand); }
+  :root { --bg-a: #B9A9FF; --bg-b: #7B61FF; --ink: #FFFFFF; --muted: rgba(255,255,255,.82); --frame: #2A2440; --frame-hi: #6E62A8; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-a: #3A2F7A; --bg-b: #16122E; } }
+  :root[data-theme="dark"] { --bg-a: #3A2F7A; --bg-b: #16122E; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: radial-gradient(70% 60% at 20% 0%, rgba(255,255,255,.45), transparent 70%), linear-gradient(160deg, var(--bg-a) 0%, var(--bg-b) 100%);
+    background-attachment: fixed; color: var(--ink);
+    font-family: "Be Vietnam Pro", system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; padding: 24px 16px 32px; overflow-x: hidden;
+  }
+  header { text-align: center; max-width: 560px; margin-bottom: 18px; }
+  header h1 { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -.02em; }
+  header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  .controls button, .controls a {
+    font: inherit; font-size: 13px; font-weight: 600; color: #fff; text-decoration: none; cursor: pointer;
+    height: 34px; padding: 0 14px; border-radius: 999px; border: 0; display: inline-flex; align-items: center;
+    background: rgba(255,255,255,.18); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+  }
+  .controls button[aria-pressed="true"] { background: #fff; color: #5B43E0; }
+  .stage { width: 100%; display: flex; justify-content: center; }
+  .scaler { transform-origin: top center; }
+
+  /* iPhone frame */
+  .iphone { position: relative; width: 422px; height: 876px; border-radius: 68px; padding: 16px;
+    background: linear-gradient(145deg, var(--frame-hi) 0%, var(--frame) 22%, #15121F 60%, var(--frame-hi) 100%);
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,.18), 0 50px 90px -40px rgba(20,10,60,.75), 0 0 0 1px rgba(0,0,0,.4); }
+  .iphone::before, .iphone::after { content: ""; position: absolute; width: 4px; border-radius: 2px; background: var(--frame); }
+  .iphone::before { left: -4px; top: 180px; height: 64px; box-shadow: 0 84px 0 var(--frame); }
+  .iphone::after { right: -4px; top: 230px; height: 100px; }
+  .screen { position: relative; width: 390px; height: 844px; border-radius: 52px; overflow: hidden; background: #fff; transform: translateZ(0); }
+  .scroll { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; overscroll-behavior: contain; }
+  .scroll::-webkit-scrollbar { display: none; }
+  .island { position: absolute; z-index: 40; top: 11px; left: 50%; transform: translateX(-50%); width: 122px; height: 35px; border-radius: 20px; background: #000; pointer-events: none; }
+  .status { position: absolute; z-index: 39; top: 0; left: 0; right: 0; height: 50px; padding: 0 30px 0 44px; display: flex; align-items: center; justify-content: space-between;
+    font: 600 16px/1 -apple-system, "SF Pro Text", "Be Vietnam Pro", system-ui, sans-serif; color: #14121F; pointer-events: none; }
+  .screen.dark .status { color: #fff; }
+  .status::before { content: ""; position: absolute; inset: 0 0 -14px; z-index: -1; background: linear-gradient(180deg, rgba(255,255,255,.96) 55%, rgba(255,255,255,0)); }
+  .screen.dark .status::before { background: linear-gradient(180deg, rgba(14,15,19,.96) 55%, rgba(14,15,19,0)); }
+  .status .r { display: flex; gap: 6px; align-items: center; }
+  .home { position: absolute; z-index: 40; bottom: 8px; left: 50%; transform: translateX(-50%); width: 136px; height: 5px; border-radius: 3px; background: #14121F; opacity: .85; pointer-events: none; }
+  .screen.dark .home { background: #fff; }
+
+  /* app inside the phone: grows with content, nav / dock / fab stick to the screen */
+  .screen .app { height: auto !important; min-height: 844px; overflow: visible; }
+  .screen .layer { height: auto; padding-top: 44px; }
+  .screen .wall, .screen .nav, .screen .nav-dock, .screen .fab, .screen .layer::after { position: fixed !important; }
+  .screen .nav { bottom: 26px !important; }
+  .screen .nav-dock { bottom: 30px !important; }
+  .screen .layer::after { bottom: 0 !important; }
+  .err { padding: 60px 24px; color: #B00020; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Gcalls ContactHub · bộ màn hình mobile</h1>
-  <p>Giao diện sáng tím – trắng cho 5 màn chính, kèm bản tối. Bấm một màn để mở prototype ở cỡ thật (390 × 844).</p>
+  <h1>Gcalls ContactHub</h1>
+  <p>Prototype app tổng đài viên. Bấm các tab, nút mặt mascot để thu gọn thanh điều hướng, cuộn trong màn hình.</p>
+  <div class="controls">
+    <button type="button" id="t-light" aria-pressed="true">Giao diện sáng</button>
+    <button type="button" id="t-dark" aria-pressed="false">Giao diện tối</button>
+    <a href="gallery.html">Xem tất cả màn hình</a>
+  </div>
 </header>
-<main id="groups"></main>
+<div class="stage">
+  <div class="scaler" id="scaler">
+    <div class="iphone">
+      <div class="screen" id="screen">
+        <div class="scroll" id="scroll"><div id="host"></div></div>
+        <div class="status" aria-hidden="true">
+          <span>9:41</span>
+          <span class="r">
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0M4 7.3a6 6 0 0 1 8 0"/><circle cx="8" cy="10" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="currentColor"/><path d="M25 4.5v4c.8-.3 1.5-1 1.5-2s-.7-1.7-1.5-2z" fill="currentColor" opacity=".5"/></svg>
+          </span>
+        </div>
+        <div class="island" aria-hidden="true"></div>
+        <div class="home" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="dc-lite.js"></script>
 <script>
 (function () {
-  var GROUPS = [
-    { title: 'Giao diện sáng (chính)', y: [2380, 2380], x: [2560, 9999] },
-    { title: 'Giao diện tối', y: [0, 0], x: [2560, 9999] }
-  ];
+  var host = document.getElementById('host');
+  var scroll = document.getElementById('scroll');
+  var screen = document.getElementById('screen');
+  var known = {};
+  var theme = 'L';
+  var current = 'MainL';
+
+  function base(name) { return name.replace(/[LD]$/, ''); }
+  function show(name) {
+    if (!known[name]) return;
+    current = name;
+    theme = /D$/.test(name) ? 'D' : 'L';
+    screen.classList.toggle('dark', theme === 'D');
+    document.getElementById('t-light').setAttribute('aria-pressed', theme === 'L');
+    document.getElementById('t-dark').setAttribute('aria-pressed', theme === 'D');
+    DcLite.mount(host, name, function (next) { show(next); })
+      .then(function () { scroll.scrollTop = 0; })
+      .catch(function (e) { host.innerHTML = '<div class="err">' + e.message + '</div>'; });
+  }
+  document.getElementById('t-light').addEventListener('click', function () { show(base(current) + 'L'); });
+  document.getElementById('t-dark').addEventListener('click', function () { show(base(current) + 'D'); });
+
+  function fit() {
+    var avail = window.innerHeight - document.querySelector('header').offsetHeight - 70;
+    var s = Math.min(1, Math.max(.5, avail / 876), (window.innerWidth - 24) / 422);
+    var sc = document.getElementById('scaler');
+    sc.style.transform = 'scale(' + s + ')';
+    sc.style.height = (876 * s) + 'px';
+    sc.style.width = (422 * s) + 'px';
+    sc.style.transformOrigin = 'top left';
+  }
+  window.addEventListener('resize', fit);
+
   fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
-    var host = document.getElementById('groups');
-    GROUPS.forEach(function (g) {
-      var files = c.order.filter(function (f) {
-        var b = c.boards[f]; var xr = g.x || [0, 2300];
-        return b.y >= g.y[0] && b.y <= g.y[1] && b.x >= xr[0] && b.x <= xr[1];
-      });
-      if (!files.length) return;
-      var sec = document.createElement('section');
-      var h = document.createElement('h2'); h.textContent = g.title; sec.appendChild(h);
-      if (g.note && c.notes[g.note]) {
-        var d = document.createElement('details'); d.className = 'note';
-        var s = document.createElement('summary'); s.textContent = 'Ghi chú thiết kế'; d.appendChild(s);
-        d.appendChild(document.createTextNode(c.notes[g.note].text)); sec.appendChild(d);
-      }
-      var grid = document.createElement('div'); grid.className = 'grid';
-      files.forEach(function (f) {
-        var name = f.replace('.dc.html', '');
-        var a = document.createElement('a'); a.className = 'item'; a.href = 'viewer.html?s=' + name;
-        var t = document.createElement('div'); t.className = 'thumb';
-        var fr = document.createElement('iframe'); fr.loading = 'lazy'; fr.title = c.boards[f].title; fr.tabIndex = -1;
-        fr.src = 'viewer.html?bare=1&s=' + name; t.appendChild(fr);
-        var b = document.createElement('b'); b.textContent = c.boards[f].title;
-        var sp = document.createElement('span'); sp.textContent = 'screens/' + f;
-        a.appendChild(t); a.appendChild(b); a.appendChild(sp); grid.appendChild(a);
-      });
-      sec.appendChild(grid); host.appendChild(sec);
-    });
+    c.order.forEach(function (f) { known[f.replace('.dc.html', '')] = true; });
+    fit();
+    show('MainL');
   });
 })();
 </script>

@@ -23,7 +23,8 @@ python3 -m http.server 8000      # hoặc: npx serve .
 
 Sau đó mở:
 
-- http://localhost:8000/ để xem tất cả màn hình
+- http://localhost:8000/ để xem app trong khung iPhone: bấm tab, cuộn, đổi Sáng/Tối
+- http://localhost:8000/gallery.html để xem tất cả màn hình
 - http://localhost:8000/viewer.html?s=MainL để mở một màn và bấm thử (thanh tab và avatar chuyển màn)
 
 Cũng có thể bật **GitHub Pages** cho thư mục `prototype/` để chia sẻ link.
@@ -35,7 +36,8 @@ docs/
   SPEC.md            Đặc tả: điều hướng, danh sách màn, design token, component, quy tắc, mô hình dữ liệu, tích hợp, câu hỏi mở
   screens/*.png      Ảnh từng màn (390 × 844; Tổng quan và Tài khoản dài hơn). Hậu tố L = sáng (chính), D = tối
 prototype/
-  index.html         Thư viện màn hình
+  index.html         App trong khung iPhone (trang chính)
+  gallery.html       Thư viện màn hình
   viewer.html        Xem một màn ở cỡ thật
   dc-lite.js         Trình hiển thị nhỏ cho file .dc.html (chỉ dùng để xem mockup)
   canvas.json        Danh sách màn, tiêu đề, vị trí và ghi chú thiết kế

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gcalls ContactHub · Bộ màn hình</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #F4F2FA; --ink: #1F1A33; --muted: #5E5878; --line: #DDD8EC; --brand: #5B3FC4; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; --brand: #CFC8FF; } .note, .thumb { background: #1C1824 !important; } }
+  :root[data-theme="dark"] { --bg: #131019; --ink: #F4F2F8; --muted: #B4AEC6; --line: #2E2938; --brand: #CFC8FF; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Be Vietnam Pro", system-ui, sans-serif; }
+  header { padding: 32px 16px 8px; max-width: 1240px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -.02em; }
+  header p { margin: 0; color: var(--muted); max-width: 720px; }
+  main { max-width: 1240px; margin: 0 auto; padding: 8px 16px 64px; }
+  section { margin-top: 36px; }
+  h2 { font-size: 19px; margin: 0 0 6px; }
+  .note { white-space: pre-line; color: var(--muted); font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 10px 0 16px; max-width: 860px; }
+  details.note summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(214px, 1fr)); gap: 20px; }
+  .item { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit; }
+  .thumb { position: relative; width: 214px; height: 463px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 18px 30px -24px rgba(31,26,51,.5); }
+  .thumb iframe { position: absolute; left: 0; top: 0; width: 390px; height: 844px; border: 0; transform: scale(.5487); transform-origin: 0 0; pointer-events: none; }
+  .item b { font-size: 14px; }
+  .item span { font-size: 12.5px; color: var(--muted); }
+  .item:hover b { color: var(--brand); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gcalls ContactHub · bộ màn hình mobile</h1>
+  <p>Giao diện sáng tím – trắng cho 5 màn chính, kèm bản tối. Bấm một màn để mở prototype ở cỡ thật (390 × 844).</p>
+</header>
+<main id="groups"></main>
+<script>
+(function () {
+  var GROUPS = [
+    { title: 'Giao diện sáng (chính)', y: [2380, 2380], x: [2560, 9999] },
+    { title: 'Giao diện tối', y: [0, 0], x: [2560, 9999] }
+  ];
+  fetch('canvas.json').then(function (r) { return r.json(); }).then(function (c) {
+    var host = document.getElementById('groups');
+    GROUPS.forEach(function (g) {
+      var files = c.order.filter(function (f) {
+        var b = c.boards[f]; var xr = g.x || [0, 2300];
+        return b.y >= g.y[0] && b.y <= g.y[1] && b.x >= xr[0] && b.x <= xr[1];
+      });
+      if (!files.length) return;
+      var sec = document.createElement('section');
+      var h = document.createElement('h2'); h.textContent = g.title; sec.appendChild(h);
+      if (g.note && c.notes[g.note]) {
+        var d = document.createElement('details'); d.className = 'note';
+        var s = document.createElement('summary'); s.textContent = 'Ghi chú thiết kế'; d.appendChild(s);
+        d.appendChild(document.createTextNode(c.notes[g.note].text)); sec.appendChild(d);
+      }
+      var grid = document.createElement('div'); grid.className = 'grid';
+      files.forEach(function (f) {
+        var name = f.replace('.dc.html', '');
+        var a = document.createElement('a'); a.className = 'item'; a.href = 'viewer.html?s=' + name;
+        var t = document.createElement('div'); t.className = 'thumb';
+        var fr = document.createElement('iframe'); fr.loading = 'lazy'; fr.title = c.boards[f].title; fr.tabIndex = -1;
+        fr.src = 'viewer.html?bare=1&s=' + name; t.appendChild(fr);
+        var b = document.createElement('b'); b.textContent = c.boards[f].title;
+        var sp = document.createElement('span'); sp.textContent = 'screens/' + f;
+        a.appendChild(t); a.appendChild(b); a.appendChild(sp); grid.appendChild(a);
+      });
+      sec.appendChild(grid); host.appendChild(sec);
+    });
+  });
+})();
+</script>
+</body>
+</html>
