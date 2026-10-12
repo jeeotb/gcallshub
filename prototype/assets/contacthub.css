@@ -1572,3 +1572,11 @@
 .app.lt.night .nav{background:rgba(255,255,255,.06)!important;box-shadow:0 10px 28px -16px rgba(0,0,0,.8)!important}
 .app.lt.night .nav .pill{background:rgba(255,255,255,.12)!important;box-shadow:none!important}
 .app.lt.night .nav a.on .pill{background:#fff!important}
+/* màn cuộc gọi không có thanh tab: bàn phím trở lại cỡ đầy đủ */
+.dpad-wrap{bottom:48px!important;gap:16px}
+.dpad{grid-template-columns:repeat(3,76px);gap:14px 26px}
+.dkey{width:76px;height:76px}
+.dk-d{font-size:32px}
+.dcall{width:72px;height:72px}
+.dact{width:50px;height:50px}
+.dpad-wrap{bottom:58px!important}
