@@ -1,0 +1,111 @@
+{
+  "$description": "Gcalls ContactHub — design tokens (định dạng W3C DTCG). Nhập vào Figma: Variables › Import, hoặc plugin Tokens Studio.",
+  "color": {
+    "brand": {
+      "$type": "color",
+      "gcalls": { "$value": "#673AB7", "$description": "Màu logo Gcalls. Chỉ dùng cho logo và nhận diện thương hiệu." },
+      "primary": { "$value": "#7B61FF", "$description": "Nút chính, mục đang chọn, công tắc bật, link." },
+      "primary-top": { "$value": "#8D78FF", "$description": "Điểm đầu gradient nút chính." },
+      "primary-bottom": { "$value": "#6F55F5", "$description": "Điểm cuối gradient nút chính." },
+      "primary-deep": { "$value": "#5B43E0", "$description": "Chữ tím trên nền tím nhạt." },
+      "primary-soft": { "$value": "#F3F0FF", "$description": "Nền tím rất nhạt: chip, tag nhấn." },
+      "primary-edge": { "$value": "#D9D1FF", "$description": "Viền nhấn khi hover / đang chọn." }
+    },
+    "neutral": {
+      "$type": "color",
+      "ink": { "$value": "#2A2838", "$description": "Chữ chính." },
+      "ink-2": { "$value": "#55526A", "$description": "Chữ phụ." },
+      "ink-3": { "$value": "#85829A", "$description": "Chữ mô tả, placeholder." },
+      "line": { "$value": "#ECEAF4", "$description": "Viền card, đường kẻ." },
+      "surface": { "$value": "#FFFFFF", "$description": "Nền app, card đặc." },
+      "surface-2": { "$value": "#F3F3F6", "$description": "Ô icon, nút gọi trong danh sách, avatar chữ." },
+      "canvas-top": { "$value": "#FAF8FF", "$description": "Đầu trang (gradient nền)." }
+    },
+    "semantic": {
+      "$type": "color",
+      "call": { "$value": "#22A65E", "$description": "Nút gọi / nghe máy. Luôn xanh lá." },
+      "call-light": { "$value": "#6EE7A2" },
+      "success": { "$value": "#1F9D5B", "$description": "Sẵn sàng, đã kết nối." },
+      "warning": { "$value": "#B7791F", "$description": "Chưa nhận, cảnh báo." },
+      "danger": { "$value": "#E5486B", "$description": "Gọi nhỡ, kết thúc cuộc gọi, badge." },
+      "missed-number": { "$value": "#D23A62", "$description": "Số gọi nhỡ trên thẻ chỉ số." }
+    },
+    "tile": {
+      "$type": "color",
+      "missed": { "$value": "#FAD3EE", "$description": "Thẻ Gọi nhỡ." },
+      "unassigned": { "$value": "#D9D3FF", "$description": "Thẻ Chưa nhận." },
+      "overdue": { "$value": "#FFE8A3", "$description": "Thẻ Quá hạn." },
+      "today": { "$value": "#C8F2EA", "$description": "Thẻ Hôm nay." }
+    },
+    "icon-bg": {
+      "$type": "color",
+      "neutral": { "$value": "#F3F3F6" },
+      "missed": { "$value": "#FFECEF" },
+      "incoming": { "$value": "#E9F7F0" },
+      "sms": { "$value": "#FFF2E6" },
+      "info": { "$value": "#EEF3FB" }
+    },
+    "dark": {
+      "$type": "color",
+      "bg-top": { "$value": "#14121F", "$description": "Nền bản tối (đầu trang)." },
+      "bg": { "$value": "#0E0D16", "$description": "Nền bản tối." },
+      "surface": { "$value": "#1A1826", "$description": "Card bản tối." },
+      "ink": { "$value": "#F1EFF8" },
+      "ink-2": { "$value": "#C9C6DA" },
+      "ink-3": { "$value": "#9A96B2" },
+      "line": { "$value": "#FFFFFF14", "$description": "Trắng 8%." }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "ui": { "$value": ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"] }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "page-title": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "26px", "fontWeight": 400, "lineHeight": 1.2, "letterSpacing": "-0.025em" } },
+    "display-number": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "30px", "fontWeight": 500, "lineHeight": 1.05, "letterSpacing": "-0.03em" } },
+    "sheet-title": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "19px", "fontWeight": 500, "lineHeight": 1.3, "letterSpacing": "-0.02em" } },
+    "section-title": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "16px", "fontWeight": 500, "lineHeight": 1.4, "letterSpacing": "-0.015em" } },
+    "row-title": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "14.5px", "fontWeight": 500, "lineHeight": 1.45, "letterSpacing": "-0.006em" } },
+    "body": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "14px", "fontWeight": 400, "lineHeight": 1.5, "letterSpacing": "-0.003em" } },
+    "button": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "14px", "fontWeight": 500, "lineHeight": 1.2, "letterSpacing": "0" } },
+    "chip": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "13px", "fontWeight": 500, "lineHeight": 1.2, "letterSpacing": "0" } },
+    "caption": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "12.5px", "fontWeight": 400, "lineHeight": 1.45, "letterSpacing": "0" } },
+    "tag": { "$value": { "fontFamily": "{font.family.ui}", "fontSize": "11.5px", "fontWeight": 500, "lineHeight": 1.2, "letterSpacing": "0" } }
+  },
+  "space": {
+    "$type": "dimension",
+    "2xs": { "$value": "4px" }, "xs": { "$value": "8px" }, "sm": { "$value": "12px" }, "md": { "$value": "16px" },
+    "lg": { "$value": "20px", "$description": "Lề trang." }, "xl": { "$value": "24px", "$description": "Giữa các khối." }, "2xl": { "$value": "32px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "tag": { "$value": "6px" }, "input": { "$value": "16px" }, "card": { "$value": "20px" }, "tile": { "$value": "24px" },
+    "sheet": { "$value": "28px" }, "pill": { "$value": "999px" }
+  },
+  "size": {
+    "$type": "dimension",
+    "screen-width": { "$value": "390px" }, "screen-height": { "$value": "844px" },
+    "touch-min": { "$value": "44px" }, "icon": { "$value": "22px" }, "icon-sm": { "$value": "16px" },
+    "avatar": { "$value": "42px" }, "avatar-lg": { "$value": "66px" },
+    "nav-pill": { "$value": "60px" }, "dial-key": { "$value": "76px" }, "button-h": { "$value": "48px" }, "button-sm-h": { "$value": "36px" }
+  },
+  "effect": {
+    "glass-card": { "$type": "string", "$value": "fill #FFFFFF 66% · background blur 22 · saturate 160% · inner stroke #FFFFFF 1px · grain 9%" },
+    "glass-nav": { "$type": "string", "$value": "fill #FFFFFF 14% · background blur 14 · pill fill #82808C 20% · active pill #FFFFFF" },
+    "shadow-card": { "$type": "shadow", "$value": { "color": "#3C288C59", "offsetX": "0px", "offsetY": "16px", "blur": "34px", "spread": "-24px" } },
+    "shadow-button": { "$type": "shadow", "$value": { "color": "#6F55F5E6", "offsetX": "0px", "offsetY": "12px", "blur": "24px", "spread": "-14px" } }
+  },
+  "motion": {
+    "$type": "duration",
+    "press": { "$value": "250ms" }, "leave": { "$value": "230ms" }, "enter": { "$value": "420ms" }, "stagger": { "$value": "60ms" }, "sheet": { "$value": "450ms" }
+  }
+}

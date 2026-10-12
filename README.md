@@ -28,6 +28,13 @@ App mobile cho tổng đài viên Gcalls: **25 màn hình**, giao diện sáng t
 | Luồng gọi điện | Bàn phím quay số · Đang gọi · Cuộc gọi đến · Kết thúc cuộc gọi · Nhắn tin SMS |
 | Đăng nhập & trạng thái hệ thống | Đăng nhập (Keycloak SSO) · Cấp quyền lần đầu · Đang tải · Không có kết quả · Mất kết nối |
 
+## Brand guideline & Figma
+
+- [`design/brand-guidelines.html`](design/brand-guidelines.html): logo, màu, chữ, lưới, icon, thành phần, hiệu ứng, chuyển động, giao diện tối.
+- `design/gcalls-tokens.json`: token W3C DTCG, nhập vào Figma Variables hoặc plugin Tokens Studio; dev dùng với Style Dictionary.
+- `design/assets/`: logo (tím, trắng, icon app 1024), 24 icon nét SVG, 4 icon kính 3D PNG.
+- Sinh lại bằng `python3 tools/build_brand.py`.
+
 ## Cấu trúc
 
 ```

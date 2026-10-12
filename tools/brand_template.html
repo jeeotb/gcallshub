@@ -1,0 +1,474 @@
+<title>Gcalls ContactHub Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: cột nội dung 1080px, mục lục dính bên trái trên màn rộng, xếp 1 cột trên điện thoại */
+:root{
+  --bg:#FFFFFF; --bg-soft:#F7F5FC; --fg:#2A2838; --fg-2:#55526A; --fg-3:#85829A; --line:#ECEAF4;
+  --brand:#673AB7; --accent:#7B61FF; --accent-deep:#5B43E0; --accent-soft:#F3F0FF; --swatch-edge:rgba(42,40,56,.08);
+  --phone-bg:#FFFFFF; --phone-ink:#2A2838;
+  --display:"Plus Jakarta Sans","Inter",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans","Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E0D16; --bg-soft:#16141F; --fg:#F1EFF8; --fg-2:#C9C6DA; --fg-3:#9A96B2; --line:rgba(255,255,255,.09);
+  --accent:#9C8BFF; --accent-deep:#C9BFFF; --accent-soft:rgba(124,97,255,.16); --swatch-edge:rgba(255,255,255,.12); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E0D16; --bg-soft:#16141F; --fg:#F1EFF8; --fg-2:#C9C6DA; --fg-3:#9A96B2; --line:rgba(255,255,255,.09);
+  --accent:#9C8BFF; --accent-deep:#C9BFFF; --accent-soft:rgba(124,97,255,.16); --swatch-edge:rgba(255,255,255,.12); color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.6;letter-spacing:-.003em;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px;padding-block:0 96px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:56px}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}.toc{display:none}}
+.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:40px}
+.toc a{display:block;padding:5px 0;color:var(--fg-3);text-decoration:none;font-size:13.5px}
+.toc a:hover,.toc a:focus-visible{color:var(--accent)}
+.toc .mark{display:flex;align-items:center;gap:10px;margin-bottom:22px;color:var(--fg);font-weight:500}
+.toc .mark img{width:28px;height:28px}
+main{min-width:0}
+header.hero{padding-block:56px 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+@media (max-width:640px){header.hero{grid-template-columns:minmax(0,1fr)}}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);font-weight:500}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.035em;margin:10px 0 14px;text-wrap:balance}
+h1 b{font-weight:500;color:var(--brand)}
+.lede{max-width:62ch;color:var(--fg-2);margin:0}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:13px;color:var(--fg-3)}
+.meta-row span b{color:var(--fg);font-weight:500}
+.hero-app{width:148px;height:148px;border-radius:34px;display:grid;place-items:center;background:linear-gradient(160deg,#8D78FF,#673AB7);box-shadow:0 24px 50px -24px rgba(103,58,183,.75)}
+.hero-app img{width:62%;filter:brightness(0) invert(1)}
+section{padding-block:56px 8px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--display);font-weight:500;font-size:26px;letter-spacing:-.025em;margin:6px 0 10px;text-wrap:balance}
+h3{font-size:15px;font-weight:500;margin:28px 0 12px}
+p.note{max-width:66ch;color:var(--fg-2);margin:0 0 6px}
+.code{font-family:var(--mono);font-size:12.5px;color:var(--fg-2)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr))}
+.panel{border:1px solid var(--line);border-radius:20px;padding:20px;background:var(--bg);min-width:0}
+.panel.soft{background:var(--bg-soft)}
+.cap{font-size:13px;color:var(--fg-3);margin-top:10px}
+.cap b{color:var(--fg);font-weight:500}
+/* logo */
+.logo-stage{height:200px;border-radius:16px;display:grid;place-items:center;position:relative}
+.logo-stage img{width:96px;height:96px}
+.on-white{background:#FFFFFF;border:1px solid var(--line)}
+.on-purple{background:linear-gradient(160deg,#8D78FF,#673AB7)}
+.on-purple img,.on-dark img{filter:brightness(0) invert(1)}
+.on-dark{background:#14121F}
+.clear{width:100%;height:200px;border-radius:16px;background:var(--bg-soft);display:grid;place-items:center}
+.clear .box{position:relative;padding:24px;outline:1.5px dashed var(--accent);outline-offset:0;border-radius:4px}
+.clear .box img{width:96px;height:96px;display:block}
+.clear .tag{position:absolute;top:-22px;left:0;font-family:var(--mono);font-size:11px;color:var(--accent)}
+.sizes{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap}
+.sizes div{display:flex;flex-direction:column;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--fg-3)}
+.donts .logo-stage{height:140px}
+.donts .logo-stage img{width:64px;height:64px}
+.dont{position:relative}
+.dont::after{content:"";position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;background:#E5486B center/12px no-repeat url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'><path d='M6 6l12 12M18 6 6 18'/></svg>")}
+.lockup{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.lockup img{width:44px;height:44px}
+.lockup .wm{font-size:24px;letter-spacing:-.02em;color:#2A2838}
+.lockup .wm b{font-weight:600}
+.on-purple .wm,.on-dark .wm{color:#fff}
+/* colors */
+.swatch{border-radius:16px;overflow:hidden;border:1px solid var(--swatch-edge);min-width:0}
+.swatch .chip{height:96px;display:flex;align-items:flex-end;padding:10px 12px;font-size:12px;font-weight:500}
+.swatch .info{padding:10px 12px 12px;background:var(--bg)}
+.swatch .info b{display:block;font-weight:500;font-size:14px}
+.swatch .info span{display:block;font-size:12.5px;color:var(--fg-3)}
+.ratio{display:flex;height:56px;border-radius:14px;overflow:hidden;border:1px solid var(--swatch-edge)}
+.ratio div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;min-width:0;white-space:nowrap;overflow:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:13px;color:var(--fg-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1px solid var(--swatch-edge)}
+/* type */
+.type-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line)}
+.type-row:first-of-type{border-top:0}
+@media (max-width:560px){.type-row{grid-template-columns:minmax(0,1fr);gap:4px}}
+.type-row .spec{font-family:var(--mono);font-size:11.5px;color:var(--fg-3);line-height:1.5}
+.type-row .spec b{display:block;color:var(--fg);font-family:var(--body);font-weight:500;font-size:13px}
+.specimen{font-size:120px;line-height:1;letter-spacing:-.05em;font-weight:300;color:var(--brand)}
+.alpha{font-size:22px;letter-spacing:-.01em;color:var(--fg-2);word-break:break-word}
+/* spacing / radius */
+.scale{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.scale div{display:flex;flex-direction:column;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--fg-3)}
+.scale i{display:block;background:var(--accent-soft);border:1px solid var(--accent);border-radius:3px}
+.radii{display:flex;gap:16px;flex-wrap:wrap}
+.radii div{width:92px;height:92px;border:1.5px solid var(--accent);background:var(--accent-soft);display:flex;align-items:flex-end;justify-content:center;padding:8px;font-family:var(--mono);font-size:11px;color:var(--accent-deep)}
+.phone-spec{position:relative;width:min(100%,260px);aspect-ratio:390/844;border-radius:34px;border:1.5px solid var(--line);background:var(--bg-soft);margin:0 auto;overflow:hidden}
+.phone-spec .m{position:absolute;top:0;bottom:0;width:13.3%;background:repeating-linear-gradient(45deg,rgba(123,97,255,.12) 0 6px,transparent 6px 12px)}
+.phone-spec .l{left:0}.phone-spec .r{right:0}
+.phone-spec .bar{position:absolute;left:0;right:0;height:5.2%;background:rgba(123,97,255,.08);font-family:var(--mono);font-size:9.5px;color:var(--fg-3);display:flex;align-items:center;justify-content:center}
+.phone-spec .t{top:0}.phone-spec .n{bottom:2.4%;left:12%;right:12%;height:9%;border-radius:999px;background:rgba(123,97,255,.14)}
+.phone-spec .lbl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;font-family:var(--mono);font-size:11px;color:var(--fg-3);line-height:1.6}
+/* icons */
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.icons div{border:1px solid var(--line);border-radius:14px;padding:16px 8px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11.5px;color:var(--fg-3);text-align:center}
+.icons svg{width:24px;height:24px;fill:none;stroke:var(--fg);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.glass3d{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px}
+.glass3d div{border-radius:22px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:14px;position:relative;overflow:hidden;color:#2A2838}
+.glass3d img{position:absolute;right:-6px;top:-6px;width:62%}
+.glass3d b{position:relative;margin-top:auto;font-size:28px;font-weight:500;letter-spacing:-.03em;line-height:1}
+.glass3d span{position:relative;font-size:12.5px;color:rgba(42,40,56,.7)}
+.grid24{width:120px;height:120px;border-radius:12px;position:relative;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/5px 5px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/5px 5px;border:1px solid var(--line);display:grid;place-items:center}
+.grid24::before{content:"";position:absolute;inset:10px;border:1px dashed var(--accent);border-radius:4px}
+.grid24 svg{width:100px;height:100px;fill:none;stroke:var(--fg);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;position:relative}
+/* components (giống app thật) */
+.demo{background:linear-gradient(180deg,#FAF8FF,#FFFFFF);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;color:#2A2838}
+.btn{height:48px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font:500 14px var(--body);border:0;cursor:pointer}
+.btn.primary{background:linear-gradient(180deg,#8D78FF,#6F55F5);color:#fff;box-shadow:0 12px 24px -14px rgba(111,85,245,.9)}
+.btn.ghost{background:#fff;color:#2A2838;box-shadow:0 0 0 1px #ECEAF4}
+.btn.call{width:64px;height:64px;padding:0;justify-content:center;border-radius:50%;color:#fff;background:radial-gradient(circle at 35% 25%,#6EE7A2,#34C474 45%,#22A65E);box-shadow:0 14px 26px -12px rgba(34,166,94,.85)}
+.btn.sm{height:36px;padding:0 14px;font-size:13px}
+.btn svg,.callbtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{height:36px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;font-size:13px;font-weight:500;background:#fff;color:#55526A;box-shadow:0 0 0 1px #E7E6EE}
+.chip.on{background:linear-gradient(180deg,#8D78FF,#6F55F5);color:#fff;box-shadow:none}
+.seg{display:flex;padding:4px;gap:4px;border-radius:999px;background:#F4F3F8;min-width:240px}
+.seg span{flex:1;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#85829A}
+.seg span.on{background:#fff;color:#7B61FF;box-shadow:0 4px 10px -6px rgba(60,40,140,.3)}
+.callbtn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#F3F3F6;color:#2A2838;box-shadow:0 0 0 1px #E7E6EE}
+.tag{height:24px;padding:0 9px;border-radius:999px;display:inline-flex;align-items:center;font-size:11.5px;font-weight:500}
+.toggle{width:50px;height:30px;border-radius:15px;background:#7B61FF;position:relative}
+.toggle::after{content:"";position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.row-demo{display:flex;align-items:center;gap:14px;width:100%;max-width:360px;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px #fff,0 0 0 1px rgba(124,97,255,.08),0 16px 34px -24px rgba(60,40,140,.35)}
+.row-demo img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.row-demo .t{flex:1;min-width:0}
+.row-demo .t b{display:block;font-weight:500;font-size:14.5px}
+.row-demo .t span{font-size:12.5px;color:#85829A}
+.nav-demo{position:relative;width:100%;height:150px;border-radius:20px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;
+  background:linear-gradient(135deg,#FAD3EE 0%,#D9D3FF 45%,#C8F2EA 100%)}
+.nav-demo .bar{display:flex;gap:10px;padding:7px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 28px -16px rgba(40,30,90,.3)}
+.nav-demo .p{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:rgba(130,128,140,.2);color:rgba(42,40,56,.6)}
+.nav-demo .p.on{background:#fff;color:#2A2838;box-shadow:0 6px 16px -8px rgba(30,20,70,.3)}
+.nav-demo svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dial-demo{display:grid;grid-template-columns:repeat(3,76px);gap:14px 22px;padding:22px;border-radius:20px;justify-content:center;background:linear-gradient(160deg,#F4F0FF,#FFFFFF 60%,#EEF3FB)}
+.dial-demo span{width:76px;height:76px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;gap:3px;
+  background:rgba(255,255,255,.42);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.75),inset 0 1.5px 0 #fff,inset 0 -8px 16px rgba(120,100,180,.1),0 8px 18px -12px rgba(40,30,90,.35);color:#2A2838;font-size:32px;font-weight:300}
+.dial-demo small{font-size:9.5px;font-weight:600;letter-spacing:.2em;color:#85829A}
+/* do / don't list */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.rules ul{margin:0;padding-left:18px;color:var(--fg-2)}
+.rules li{margin:6px 0}
+.rules h4{margin:0 0 6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.rules .do h4{color:#1F9D5B}.rules .no h4{color:#E5486B}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+th,td{text-align:left;padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;font-weight:500;color:var(--fg-3);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+td .code{white-space:nowrap}
+.dot{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:-1px;margin-right:8px;border:1px solid var(--swatch-edge)}
+ol.steps{padding-left:20px;color:var(--fg-2);max-width:70ch}
+ol.steps li{margin:8px 0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Mục lục">
+  <div class="mark"><img src="{{LOGO}}" alt="">ContactHub</div>
+  <a href="#logo">Logo</a>
+  <a href="#mau">Màu sắc</a>
+  <a href="#chu">Chữ</a>
+  <a href="#luoi">Lưới, khoảng cách, bo góc</a>
+  <a href="#icon">Icon</a>
+  <a href="#thanh-phan">Thành phần</a>
+  <a href="#hieu-ung">Hiệu ứng & chuyển động</a>
+  <a href="#toi">Giao diện tối</a>
+  <a href="#hinh-anh">Hình ảnh & nội dung</a>
+  <a href="#figma">Bàn giao Figma & dev</a>
+</nav>
+
+<main>
+<header class="hero">
+  <div>
+    <div class="eyebrow">Brand guideline · v1.0 · 10/2026</div>
+    <h1>Gcalls <b>ContactHub</b><br>bộ nhận diện app mobile</h1>
+    <p class="lede">Quy chuẩn thiết kế cho app tổng đài viên: logo, màu, chữ, lưới, icon, thành phần và chuyển động. Mọi giá trị ở đây khớp với file token <span class="code">gcalls-tokens.json</span> và prototype trong repo.</p>
+    <div class="meta-row"><span>Màn chuẩn <b>390 × 844 pt</b></span><span>Font <b>Plus Jakarta Sans</b></span><span>Màu chính <b>#7B61FF</b></span><span>Logo <b>#673AB7</b></span></div>
+  </div>
+  <div class="hero-app" role="img" aria-label="Icon app Gcalls ContactHub"><img src="{{LOGO}}" alt=""></div>
+</header>
+
+<section id="logo">
+  <div class="eyebrow">01 · Logo</div>
+  <h2>Logo Gcalls</h2>
+  <p class="note">Biểu tượng gồm các cung tròn đồng tâm mở về bên phải, gợi sóng âm của cuộc gọi. Logo chỉ có một màu tím <span class="code">#673AB7</span>. Trên nền tím hoặc nền tối, dùng bản trắng.</p>
+  <div class="grid g3" style="margin-top:20px">
+    <div><div class="logo-stage on-white"><img src="{{LOGO}}" alt="Logo Gcalls trên nền trắng"></div><div class="cap"><b>Chuẩn</b> · tím trên nền trắng</div></div>
+    <div><div class="logo-stage on-purple"><img src="{{LOGO}}" alt="Logo Gcalls trắng trên nền tím"></div><div class="cap"><b>Đảo màu</b> · trắng trên gradient tím</div></div>
+    <div><div class="logo-stage on-dark"><img src="{{LOGO}}" alt="Logo Gcalls trắng trên nền tối"></div><div class="cap"><b>Nền tối</b> · trắng trên #14121F</div></div>
+  </div>
+
+  <h3>Logo kèm tên sản phẩm</h3>
+  <div class="grid g2">
+    <div class="panel on-white" style="display:flex;align-items:center;justify-content:center;min-height:120px"><div class="lockup"><img src="{{LOGO}}" alt=""><span class="wm"><b>Gcalls</b> ContactHub</span></div></div>
+    <div class="panel on-purple" style="display:flex;align-items:center;justify-content:center;min-height:120px;border:0"><div class="lockup"><img src="{{LOGO}}" alt=""><span class="wm"><b>Gcalls</b> ContactHub</span></div></div>
+  </div>
+  <p class="cap">Chữ "Gcalls" 600, "ContactHub" 400, cùng Plus Jakarta Sans. Chiều cao chữ bằng 55% chiều cao biểu tượng, khoảng cách giữa biểu tượng và chữ bằng 30% chiều cao biểu tượng.</p>
+
+  <h3>Vùng an toàn và cỡ tối thiểu</h3>
+  <div class="grid g2">
+    <div class="clear"><div class="box"><span class="tag">x = ¼ chiều rộng logo</span><img src="{{LOGO}}" alt=""></div></div>
+    <div class="panel soft" style="display:flex;flex-direction:column;justify-content:center;gap:16px">
+      <div class="sizes">
+        <div><img src="{{LOGO}}" alt="" style="width:64px"><span>64</span></div>
+        <div><img src="{{LOGO}}" alt="" style="width:40px"><span>40</span></div>
+        <div><img src="{{LOGO}}" alt="" style="width:24px"><span>24 · nhỏ nhất</span></div>
+        <div><img src="{{LOGO}}" alt="" style="width:16px;opacity:.35"><span>16 · không dùng</span></div>
+      </div>
+      <p class="note" style="font-size:13.5px">Luôn chừa trống quanh logo ít nhất <b>x</b>. Cỡ nhỏ nhất trên màn hình là 24pt. Icon app dùng ô vuông bo 22.37% (chuẩn iOS), nền gradient <span class="code">#8D78FF → #673AB7</span>, logo trắng chiếm 62% chiều rộng.</p>
+    </div>
+  </div>
+
+  <h3>Không được làm</h3>
+  <div class="grid g4 donts">
+    <div><div class="logo-stage on-white dont"><img src="{{LOGO}}" alt="" style="transform:scaleX(1.5)"></div><div class="cap">Kéo giãn, bóp méo</div></div>
+    <div><div class="logo-stage on-white dont"><img src="{{LOGO}}" alt="" style="filter:hue-rotate(150deg)"></div><div class="cap">Đổi sang màu khác</div></div>
+    <div><div class="logo-stage on-white dont"><img src="{{LOGO}}" alt="" style="filter:drop-shadow(4px 6px 3px rgba(0,0,0,.45))"></div><div class="cap">Thêm bóng, viền, hiệu ứng</div></div>
+    <div><div class="logo-stage dont" style="background:linear-gradient(135deg,#FAD3EE,#FFE8A3,#C8F2EA)"><img src="{{LOGO}}" alt="" style="opacity:.6"></div><div class="cap">Đặt trên nền rối, làm mờ</div></div>
+  </div>
+</section>
+
+<section id="mau">
+  <div class="eyebrow">02 · Màu sắc</div>
+  <h2>Tím làm điểm nhấn, trắng làm nền</h2>
+  <p class="note">App chủ yếu là trắng và xám trung tính. Tím chỉ dùng để chỉ ra hành động chính hoặc trạng thái đang chọn. Gọi luôn là xanh lá, gọi nhỡ và kết thúc luôn là đỏ hồng.</p>
+
+  <h3>Tỉ lệ phân bổ trên một màn</h3>
+  <div class="ratio" role="img" aria-label="Tỉ lệ màu: trắng 70%, trung tính 20%, tím 8%, màu ngữ nghĩa 2%">
+    <div style="flex:70;background:#FFFFFF;color:#55526A">Trắng · 70%</div>
+    <div style="flex:20;background:#F3F3F6;color:#55526A">Trung tính · 20%</div>
+    <div style="flex:8;background:#7B61FF;color:#fff">8%</div>
+    <div style="flex:2;background:#22A65E"></div>
+  </div>
+  <div class="legend"><span><i style="background:#FFFFFF"></i>Nền, card</span><span><i style="background:#F3F3F6"></i>Ô icon, nút gọi, chip, đường kẻ</span><span><i style="background:#7B61FF"></i>Nút chính, mục đang chọn, link</span><span><i style="background:#22A65E"></i>Gọi, trạng thái</span></div>
+
+  <h3>Màu thương hiệu</h3>
+  <div class="grid g4">
+    {{SWATCHES:brand}}
+  </div>
+  <h3>Trung tính</h3>
+  <div class="grid g4">
+    {{SWATCHES:neutral}}
+  </div>
+  <h3>Ngữ nghĩa</h3>
+  <div class="grid g4">
+    {{SWATCHES:semantic}}
+  </div>
+  <h3>Pastel cho 4 thẻ chỉ số</h3>
+  <div class="grid g4">
+    {{SWATCHES:tile}}
+  </div>
+  <p class="cap">Chữ trên nền pastel luôn dùng <span class="code">#2A2838</span>. Tỉ lệ tương phản chữ chính trên nền trắng 14.6:1, chữ phụ <span class="code">#55526A</span> 7.5:1, chữ mô tả <span class="code">#85829A</span> 3.7:1 (chỉ dùng cho chữ ≥ 12.5px không mang thông tin bắt buộc).</p>
+</section>
+
+<section id="chu">
+  <div class="eyebrow">03 · Chữ</div>
+  <h2>Plus Jakarta Sans, nét dịu</h2>
+  <p class="note">Một font duy nhất cho toàn app, có đủ dấu tiếng Việt. Dự phòng: Inter, rồi font hệ thống. Chỉ dùng 3 độ đậm 400, 500, 600 và không dùng 700. Tiêu đề lớn để nhẹ (400), độ đậm đến từ cỡ chữ.</p>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="panel soft"><div class="specimen">Aa</div><div class="cap"><b>Plus Jakarta Sans</b> · 400 / 500 / 600</div></div>
+    <div class="panel soft"><div class="alpha">Ăn Ân Đề Ổi Ư Ỹ<br>0123456789 · 0901 234 567<br>Gọi nhỡ · Sẵn sàng · Nhắc hẹn</div><div class="cap">Số điện thoại và thời lượng dùng <span class="code">tabular-nums</span> để các cột thẳng hàng.</div></div>
+  </div>
+  <h3>Thang chữ</h3>
+  <div>
+    {{TYPE_ROWS}}
+  </div>
+</section>
+
+<section id="luoi">
+  <div class="eyebrow">04 · Lưới, khoảng cách, bo góc</div>
+  <h2>Lưới 390 pt, lề 20</h2>
+  <div class="grid g2" style="margin-top:16px;align-items:center">
+    <div class="phone-spec" role="img" aria-label="Khung màn 390 × 844 với lề 20, thanh trạng thái 44, thanh tab nổi ở đáy">
+      <div class="m l"></div><div class="m r"></div>
+      <div class="bar t">status bar · 44</div>
+      <div class="bar n"></div>
+      <div class="lbl">390 × 844<br>lề trái/phải 20<br>khoảng giữa khối 24<br>thanh tab nổi · cách đáy 26</div>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Khoảng cách (bội số 4)</h3>
+      <div class="scale">
+        <div><i style="width:4px;height:4px"></i>4</div><div><i style="width:8px;height:8px"></i>8</div><div><i style="width:12px;height:12px"></i>12</div>
+        <div><i style="width:16px;height:16px"></i>16</div><div><i style="width:20px;height:20px"></i>20 · lề</div><div><i style="width:24px;height:24px"></i>24 · khối</div><div><i style="width:32px;height:32px"></i>32</div>
+      </div>
+      <h3>Bo góc</h3>
+      <div class="radii">
+        <div style="border-radius:6px">tag 6</div><div style="border-radius:16px">input 16</div><div style="border-radius:20px">card 20</div>
+        <div style="border-radius:24px">thẻ số 24</div><div style="border-radius:28px">sheet 28</div><div style="border-radius:46px">nút 999</div>
+      </div>
+      <h3>Kích thước chạm</h3>
+      <p class="note">Mọi vùng bấm tối thiểu 44 × 44. Nút 48 (nhỏ 36), avatar 42 (lớn 66), viên thanh tab 60, phím quay số 76, nút gọi 64–76.</p>
+    </div>
+  </div>
+</section>
+
+<section id="icon">
+  <div class="eyebrow">05 · Icon</div>
+  <h2>Icon nét đơn giản, icon kính 3D chỉ dùng cho thẻ chỉ số</h2>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="panel soft" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <div class="grid24" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+      <ul class="note" style="padding-left:18px;margin:0;font-size:14px">
+        <li>Lưới 24, vùng vẽ 20 (lề 2)</li><li>Nét 1.6–1.8, đầu và góc bo tròn</li><li>Không tô, không gradient</li><li>Màu: <span class="code">#2A2838</span>, chưa chọn xám 45–60%</li><li>Cỡ hiển thị 22 (nhỏ 16)</li>
+      </ul>
+    </div>
+    <div class="panel soft">
+      <div class="glass3d">
+        <div style="background:#FAD3EE"><img src="{{DECO:missed-pink}}" alt=""><b style="color:#D23A62">1</b><span>Gọi nhỡ</span></div>
+        <div style="background:#D9D3FF"><img src="{{DECO:unassigned-violet}}" alt=""><b>852</b><span>Chưa nhận</span></div>
+        <div style="background:#FFE8A3"><img src="{{DECO:overdue-yellow}}" alt=""><b>0</b><span>Quá hạn</span></div>
+        <div style="background:#C8F2EA"><img src="{{DECO:today-mint}}" alt=""><b>1</b><span>Hôm nay</span></div>
+      </div>
+      <p class="cap">Icon kính 3D: PNG nền trong suốt, tô cùng tông với thẻ, đặt góc trên phải, xoay −4°. Không dùng icon 3D ở nơi khác.</p>
+    </div>
+  </div>
+  <h3>Bộ icon cơ bản</h3>
+  <div class="icons">
+    {{ICONS}}
+  </div>
+</section>
+
+<section id="thanh-phan">
+  <div class="eyebrow">06 · Thành phần</div>
+  <h2>Thành phần dùng chung</h2>
+  <h3>Nút, chip, phân đoạn, công tắc</h3>
+  <div class="demo">
+    <button class="btn primary" type="button">Xem ngay</button>
+    <button class="btn ghost" type="button">Bỏ qua</button>
+    <button class="btn primary sm" type="button">Lưu kết quả</button>
+    <span class="btn call" role="img" aria-label="Nút gọi"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+    <span class="callbtn" role="img" aria-label="Nút gọi trong danh sách"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+    <div class="chips"><span class="chip on">Tất cả</span><span class="chip">Gọi nhỡ 1</span><span class="chip">Tin nhắn</span></div>
+    <div class="seg"><span class="on">Đang mở</span><span>Hôm nay</span><span>Đã xong</span></div>
+    <span class="toggle" role="img" aria-label="Công tắc bật"></span>
+    <span class="tag" style="background:#E9F7F0;color:#1F9D5B">Đã kết nối</span>
+    <span class="tag" style="background:rgba(246,173,85,.18);color:#B7791F">Chưa nhận</span>
+    <span class="tag" style="background:#FFECEF;color:#E5486B">Cao</span>
+  </div>
+  <div class="tbl" style="margin-top:12px"><table>
+    <thead><tr><th>Thành phần</th><th>Quy cách</th><th>Dùng khi</th></tr></thead>
+    <tbody>
+      <tr><td>Nút chính</td><td class="code">h48 · bo 999 · gradient #8D78FF→#6F55F5 · chữ 14/500 trắng</td><td>Một hành động chính mỗi màn</td></tr>
+      <tr><td>Nút phụ</td><td class="code">h48 · nền trắng · viền 1px #ECEAF4</td><td>Huỷ, Bỏ qua, hành động thứ hai</td></tr>
+      <tr><td>Nút gọi</td><td class="code">64–76 tròn · xanh #22A65E · icon trắng</td><td>Gọi, nghe máy. Không đổi màu</td></tr>
+      <tr><td>Nút gọi trong danh sách</td><td class="code">42 tròn · nền #F3F3F6 · icon #2A2838</td><td>Danh bạ, tìm kiếm</td></tr>
+      <tr><td>Chip lọc</td><td class="code">h36 · bo 999 · chọn: gradient tím, chữ trắng</td><td>Lọc nhanh trên danh sách</td></tr>
+      <tr><td>Phân đoạn</td><td class="code">nền #F4F3F8 · mục chọn trắng, chữ #7B61FF</td><td>2–3 chế độ xem cùng dữ liệu</td></tr>
+      <tr><td>Tag</td><td class="code">h24 · 11.5/500 · nền nhạt cùng tông chữ</td><td>Trạng thái, mức ưu tiên</td></tr>
+    </tbody></table></div>
+
+  <h3>Card và dòng danh sách</h3>
+  <div class="demo" style="background:linear-gradient(135deg,#F4F0FF,#FFFFFF 50%,#EEF7F3)">
+    <div class="row-demo"><img src="{{AVATAR}}" alt=""><div class="t"><b>Anh Hoàng</b><span>0901 234 567</span></div><span class="callbtn" aria-hidden="true"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span></div>
+    <p class="cap" style="margin:0;max-width:40ch">Card kính: nền trắng 66%, blur 22, viền trắng 1px, grain 9%, bo 20. Dòng cao tối thiểu 78, đệm 14 × 16, avatar 42.</p>
+  </div>
+
+  <h3>Thanh tab (liquid glass)</h3>
+  <div class="grid g2">
+    <div class="nav-demo" role="img" aria-label="Thanh tab gồm 4 viên tròn, viên đang chọn màu trắng">
+      <div class="bar">
+        <span class="p on"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg></span>
+        <span class="p"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="p"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2"/></svg></span>
+        <span class="p"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+      </div>
+    </div>
+    <div class="panel soft"><ul class="note" style="padding-left:18px;margin:0;font-size:14px">
+      <li>4 tab cố định: Tổng quan, Danh bạ, Lịch sử, Công việc</li>
+      <li>Viên 60, cách nhau 10, thanh nền trắng 14% + blur 14</li>
+      <li>Viên thường xám 20% trong suốt; viên chọn trắng đặc</li>
+      <li>Chỉ icon, không nhãn. Badge đỏ góc trên phải</li>
+      <li>Luôn hiển thị, trừ luồng cuộc gọi, đăng nhập, cấp quyền</li>
+    </ul></div>
+  </div>
+
+  <h3>Bàn phím quay số</h3>
+  <div class="grid g2" style="align-items:center">
+    <div class="dial-demo" aria-hidden="true">
+      <span>1<small>&nbsp;</small></span><span>2<small>ABC</small></span><span>3<small>DEF</small></span>
+      <span>4<small>GHI</small></span><span>5<small>JKL</small></span><span>6<small>MNO</small></span>
+    </div>
+    <p class="note">Phím tròn 76, cách nhau 14 × 26, kính lỏng: trắng 42%, blur 18, viền trắng trong, bóng trong ở đáy. Số 32/300, chữ cái 9.5/600 giãn 0.2em. Gợi ý người gọi là một dòng chữ xám dưới dãy số, không dùng thẻ.</p>
+  </div>
+</section>
+
+<section id="hieu-ung">
+  <div class="eyebrow">07 · Hiệu ứng & chuyển động</div>
+  <h2>Kính mờ, grain, nền lỏng</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Hiệu ứng</th><th>Thông số</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>Kính mờ (card, sheet, thanh tab)</td><td class="code">fill trắng 14–66% · background blur 14–26 · saturate 160%</td><td>Trên Figma: Background blur + fill có độ trong</td></tr>
+      <tr><td>Grain</td><td class="code">noise fractal 0.85 · độ đậm 7–14% · multiply</td><td>Figma: lớp noise PNG, blend Multiply</td></tr>
+      <tr><td>Nền lỏng (liquid)</td><td class="code">4 khối tím nhạt 240–400 · blur 28 · saturate 60% · trôi 19–29s</td><td>Native: shader / Lottie / video pre-render</td></tr>
+      <tr><td>Bóng card</td><td class="code">0 16 34 −24 · #3C288C 35%</td><td>Rất nhẹ, chỉ để tách card khỏi nền</td></tr>
+    </tbody></table></div>
+  <h3>Chuyển động</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Sự kiện</th><th>Chuyển động</th><th>Thời gian · easing</th></tr></thead>
+    <tbody>
+      <tr><td>Bấm nút / icon</td><td>Co còn 0.88, mờ 70%, trả lại</td><td class="code">250ms · cubic-bezier(.2,.8,.2,1)</td></tr>
+      <tr><td>Đổi module</td><td>Màn cũ trượt trái 42 + mờ dần; màn mới vào từ phải</td><td class="code">230ms ra · 420ms vào</td></tr>
+      <tr><td>Khối trong màn</td><td>Hiện dần + trồi lên 14, lần lượt</td><td class="code">550ms · cách nhau 60ms</td></tr>
+      <tr><td>Thẻ chỉ số</td><td>Bật ra 0.85 → 1.04 → 1</td><td class="code">500ms · cách nhau 80ms</td></tr>
+      <tr><td>Sheet</td><td>Nền mờ hiện dần, sheet trượt lên</td><td class="code">300ms · 450ms</td></tr>
+    </tbody></table></div>
+  <p class="cap">Khi máy bật "Giảm chuyển động", tắt toàn bộ chuyển động trang trí, chỉ giữ thay đổi trạng thái.</p>
+</section>
+
+<section id="toi">
+  <div class="eyebrow">08 · Giao diện tối</div>
+  <h2>Cùng bố cục, chỉ đổi nền, card và chữ</h2>
+  <p class="note">Bản tối không phải một thiết kế khác. Tab, nút, chip, thanh tab, thẻ chỉ số, icon và nội dung giữ nguyên như bản sáng.</p>
+  <div class="tbl" style="margin-top:14px"><table>
+    <thead><tr><th>Vai trò</th><th>Sáng</th><th>Tối</th></tr></thead>
+    <tbody>
+      <tr><td>Nền</td><td><span class="dot" style="background:#FFFFFF"></span><span class="code">#FFFFFF → #FAF8FF</span></td><td><span class="dot" style="background:#0E0D16"></span><span class="code">#14121F → #0E0D16</span></td></tr>
+      <tr><td>Card</td><td><span class="dot" style="background:#FFFFFF"></span><span class="code">trắng 66%</span></td><td><span class="dot" style="background:#1A1826"></span><span class="code">trắng 6.5% (≈ #1A1826)</span></td></tr>
+      <tr><td>Chữ chính</td><td><span class="dot" style="background:#2A2838"></span><span class="code">#2A2838</span></td><td><span class="dot" style="background:#F1EFF8"></span><span class="code">#F1EFF8</span></td></tr>
+      <tr><td>Chữ phụ</td><td><span class="dot" style="background:#55526A"></span><span class="code">#55526A</span></td><td><span class="dot" style="background:#C9C6DA"></span><span class="code">#C9C6DA</span></td></tr>
+      <tr><td>Chữ mô tả</td><td><span class="dot" style="background:#85829A"></span><span class="code">#85829A</span></td><td><span class="dot" style="background:#9A96B2"></span><span class="code">#9A96B2</span></td></tr>
+      <tr><td>Đường kẻ</td><td><span class="dot" style="background:#ECEAF4"></span><span class="code">#ECEAF4</span></td><td><span class="dot" style="background:#2A2836"></span><span class="code">trắng 8%</span></td></tr>
+    </tbody></table></div>
+  <p class="cap">Phần tử giữ nền sáng (nút trắng, chip, thẻ pastel) giữ luôn chữ tối của bản sáng.</p>
+</section>
+
+<section id="hinh-anh">
+  <div class="eyebrow">09 · Hình ảnh & nội dung</div>
+  <h2>Ảnh người thật, lời lẽ của người quản lý</h2>
+  <div class="rules">
+    <div class="panel do"><h4>Nên</h4><ul>
+      <li>Avatar ảnh thật, cắt vuông lấy khuôn mặt, hiển thị tròn</li>
+      <li>Thiếu ảnh: 2 chữ cái đầu trên nền <span class="code">#F3F3F6</span></li>
+      <li>Câu ngắn, động từ rõ: "Gọi lại", "Nhận việc", "Lưu kết quả"</li>
+      <li>Số điện thoại tách nhóm 4-3-3: 0901 234 567</li>
+      <li>Thời gian 24h: 15:00 · ngày dd/mm</li>
+    </ul></div>
+    <div class="panel no"><h4>Không nên</h4><ul>
+      <li>Emoji trong giao diện</li>
+      <li>Tím cho icon, avatar, tag thông thường</li>
+      <li>Đổi màu nút gọi theo màn</li>
+      <li>Trộn tiếng Anh ("SECURITY", "Gender") vào giao diện tiếng Việt</li>
+      <li>Chữ nhỏ hơn 11px hoặc xám nhạt hơn <span class="code">#85829A</span></li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="figma">
+  <div class="eyebrow">10 · Bàn giao</div>
+  <h2>Đưa vào Figma và code</h2>
+  <ol class="steps">
+    <li><b>Token màu, chữ, khoảng cách:</b> mở file <span class="code">design/gcalls-tokens.json</span> trong repo. Trong Figma: bảng Variables, chọn <i>Import</i> (định dạng W3C Design Tokens), hoặc dùng plugin <i>Tokens Studio</i> → Load from file.</li>
+    <li><b>Logo, icon, ảnh 3D:</b> kéo thư mục <span class="code">design/assets/</span> vào Figma. SVG giữ được vector, chỉnh màu được.</li>
+    <li><b>Màn hình:</b> dùng plugin <i>html.to.design</i>, dán link trang prototype (mỗi màn một link <span class="code">viewer.html?s=Main&amp;bare=1</span>) để lấy layer chỉnh sửa được. Hoặc kéo ảnh trong <span class="code">docs/screens/</span> làm tham chiếu.</li>
+    <li><b>Dev:</b> token cũng dùng trực tiếp được trong code (Style Dictionary sinh ra Swift, Kotlin, CSS). Đặc tả đầy đủ ở <span class="code">docs/SPEC.md</span>.</li>
+  </ol>
+</section>
+</main>
+</div>
